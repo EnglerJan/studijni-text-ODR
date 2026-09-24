@@ -2,7 +2,10 @@
 \contentsline {chapter}{Obsah}{ii}{chapter*.1}%
 \contentsline {chapter}{Úvod}{iii}{chapter*.2}%
 \contentsline {chapter}{\numberline {1}Limity a Derivace}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}O co by se mělo jednat}{1}{section*.3}%
-\contentsline {section}{\numberline {1.2}O co se jedná}{1}{section*.4}%
-\contentsline {chapter}{Summary and Outlook}{12}{chapter*.5}%
+\contentsline {section}{\numberline {1.1}Paradox pohybu}{1}{section*.3}%
+\contentsline {section}{\numberline {1.2}Rigorózní zavedení}{4}{section*.4}%
+\contentsline {chapter}{\numberline {2}Diferenciální rovnice}{15}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Volný pád}{15}{section*.5}%
+\contentsline {section}{\numberline {2.2}Picard-Lindelöfova věta. Princip determinismu}{15}{section*.6}%
+\contentsline {chapter}{Summary and Outlook}{16}{chapter*.7}%
 \contentsfinish 

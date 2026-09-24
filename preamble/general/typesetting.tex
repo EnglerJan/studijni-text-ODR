@@ -33,3 +33,14 @@
 \setdefaultleftmargin{1.87em}{1.7em}{1.5em}{1em}{1em}{1em}
 \setdefaultitem{$\bullet$}{\textbullet}{\textasteriskcentered}{\textperiodcentered}
 \setdefaultenum{\bfseries (1)}{\bfseries (a)}{\bfseries (i)}{A.}
+
+%%CUSTOM
+\makeatletter
+\renewcommand{\@chapapp}{}% Not necessary...
+\newenvironment{chapquote}[2][2em]
+  {\setlength{\@tempdima}{#1}%
+   \def\chapquote@author{#2}%
+   \parshape 1 \@tempdima \dimexpr\textwidth-2\@tempdima\relax%
+   \itshape}
+  {\par\normalfont\hfill--\ \chapquote@author\hspace*{\@tempdima}\par\bigskip}
+\makeatother

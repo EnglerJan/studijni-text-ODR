@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.5.10)  24 SEP 2026 19:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.5.10)  25 SEP 2026 01:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1577,7 +1577,7 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (./thesis.aux (./frontmatter/title.aux)
 Package babel Info: 'czech' activates 'czech' shorthands.
 (babel)             Reported on input line 17.
- (./chapters/Úvod.aux) (./chapters/Limity a derivace.aux) (./chapters/Summary.aux))
+ (./chapters/Úvod.aux) (./chapters/Limity a derivace.aux) (./chapters/Diferencialni rovnice.aux) (./chapters/Summary.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
@@ -1768,47 +1768,82 @@ LaTeX Warning: Reference `ch:Tips' on page iii undefined on input line 7.
 \openout2 = `"chapters/Limity a derivace.aux"'.
 
  (./chapters/Limity a derivace.tex
-Kapitola 1.
-(/usr/local/texlive/2025/texmf-dist/tex/latex/cmbright/ot1cmbr.fd
+ 1.
+[1
+
+
+
+
+
+{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}] (/usr/local/texlive/2025/texmf-dist/tex/latex/cmbright/ot1cmbr.fd
 File: ot1cmbr.fd 2005/04/13 v8.1 (WaS)
 )
 LaTeX Font Info:    Font shape `OT1/cmbr/b/n' in size <12> not available
-(Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 4.
+(Font)              Font shape `OT1/cmbr/bx/n' tried instead on input line 43.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmbr' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/iwona/omxiwona.fd
 File: omxiwona.fd 2008/07/22 v0.995 font definition file for OMX/iwona (MW)
-) [1
-
-
-
-
-
-{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
+)
 Package babel Info: 'czech' activates 'czech' shorthands.
-(babel)             Reported on input line 140.
- [2{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [3] [4] [5]
-Underfull \vbox (badness 5787) has occurred while \output is active []
+(babel)             Reported on input line 66.
+ [2{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [3] [4]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6] [7] [8] [9] [10]) [11]
+ [5]
+Underfull \vbox (badness 8000) has occurred while \output is active []
+
+ [6] [7] [8] [9]
+
+LaTeX Warning: Command \v invalid in math mode on input line 373.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 373.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 373.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 373.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 375.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 375.
+
+
+LaTeX Warning: Command \v invalid in math mode on input line 377.
+
+[10] [11] [12] [13]) [14]
+\openout2 = `"chapters/Diferencialni rovnice.aux"'.
+
+ (./chapters/Diferencialni rovnice.tex
+ 2.
+) [15
+
+
+
+
+]
 \openout2 = `chapters/Summary.aux'.
 
- (./chapters/Summary.tex) [12
+ (./chapters/Summary.tex) [16
 
 
 
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 57.
+LaTeX Warning: Empty bibliography on input line 58.
 
 
-Package silence Warning: There were 9 warning(s) and 0 error(s).
+Package silence Warning: There were 16 warning(s) and 0 error(s).
 (silence)                I've killed 3 warning(s) and 0 error(s).
 
-(./thesis.aux (./frontmatter/title.aux) (./chapters/Úvod.aux) (./chapters/Limity a derivace.aux) (./chapters/Summary.aux))
+(./thesis.aux (./frontmatter/title.aux) (./chapters/Úvod.aux) (./chapters/Limity a derivace.aux) (./chapters/Diferencialni rovnice.aux) (./chapters/Summary.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1822,18 +1857,18 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 59459 strings out of 467533
- 1311635 string characters out of 5419495
- 2245502 words of memory out of 5000000
- 87026 multiletter control sequences out of 15000+600000
- 729269 words of font info for 229 fonts, out of 8000000 for 9000
+ 59649 strings out of 467533
+ 1317203 string characters out of 5419495
+ 2252915 words of memory out of 5000000
+ 87173 multiletter control sequences out of 15000+600000
+ 730239 words of font info for 238 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 126i,20n,127p,1135b,1905s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 126i,20n,127p,1135b,1911s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmro12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/tex-gyre/qzcmi.pfb>
-Output written on thesis.pdf (15 pages, 459395 bytes).
+Output written on thesis.pdf (19 pages, 488429 bytes).
 PDF statistics:
- 383 PDF objects out of 1000 (max. 8388607)
- 286 compressed objects within 3 object streams
- 80 named destinations out of 1000 (max. 500000)
- 53947 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 442 PDF objects out of 1000 (max. 8388607)
+ 337 compressed objects within 4 object streams
+ 96 named destinations out of 1000 (max. 500000)
+ 53971 words of extra memory for PDF output out of 61914 (max. 10000000)
 

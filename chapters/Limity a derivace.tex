@@ -1,6 +1,89 @@
 \chapter{Limity a Derivace} \label{ch:Limity a Derivace}
-\section{O co by se mělo jednat}\label{sec:O co by se mělo jednat}
-\section{O co se jedná}
+
+\begin{chapquote}{Aristoteles (Fyzika, 239b30)}
+Třetí paradox je … že letící šíp je v klidu, což vyplývá z předpokladu, že čas se skládá z okamžiků … Říká, že pokud je vše, co zabírá pořád stejný prostor, v klidu, a pokud to, co je v pohybu, se vždy nachází v „nyní“, pak je letící šíp nehybný.  
+\end{chapquote}
+\section{Paradox pohybu}\label{sec:Paradox pohybu}
+Na základní škole se učí, že pokud auto mezi časy $t, t+\Delta t$ urazí vzdálenost $\Delta x$, jeho rychlost (v časovém intervalu $(t,t+\Delta t)$) je
+\begin{equation}\label{eq:rychlost zš}
+  v = \frac{\Delta x}{\Delta t}
+\end{equation}
+Pojďme se nad tím zamyslet. Představme si, že jedeme po nekonečně dlouhé rovné silnici, podél níž je metr, a v každém čase $t$ můžeme na metru odečíst naši polohu $x(t).$
+
+\begin{příklad}\label{pr:x(t)=vt+x_0}
+	Pokud jedeme rovnoměrně, naše poloha je afinní funkcí času $x(t)=v\cdot t+x_0.$ Vybereme-li si dva momenty v čase $t, t+\Delta t$, vyjde nám ze vzorečku \ref{eq:rychlost zš}
+	\begin{equation*}
+	  \frac{\Delta x}{\Delta t}=\frac{x(t+\Delta t)-x(t)}{\Delta t}=\frac{v\cdot (t+\Delta t)+x_0-v\cdot t - x_0}{\Delta t} = v
+	\end{equation*}
+	a vše je v pořádku.
+\end{příklad}
+
+\begin{příklad}\label{pr:x(t)=t^2}
+  Zkusme jet tak, aby naše poloha byla $x(t)=t^{2}$. To by šlo docílit tak, že bychom jeli ve vakuu (bez odporu vzduchu) a měli stále nohu na plynu. Teprve zkusme začít měřit po 3 sekundách na 1 sekundu $(t=3, \Delta t = 1):$
+  \begin{equation*}
+    \frac{\Delta x}{\Delta t}=\frac{(t+\Delta t)^{2}-t^{2}}{\Delta t}=\frac{(3+1)^{2}-3^{2}}{1}=7
+  \end{equation*}
+  Pak zkusme $t=3, \Delta t=3$
+  \begin{equation*}
+    \frac{\Delta x}{\Delta t}=\frac{(t+\Delta t)^{2}-t^{2}}{\Delta t}=\frac{(3+3)^{2}-3^{2}}{3}=\frac{25}{3}>7
+  \end{equation*}
+  Měření přes delší časový interval nám \uv{zvětšilo} rychlost. Zkusme $t=3, \Delta t=0.5$:
+  \begin{equation*}
+	  \frac{\Delta x}{\Delta t}=\frac{(t+\Delta t)^{2}-t^{2}}{\Delta t}=\frac{(3+.5)^{2}-3^{2}}{.5}=\frac{13}{2}<7
+  \end{equation*}
+  Měření přes kratší časový interval nám \uv{zmenšilo} rychlost. Jaká je naše skutečná rychlost? 
+\end{příklad}
+
+Problém je, že vzoreček \ref{eq:rychlost zš} udává \emph{průměrnou rychlost} na časovém intervalu. Ta ale závisí na volbě onoho intervalu. My chceme mluvit o rychlosti v jednom čase. To ale nedává smysl, vzoreček \ref{eq:rychlost zš} vyžaduje dva časy: snažit se dosadit $\Delta t=0$ vede na nesmyslný výraz
+\begin{equation}\label{eq: 0/0}
+  \frac{\Delta x}{\Delta t} = \frac{x(t)-x(t)}{0}=\frac{0}{0}
+\end{equation}
+Stojí před námi hádanka, která lidstvo trápila 2000 let. Antickým filosofům z Eleje se zdál pojem pohybu tak zvláštní, že ho zavrhli a řekli, že žádný pohyb vlastně neexistuje. Zenón Elejský vymyslel několik paradoxů, které měli prokázat logickou nesmyslnost pohybu. Bohužel se nedochovali jeho původní spisy a musíme čerpat z Aristotelova komentáře. Aristoteles mluví o čtyřech paradoxech, přičemž ten čtvrtý je velmi vágní, pojďme si představit první tři.
+
+\begin{paradox}[První Zenónův paradox: Dichotomie (dělení na poloviny)]\label{paradox:zenon 1}
+	Závodíte na Olympijských hrách ve sprintu na \SI{100}{m}. Abyste uběhli \SI{100}{m}, musíte uběhnout prvních \SI{50}{m}. Pak musíte uběhnout dalších \SI{25}{m}, pak dalších \SI{12,5}{m} atd. Po $n$ krocích tohoto procesu uběhnete 
+\begin{equation*}
+	\SI{50}{m}+\SI{25}{m}+\hdots + \frac{100}{2^{n-1}}\SI{}{m} = \left(100-\frac{100}{2^{n-1}}\right)\SI{}{m} < \SI{100}{m}
+\end{equation*}
+Tedy po konečně mnoho krocích neuběhnete \SI{100}{m}. Nekonečně mnoho úkonů nelze provést, tudíž nelze uběhnout \SI{100}{m}.
+\end{paradox}
+
+\begin{paradox}[Druhý Zenónův paradox: Achilles a želva]\label{paradox:zenon 2}
+	Achilles běží rychlostí \SI{1}{m/s}, želva \SI{0,1}{m/s}. Závodí spolu, přičemž želva dostane náskok \SI{9}{s}, takže když vystartuje Achilles, želva už urazila \SI{0,9}{m}. Doběhne Achilles želvu? Když Achilles urazí vzdálenost \SI{0,9}{m}, o kterou měla želva náskok, bude mu to trvat \SI{0,9}{s} a želva mezi tím urazí vzdálenost \SI{0,09}{m}. O tuto vzdálenost navíc musí Achilles dobíhat želvu, bohužel, za \SI{0,09}{s} k tomu potřebných želva urazí zase \SI{0,009}{m}. Po $n$ krocích urazí běžci vzdálenosti
+\begin{align*}
+	\text{Želva:} \quad &\SI{0,9}{m}+\SI{0,09}{m}+\hdots +9\cdot 10^{-n+1}\SI{}{m}+9\cdot 10^{-n}\SI{}{m}\\
+	\text{Achilles:} \quad &\SI{0,9}{m}+\SI{0,09}{m}+\hdots +9\cdot 10^{-n+1}\SI{}{m}
+\end{align*}
+a tudíž Achilles želvu nikdy nedoběhne.
+\end{paradox}
+
+\begin{paradox}[Třetí Zenónův paradox: Letící šíp]\label{paradox:zenon 3} Představme si letící šíp. Šíp letí nějaký čas, který se skládá z jednotlivých momentů. V každém jednotlivém momentu šíp neurazí žádnou vzdálenost. Tudíž šíp za celkový čas nemůže urazit žádnou vzdálenost. Pohyb je nemožný. 
+\end{paradox}
+
+Všechny tři paradoxy rozdělují pohyb na nekonečně mnoho dílčích částí a pak tvrdí, že na realizaci \uv{pohybu} bychom nějak museli těchto nekonečně mnoho částí složit dohromady. V paradoxech \ref{paradox:zenon 1} a \ref{paradox:zenon 2} se sčítá nekonečně mnoho čísel, což se později naučíme pomocí pojmu \emph{limity posloupnosti}. V paradoxu \ref{paradox:zenon 3} se sčítá \uv{nulový pohyb} přes všechny momenty v čase, a tvrdí se, že se nemůže nastřádat na nenulový pohyb. My se to ale naučíme: této operaci se říká \emph{integrál}.
+
+Problém zmraženého šípu vyřešil Isaac Newton. On si představoval, že šíp sledovuje na \emph{velmi malém časovém intervalu}, v rámci kterého se rychlost téměř nemění. Pokud je rychlost téměř konstantní, vracíme se k Příkladu \ref{pr:x(t)=vt+x_0} a tam vzoreček \ref{eq:rychlost zš} fungoval. Dopustíme se chyby, ale čím menší interval budeme uvažovat, tím menší bude chyba. Zkusme to!
+
+\begin{příklad}[Pokračování Příkladu \ref{pr:x(t)=t^2}]
+  \begin{align*}
+  	t=3,\ \Delta t=1 &\Rightarrow \frac{\Delta x}{\Delta t} = \frac{(3+1)^{2}-3^{2}}{1}=7 \\
+  	t=3,\ \Delta t=0.1 &\Rightarrow \frac{\Delta x}{\Delta t} = \frac{(3+0.1)^{2}-3^{2}}{0.1}=6.1 \\
+  	t=3,\ \Delta t=0.01 &\Rightarrow \frac{\Delta x}{\Delta t} = \frac{(3+0.01)^{2}-3^{2}}{0.01}=6.01 \\
+  	t=3,\ \Delta t=0.001 &\Rightarrow \frac{\Delta x}{\Delta t} = \frac{(3+0.001)^{2}-3^{2}}{0.001}=6.001 \\
+  	t=3,\ \Delta t=h &\Rightarrow \frac{\Delta x}{\Delta t} = \frac{(3+h)^{2}-3^{2}}{h}=6+h \\
+  \end{align*}
+  Nemůžeme sice dosadit $\Delta t=0,$ ale můžeme dosadit libovolně malé $\Delta t$, a výsledek tím bude libovolně blízko číslu 6. Je tedy rozumné definovat rychlost \emph{v čase} $t=3$ jako výsledek \emph{limitního procesu}, při kterém kdy pořád zmenšujeme $\Delta t.$ Výsledek limitního procesu značíme
+  \begin{equation*}
+	  \lim_{h\to 0}\frac{(3+h)^{2}-3^{2}}{h}=6
+  \end{equation*}
+  a říkáme mu \emph{derivace funkce $x(t)=t^{2}$ v bodě $t=3$.} Derivace značíme čárkou, píšeme $x'(3)=6.$
+\end{příklad}
+
+Základní myšlenka tedy spočívá v tom, že funkci $x(t)$ na malém časovém intervalu aproximujeme afinní funkcí $v\cdot t+x_0$ s snažíme se odhadnout parametr $v.$ Nejlepší možná aproximace funkce afinní funkcí nám dá \emph{tečnu ke grafu} dané funkce. Z tohoto soudku k pojmu derivace přišel Gottfried Willhelm Leibniz, který pro derivace používal zápis $\frac{dx}{dt}(3)=6.$
+
+\newpage
+\section{Rigorózní zavedení}
+V této sekci si zavedeme derivace a naučíme se je počítat. Před tím nás ale čekají přípravné práce.
 \begin{definice}[Funkce] \label{def:Funkce} Funkce (= zobrazení) se skládá z následujících dat:
 \begin{itemize}
 	\item Množiny $A$, zvané \emph{definiční obor},
@@ -27,16 +110,11 @@ Funkce $f\colon A\to B$ udává počet dnů v měsíci v nepřestupném roce. Ne
 \begin{poznámka}
 \leavevmode
 \begin{itemize}
-	\item Definiční obor a obor hodnot jsou \emph{součástí definice} a mají vliv na vlastnosti funkce. Například funkce $f\colon (0,\infty)\to \mathbb{R}, \ f(x)=x^{2}$ je rostoucí, zatímco $g\colon \mathbb{R}\to \mathbb{R}, \ g(x)=x^{2}$ nikoliv.
 	\item Může se stát, že dva různé prvky $a_1\neq a_2\in A$ funkce přiřadí na stejný prvek $f(a_1)=f(a_2).$ Také se může stát, že existuje prvek $b\in B$, který není obrazem žádného $a\in A$, tedy
 	\begin{equation*}
 	  \forall a\in A\colon b\neq f(a).
 	\end{equation*}
-	Například funkce $g$ z předchozího bodu má obě tyto vlastnosti:
-	\begin{align*}
-		3^{2} &= (-3)^{2} \\
-		\forall a\in \mathbb{R}\colon\ a^{2} &\neq -1
-	\end{align*}
+	Například funkce $g$ z předchozího bodu má obě tyto vlastnosti.
 \end{itemize}
 \end{poznámka}
 \begin{definice}[Limita funkce] \label{def:Limita funkce}
@@ -52,7 +130,7 @@ Značíme ho
 
 \begin{příklad}\label{pr:prvni limita}
 $\lim_{h\to 0}\frac{(3+h)^{2}-3^{2}}{h}=\ ?$\par
-\textit{Řešení:} V sekci \ref{sec:O co by se mělo jednat} jsme nahlédli, že výsledek má být 6. Pojďme si to spočítat z definice. Chceme ke každému $\epsilon>0$ najít $\delta>0$ takové, že
+\textit{Řešení:} V sekci \ref{sec:Paradox pohybu} jsme nahlédli, že výsledek má být 6. Pojďme si to spočítat z definice. Chceme ke každému $\epsilon>0$ najít $\delta>0$ takové, že
 \begin{equation*}
 	\forall h\in (-\delta,\delta)\setminus\{0\}\colon \frac{(3+h)^{2}-3^{2}}{h}\in (6-\epsilon,6+\epsilon)
 \end{equation*}
@@ -124,7 +202,7 @@ Takže
   \forall x\in \mathbb{R}\colon |x-3|<\delta \Rightarrow |x^{2}-9|=|x-3||x+3|<\frac{\epsilon}{7}\cdot 7 = \epsilon
 \end{equation*}
 \end{důkaz}
-
+\end{příklad}
 \begin{poznámka}\leavevmode
 \begin{itemize}
 	\item Odhadnout funkci $f(x)$ znamená omezit ji nějakým číslem nebo jinou funkcí, to jest ukázat nerovnost typu
@@ -136,9 +214,6 @@ Takže
 \end{itemize}
 \end{poznámka}
 
-
-\end{příklad}
-
 \begin{příklad}\label{pr:neexistence limity}
   Nechť $f(x)=\left\{
   \begin{matrix}
@@ -147,7 +222,7 @@ Takže
 \end{matrix}\right.$. \hspace{1em}$\lim_{x\to 0}f(x)=\ ?$\par
 \textit{Řešení:} ukážeme, že limita neexituje.
 \begin{důkaz}
-	Pro spor předpokládejme, že existuje $\lim_{x\to 0}f(x)=L.$ Pro libovolné, ale pevně zvolené $\epsilon>0$ (na které později budeme klást požadavky) najděme $\delta>0$ tak, že
+	Pro spor předpokládejme, že existuje $\lim_{x\to 0}f(x)=L.$ Pro libovolné $\epsilon>0$ (na které ale později budeme klást požadavky) najděme $\delta>0$ tak, že
 	\begin{align*}
 		&\forall x\in (-\delta,\delta)\setminus\{0\} \colon f(x)\in (L-\epsilon, L+\epsilon) \\
 		\Rightarrow &\left\{\begin{matrix}\forall x\in (-\delta,0)\setminus\{0\}\colon &0=f(x)\in (L-\epsilon, L+\epsilon) \\
@@ -266,7 +341,11 @@ Pokud navíc $M\neq 0,$ existuje limita i pro $\frac{f}{g}$ a platí
   \begin{equation*}
 	  f'(x) := \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}
   \end{equation*}
-  Pokud existuje $f'(x)$ pro všechna $x\in (a,b)$, značíme odpovídající funkci $f'$ nebo také $\tfrac{df}{dx}:= f'.$
+  Pokud existuje $f'(x)$ pro všechna $x\in (a,b)$, značíme odpovídající funkci $f'$ nebo také $\tfrac{df}{dx}:= f'.$\par
+Dále definujeme druhou, třetí, $\hdots, n$-tou derivaci rekurzivně
+  \begin{equation*}
+	   f'':=(f')',\ f^{(3)}:=(f'')',\ \hdots, f^{(n)}:=(f^{(n-1)})'.
+  \end{equation*}
 \end{definice}
 
 \begin{úloha}
@@ -276,7 +355,7 @@ Pokud navíc $M\neq 0,$ existuje limita i pro $\frac{f}{g}$ a platí
   $f(x)=ax+b.\ f'(x)=\ ?$ 
 \end{úloha}
 \begin{úloha}
-  $f(x)=x^{2}.\ f'(x)=\ ?$ 
+  $f(x)=x^{2}.\ f'(x)=\ ?\ f''(x)=\ ?\ f^{(3)}(x)=\ ?\ $
 \end{úloha}
 
 \begin{příklad}
@@ -291,14 +370,22 @@ Pokud navíc $M\neq 0,$ existuje limita i pro $\frac{f}{g}$ a platí
 \end{equation*}
 \end{příklad}
 
-\begin{úloha}
-  $f(x)=|x|.$ Je $f$ spojitá v bodě $x=0$? Existuje $f'(0)?$ Zkuste důkaz sepsat co nejsrozumitejněji.
-\end{úloha}
+Dále nás bude zajímat, jak se derivace chovají, když funkce sčítáme a násobíme. Asi nás nepřekvapí, že bude platit $(f+g)'=f'+g'.$ Na první pohled ale není jasné, jak má vyjít $(fg)'$. Představme si, že prodáváme chleba, a za jeden týden prodáme \SI{300}{kg} chleba za \SI{100}{Kč/kg}. Další týden prodáme o \textcolor{red}{\SI{5}{kg}} chleba víc a zdražíme ho o \textcolor{blue}{\SI{10}{Kč/kg}}. O kolik víc vyděláme? Samozřejmě odpověď je triviální, ale pojďme ji spočítat přibližně bez toho, aniž bychom přímo násobili $305\times 110$. Za chleba navíc bychom (při staré ceně) vydělali $\textcolor{red}{\SI{5}{kg}}\times\SI{100}{Kč/kg}$ a zdražením (při původní kiláži prodaného chleba) bychom vydělali $\SI{300}{kg}\times\textcolor{blue}{\SI{10}{Kč}},$ tedy změna výdělku jde aproximovat jako
+\begin{equation*}
+	\SI{300}{kg}\times\textcolor{blue}{\SI{10}{Kč}}+\textcolor{red}{\SI{5}{kg}}\times\SI{100}{Kč/kg}
+\end{equation*}
+Chyba, které jsme se dopustili, činí $\textcolor{red}{\SI{5}{kg}}\times\textcolor{blue}{\SI{10}{Kč/kg}},$ a tudíž je zanedbatelná.
 
-\begin{Todo}
-  motivace leibnize
-\end{Todo}
+Obecně vznikne tento vzorec následovně: pro dvě funkce $f,g$ vyčíslené v bodě $x$ (v němž mají derivaci) a $h$ malé platí
+\begin{align*}
+	f(x+h)g(x+h) &\approx (f(x)+hf'(x))(g(x)+hg'(x)) \\
+		     &= f(x)g(x)+ h\left[f(x)\textcolor{red}{g'(x)}+\textcolor{blue}{f'(x})g(x)\right] + h^{2}f'(x)g'(x) \\
+	(fg)(x+h)    &\approx (fg)(x) + h\left[(fg)'(x)\right] \\
+	\Rightarrow  (fg)'(x) &= f(x)\textcolor{red}{g'(x)}+\textcolor{blue}{f'(x)}g(x)
+\end{align*}
+Chyba, které jsme se dopustili, je řádově $h^{2}$, a tudíž je zanedbatelná (v limitě zmizí).
 
+\newpage
 \begin{věta}[Derivace součtu, součinu a násobku]
   Nechť $f,g\colon (a,b)\to \mathbb{R},\ x\in (a,b), \alpha\in \mathbb{R}$. Pak platí
   \begin{align}
@@ -420,6 +507,7 @@ Vidíme, že ač za definiční obor pro $f(x)=\sqrt{x}$ můžeme vzít $[0,\inf
   Protože $h'(3)=-\frac{3}{4},$ tečna má rovnici $y=-\frac{3}{4}x+b.$ Dosazením bodu $(3,4)$ dostaneme $b=\frac{25}{4}.$ Rovnice jde napsat v elegantním tvaru $\textcolor{blue}{3}x+\textcolor{violet}{4}y=\textcolor{red}{25}.$
 \end{příklad}
 
+\newpage
 \begin{definice}[Vlastnosti funkce]
   Nechť $f\colon A\to \mathbb{R}, x\in A.$ Říkáme, že
   \begin{itemize}
