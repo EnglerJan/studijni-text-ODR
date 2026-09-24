@@ -1,5 +1,5 @@
 \chapter{Limity a Derivace} \label{ch:Limity a Derivace}
-\section{O co by se mělo jednat}
+\section{O co by se mělo jednat}\label{sec:O co by se mělo jednat}
 \section{O co se jedná}
 \begin{definice}[Funkce] \label{def:Funkce} Funkce (= zobrazení) se skládá z následujících dat:
 \begin{itemize}
@@ -21,7 +21,7 @@ Značení $f\colon A\to B$ znamená, že $A$ je definiční obor funkce $f$ a $B
 		f(\Brezen)&=31 \\
 			 &\vdots
 	\end{align*}
-Funkce $f\colon A\to B$ udává počet dnů měsíce v nepřestupném roce. Není daná žádným matematickým vzorečkem, její definiční obor neobsahuje čísla. 
+Funkce $f\colon A\to B$ udává počet dnů v měsíci v nepřestupném roce. Není daná žádným matematickým vzorečkem, její definiční obor neobsahuje čísla. 
 \end{příklad}
 
 \begin{poznámka}
@@ -35,21 +35,39 @@ Funkce $f\colon A\to B$ udává počet dnů měsíce v nepřestupném roce. Nen�
 	Například funkce $g$ z předchozího bodu má obě tyto vlastnosti:
 	\begin{align*}
 		3^{2} &= (-3)^{2} \\
-		\forall a\in \mathbb{R}\colon-1&\neq a^{2}
+		\forall a\in \mathbb{R}\colon\ a^{2} &\neq -1
 	\end{align*}
 \end{itemize}
 \end{poznámka}
-Dále nebudeme značit definiční obory a obory hodnot, pokud to nebude nutné. Zpravidla budeme uvažovat největší možné definiční obory v rámci $\mathbb{R}.$
 \begin{definice}[Limita funkce] \label{def:Limita funkce}
-	Nechť $c\in \mathbb{R}$ a $f$ je funkce, jejíž obor hodnot je $\mathbb{R}$ a její definiční obor obsahuje $(c-\delta,c+\delta)\setminus\{c\}$ pro nějaké $\delta>0$. Limita funkce $f$ v bodě $c$, pokud existuje, je číslo $L$ splňující
+	Nechť $c\in \mathbb{R}$ a $f$ je funkce, jejíž obor hodnot je $\mathbb{R}$ a její definiční obor obsahuje $(c-\Delta,c+\Delta)\setminus\{c\}$ pro nějaké $\Delta>0$. Limita funkce $f$ v bodě $c$, pokud existuje, je číslo $L$ splňující
 \begin{equation*}
 	\forall \epsilon>0 \ \exists \delta>0\ \forall x\in (c-\delta,c+\delta)\setminus\{c\}\colon f(x)\in(L-\epsilon, L+\epsilon).
 \end{equation*}
 Značíme ho
 \begin{equation*}
-	\lim_{x\to c}f(x):=L,
-\end{equation*}
+	\lim_{x\to c}f(x):=L
+\end{equation*} 
 \end{definice}
+
+\begin{příklad}\label{pr:prvni limita}
+$\lim_{h\to 0}\frac{(3+h)^{2}-3^{2}}{h}=\ ?$\par
+\textit{Řešení:} V sekci \ref{sec:O co by se mělo jednat} jsme nahlédli, že výsledek má být 6. Pojďme si to spočítat z definice. Chceme ke každému $\epsilon>0$ najít $\delta>0$ takové, že
+\begin{equation*}
+	\forall h\in (-\delta,\delta)\setminus\{0\}\colon \frac{(3+h)^{2}-3^{2}}{h}\in (6-\epsilon,6+\epsilon)
+\end{equation*}
+zjednodušme zlomek:
+\begin{equation}
+	\forall h\in (-\delta,\delta)\setminus\{0\}\colon 6+h\in (6-\epsilon,6+\epsilon)\label{eq:epsilon-delta}
+\end{equation}
+Teď je to snadné, s volbou $\delta:= \epsilon$ bude výrok \ref{eq:epsilon-delta} pravdivý.
+\end{příklad}
+\begin{poznámka}\leavevmode
+\begin{itemize}
+	\item Všimněte si, že $f(h)=\frac{(3+h)^{2}-3^{2}}{h}$ nelze definovat v bodě $h=0,$ opravdu jsme tedy spočítali něco netriviálního.
+	\item Součástí řešení příkladu \ref{pr:prvni limita} bylo uhodnutí, jak má řešení vyjít. To jsme prováděli na základě numerického experimentu. Níže si vybudujeme nástroje, pomocí kterých ke stejnému výsledku dojdeme mechanickým počítáním.
+\end{itemize}
+\end{poznámka}
 
 \begin{úloha}
 	Nechť $f(x)=2x+3.\ \lim_{x\to 1}f(x)=\ ?$
@@ -67,34 +85,184 @@ Značíme ho
   A $g\colon \mathbb{R}\setminus \{0\}\to \mathbb{R}$ má předpis $g(x)=2.$ $\lim_{x\to 0}f(x),\ \lim_{x\to 0}g(x)=\ ?$
 \end{úloha}
 
-\begin{příklad}
-	Nechť $f(x)=x^{2}. \lim_{x\to 3}f(x)=\ ?$
+\begin{příklad}\label{pr:x^2 v bode 3}
+	Nechť $f(x)=x^{2}. \lim_{x\to 3}f(x)=\ ?$\par
+	\textit{Řešení:} uhodneme, že výsledek má být $9.$ Chceme ke každému $\epsilon>0$ najít $\delta>0$ takové, že
+\begin{equation*}
+	\forall x\in (3-\delta,3+\delta)\setminus\{3\}\colon x^{2}\in (9-\epsilon,9+\epsilon)
+\end{equation*}
+Očividně, pokud $x=3$, pak $x^{2}\in (9-\epsilon,9+\epsilon),$ takže si nijak neuškodíme, pokud budeme dokazovat
+\begin{equation*}
+	\forall x\in (3-\delta,3+\delta)\colon x^{2}\in (9-\epsilon,9+\epsilon)
+\end{equation*}
+neboli
+\begin{equation*}
+	\forall x\in \mathbb{R}\colon |x-3|<\delta \Rightarrow |x^{2}-9|<\epsilon
+\end{equation*}
+\begin{jak vymyslet důkaz}
+Rozepíšeme si výraz na pravé straně, který chceme odhadovat:
+\begin{equation*}
+	|x^{2}-9|=\underbrace{|x-3|}_{<\delta}\underbrace{|x+3|}_{\text{co s tímto?}}
+\end{equation*}
+Myšlenka je následující: $|x-3|<\delta$ znamená, že $x$ je blízko číslu 3. Pokud je $x$ blízko číslu $3$, bude $|x+3|$ blízko číslu 6. Konkrétně využijeme odhad $|x+3|<6+\delta.$ Pokud půjdeme dost blízko ($\delta\leq 1$), umíme například zaručit, že $|x+3|<7.$ Pak dostáváme
+\begin{equation*}
+	|x^{2}-9|=\underbrace{|x-3|}_{<\delta}\underbrace{|x+3|}_{<7}<7\delta
+\end{equation*}
+takže pro $\delta \leq \frac{\epsilon}{7}$ bychom formálně dostali
+\begin{equation*}
+  \forall x\in \mathbb{R}\colon |x-3|<\delta \Rightarrow |x^{2}-9|=|x-3||x+3|<\frac{\epsilon}{7}\cdot 7 = \epsilon.
+\end{equation*}
+Pozor, na odhad členu $|x-3|$ jsme využili $\delta\leq \frac{\epsilon}{7}$ a na odhad členu $|x+3|$ zase $\delta\leq 1$ a není jasné, jestli jedna z nerovností plyne z druhé (to závisí na tom, jak velké je $\epsilon$). Musíme tedy zaručit obě nerovnosti.
+\end{jak vymyslet důkaz}
+\begin{důkaz}
+	Zvolme $\delta:=\min\{\frac{\epsilon}{7},1\}.$ Pak platí
+\begin{equation*}
+  \forall x\in \mathbb{R}\colon |x-3|<\delta \Rightarrow |x+3|<7
+\end{equation*}
+Takže
+\begin{equation*}
+  \forall x\in \mathbb{R}\colon |x-3|<\delta \Rightarrow |x^{2}-9|=|x-3||x+3|<\frac{\epsilon}{7}\cdot 7 = \epsilon
+\end{equation*}
+\end{důkaz}
+
+\begin{poznámka}\leavevmode
+\begin{itemize}
+	\item Odhadnout funkci $f(x)$ znamená omezit ji nějakým číslem nebo jinou funkcí, to jest ukázat nerovnost typu
+	\begin{equation*}
+		|f(x)| \leq C, \ \ C \text{ je číslo, nebo } |f(x)|\leq g(x), \ \ g \text{ je funkce.}
+	\end{equation*}
+	Nemá to nic společného s \uv{hádáním}.
+	\item Všimněme si, že vymýšlení důkazu může probíhat opačně, než jak je sepsaný hotový důkaz. V tomto případě jsme museli přijít na to, jak zvolit $\delta,$ aby nám vycházeli nerovnosti.
+\end{itemize}
+\end{poznámka}
+
+
 \end{příklad}
 
-\begin{příklad}
+\begin{příklad}\label{pr:neexistence limity}
   Nechť $f(x)=\left\{
   \begin{matrix}
 	  0, & x\leq 0 \\
 	  1, & x>0
-  \end{matrix}\right.$\par $\lim_{x\to 0}f(x)=\ ?$
+\end{matrix}\right.$. \hspace{1em}$\lim_{x\to 0}f(x)=\ ?$\par
+\textit{Řešení:} ukážeme, že limita neexituje.
+\begin{důkaz}
+	Pro spor předpokládejme, že existuje $\lim_{x\to 0}f(x)=L.$ Pro libovolné, ale pevně zvolené $\epsilon>0$ (na které později budeme klást požadavky) najděme $\delta>0$ tak, že
+	\begin{align*}
+		&\forall x\in (-\delta,\delta)\setminus\{0\} \colon f(x)\in (L-\epsilon, L+\epsilon) \\
+		\Rightarrow &\left\{\begin{matrix}\forall x\in (-\delta,0)\setminus\{0\}\colon &0=f(x)\in (L-\epsilon, L+\epsilon) \\
+				\forall x\in (0,\delta)\setminus\{0\}\colon &1=f(x)\in (L-\epsilon, L+\epsilon)
+	\end{matrix}\right.
+	\end{align*}
+	Obě čísla $0, 1$ musí ležet v intervalu $(L-\epsilon,L+\epsilon),$ který má délku $2\epsilon,$ takže
+	\begin{equation*}
+	  1=|1-0|\leq 2\epsilon
+	\end{equation*}
+	jenže $\epsilon>0$ bylo libovolné. Volbou $\epsilon=\frac{1}{3}$ dostáváme $1\leq \frac{2}{3},$ spor.
+\end{důkaz}
 \end{příklad}
+
+\begin{poznámka}
+	Obrat použitý v Příkladu \ref{pr:neexistence limity} je častý: prvně pracujeme s obecným $\epsilon>0$ a později na něj klademe další požadavky tak, abychom dostali, co chceme. Můžeme se tak vyvarovat ad hoc volbám na začátku důkazu, jako například $\delta\leq \min\{\frac{\epsilon}{7},1\}$ v Příkladu \ref{pr:prvni limita}. Čtenáři tak usnadníme práci, protože je jasně vidět, ve kterém kroku se použila specifická volba $\delta$ nebo $\epsilon$.
+\end{poznámka}
 
 Vidíme, že pokud se nesnažíme konstruovat funkce s patologickým předpisem, nebo násilím odebranými body z definičního oboru, většinou platí $\lim_{x\to c}f(x)=f(c).$
 
 \begin{definice}[Spojitá funkce]
-  Mějme funkci $f\colon (a,b)\to \mathbb{R},\ x\in (a,b).$ Říkáme, že $f$ je spojitá v bodě $x\in (a,b)$, pokud platí
+  Mějme $c\in \mathbb{R}$ a funkci $f$, jejíž obor hodnot je $\mathbb{R}$ a jejíž definiční obor obsahuje $(c-\Delta,c+\Delta)$ pro nějaké $\Delta>0.$ Říkáme, že $f$ je spojitá v bodě $c$, pokud platí
   \begin{equation*}
-	  \lim_{y\to x}f(y)=f(x), \text{ neboli } \lim_{h\to 0}f(x+h)=f(x).
+	  \lim_{x\to c}f(x)=f(c), \text{ neboli } \lim_{h\to 0}f(c+h)=f(c).
   \end{equation*}
-  Říkáme, že $f$ je spojitá na $(a,b),$ pokud je spojitá v bodě $x$ pro všechna $x\in (a,b).$
+  Říkáme, že $f$ je spojitá na $(a,b),$ pokud její definiční obor obsahuje $(a,b)$ a je spojitá v bodě $c$ pro všechna $c\in (a,b).$
 \end{definice}
 
-\begin{Todo}
-  polynomy jsou spojite
-\end{Todo}
+Dále ukážeme, že polynomy jsou spojité funkce.
+
+\begin{definice}[Součet, součin a podíl funkcí, násobek funkce]
+  Nechť $\alpha\in \mathbb{R},\ f\colon A\to \mathbb{R},\ g\colon B\to \mathbb{R}.$ Pak definujeme funkce $f+g,\ f\cdot g,\ \alpha f$ tak, že
+  \begin{itemize}
+	  \item $f+g\colon A\cap B\to \mathbb{R},\ f\cdot g\colon A\cap B\to \mathbb{R},\ \alpha f\colon A\to \mathbb{R}$
+	  \item $(f+g)(x):= f(x)+g(x),\ (f\cdot g)(x):= f(x)\cdot g(x),\ (\alpha f)(x):= \alpha\cdot f(x)$
+  \end{itemize}
+  Dále definujeme funkci $\frac{f}{g}$ tak, že
+  \begin{itemize}
+	  \item $\frac{f}{g}:\{x\in A\cap B\ \rvert\  g(x)\neq 0\}\to \mathbb{R}$
+	  \item $\left(\frac{f}{g}\right)(x):= \frac{f(x)}{g(x)}$
+  \end{itemize}
+\end{definice}
+
+  Polynomy jsou právě ty funkce, které lze z funkcí $f(x)=1$ a $f(x)=x$ získat operacemi sčítání, násobení (dvou funkcí) a násobku (čísla a funkce). Už víme, že funkce $1$ a $x$ jsou spojité. Pokud tedy ukážeme, že výše popsané operace zachovávají spojitost funkcí (například pokud $f$ a $g$ jsou spojité, pak $f+g$ je spojitá), dostaneme, že všechny polynomy jsou spojité.
+
+\begin{věta}[Limita součtu, součinu, podílu a násobku] Nechť $f,g\colon (a,b)\to \mathbb{R}, c\in(a,b), \alpha\in \mathbb{R}.$ Pokud existují limity
+\begin{equation*}
+	\lim_{x\to c}f(x) = L, \hspace{1em} \lim_{x\to}g(x) = M
+\end{equation*}
+Pak existují i příslušné limity pro $f+g,f\cdot g, \alpha f$ a platí
+\begin{align}
+	\lim_{x\to c}(f+g)(x)&=L+M,\label{eq:limita souctu} \\
+	\lim_{x\to c}(f\cdot g)(x)&=L\cdot M, \label{eq:limita soucinu} \\
+	\lim_{x\to c}(\alpha f)(x)&=\alpha L, \label{eq:limita nasobku}
+\end{align}
+Pokud navíc $M\neq 0,$ existuje limita i pro $\frac{f}{g}$ a platí
+\begin{equation}
+	\lim_{x\to c}\left(\frac{f}{g}\right) = \frac{L}{M} \label{eq:limita podilu}
+\end{equation}
+\end{věta}
+\begin{důkaz}
+	Od tohoto důkazu dál nebudeme podrobně vysvětlovat myšlenkový postup, jak k důkazu dojít, a budeme psát už hotový důkaz. Jednak to usnadní práci autorovi, a také to donutí čtenáře se nad důkazem zamyslet.
+
+	První dokažme rovnost \ref{eq:limita souctu}. Nechť $\epsilon>0$ je dáno. Najděme $\delta_1>0$ takové, že
+	\begin{equation*}
+		\forall x\in (c-\delta_1,c+\delta_1)\setminus \{c\}\colon |f(x)-L|<\frac{\epsilon}{2}
+	\end{equation*}
+	a dále $\delta_2>0$ takové, že
+	\begin{equation*}
+		\forall x\in (c-\delta_2,c+\delta_2)\setminus \{c\}\colon |g(x)-M|<\frac{\epsilon}{2}
+	\end{equation*}
+	Pak pro $\delta:=\min\{\delta_1,\delta_2\}$ platí $\forall x\in (c-\delta,c+\delta)\setminus \{c\}\colon $
+	\begin{equation*}
+		|f(x)+g(x)-(L+M)|\leq |f(x)-L|+|g(x)-M|< \frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon.
+	\end{equation*}
+	Dále dokažme rovnost \ref{eq:limita soucinu}.
+	Nechť $\epsilon>0$ je dáno. Najděme $\delta_1>0, \delta_2>0, \delta_3>0$ takové, že 
+	\begin{align*}
+		\forall x\in(c-\delta_1,c+\delta_1)\setminus \{c\} &\colon |f(x)-L|\leq 1  \\
+		\forall x\in(c-\delta_2,c+\delta_2)\setminus \{c\} &\colon |f(x)-L|\leq \frac{\epsilon}{2|M|}  \\
+		\forall x\in(c-\delta_3,c+\delta_3)\setminus \{c\} &\colon |g(x)-M|\leq \frac{\epsilon}{2(|L|+1)}
+	\end{align*}
+	Pak pro $\delta:=\min\{\delta_1,\delta_2,\delta_3\}$ platí $\forall x\in (c-\delta,c+\delta)\setminus\{c\}\colon $
+	\begin{align*}
+		|f(x)g(x)-LM|&=|f(x)g(x)-f(x)M+f(x)M-LM| \\
+	  &\leq |f(x)|\cdot|g(x)-M|+|f(x)-L|\cdot |M| \\
+	  &\leq (|L|+1)\cdot \frac{\epsilon}{2(|L|+1)} + \frac{\epsilon}{2|M|}\cdot |M| = \epsilon
+	\end{align*}
+	Rovnost \ref{eq:limita nasobku} plyne z \ref{eq:limita soucinu}, pokud za $g$ vezmeme konstantní funkci. Rovnost \ref{eq:limita podilu} se dokazuje podobně jako \ref{eq:limita soucinu} a je ponecháno jako cvičení pilnému čtenáři.
+\end{důkaz}
+
+\begin{důsledek}
+\leavevmode
+\begin{itemize}
+	\item Pokud $f,g$ jsou spojité na $(a,b), \alpha\in \mathbb{R},$ pak jsou na $(a,b)$ spojité i funkce
+		\begin{equation*}
+		  f+g,\ f\cdot g,\ \alpha f
+		\end{equation*}
+	Navíc pokud $g\neq 0$ na $(a,b)$, je na $(a,b)$ spojitá i $\frac{f}{g}.$
+	\item Polynomy jsou spojité funkce na celém $\mathbb{R}$. (Zde bereme $a=-\infty, b=+\infty,\ \mathbb{R}=(-\infty,+\infty)$)
+\end{itemize}
+\end{důsledek}
+
+\begin{příklad}
+  Ukažte, že $f(x)=\sqrt{x}$ je spojitá na $(0,\infty).$\par
+\textit{Řešení:} 
+\begin{align*}
+	\lim_{h\to 0}\sqrt{x+h}-\sqrt{x}&=\lim_{h\to 0}\frac{(\sqrt{x+h}-\sqrt{x})(\sqrt{x+h}+\sqrt{x})}{\sqrt{x+h}+\sqrt{x}} = \lim_{h\to 0} \frac{h}{\sqrt{x+h}+\sqrt{x}} \\
+					&=  \frac{\lim_{h\to 0} h}{\lim_{h\to 0} \left(\sqrt{x+h}+\sqrt{x}\right)} = \frac{0}{2 \sqrt{x}}=0 \\
+	\Rightarrow \lim_{h\to 0}\sqrt{x+h}&=\lim_{h\to 0}\left(\sqrt{x+h}-\sqrt{x}\right)+ \lim_{h\to 0} \sqrt{x} = 0+\sqrt{x}=\sqrt{x}
+\end{align*}
+\end{příklad}
 
 \begin{definice}[Derivace funkce]
-  Mějme funkci $f\colon (a,b)\to \mathbb{R},\ x\in (a,b).$ Derivace funkce $f$ v bodě $x$ (pokud existuje) je číslo
+  Mějme funkci $f\colon (a,b)\to \mathbb{R},\ x\in (a,b).$ Derivace funkce $f$ v bodě $x$, pokud existuje, je číslo
   \begin{equation*}
 	  f'(x) := \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}
   \end{equation*}
@@ -110,6 +278,7 @@ Vidíme, že pokud se nesnažíme konstruovat funkce s patologickým předpisem,
 \begin{úloha}
   $f(x)=x^{2}.\ f'(x)=\ ?$ 
 \end{úloha}
+
 \begin{příklad}
   $f(x)=x^{n}, n\geq 2.\ f'(x)=\ ?$\par
 \textit{Řešení:} Roznásobením závorek v $(x+h)^{n}$ dostáváme členy typu $x^{a}h^{b},$ $a+b=n.$
@@ -122,13 +291,9 @@ Vidíme, že pokud se nesnažíme konstruovat funkce s patologickým předpisem,
 \end{equation*}
 \end{příklad}
 
-\begin{definice}[Součet, násobek a součin funkcí]
-  Nechť $\alpha\in \mathbb{R},\ f\colon A\to \mathbb{R},\ g\colon A\to \mathbb{R}.$ Pak definujeme funkce $f+g, f\cdot g, \alpha f$ tak, že
-  \begin{itemize}
-	  \item $f+g\colon A\to \mathbb{R},\ f\cdot g\colon A\to \mathbb{R},\ \alpha f\colon A\to \mathbb{R}$
-	  \item $(f+g)(x):= f(x)+g(x),\ (f\cdot g)(x):= f(x)\cdot g(x),\ (\alpha f)(x):= \alpha\cdot f(x)$
-  \end{itemize}
-\end{definice}
+\begin{úloha}
+  $f(x)=|x|.$ Je $f$ spojitá v bodě $x=0$? Existuje $f'(0)?$ Zkuste důkaz sepsat co nejsrozumitejněji.
+\end{úloha}
 
 \begin{Todo}
   motivace leibnize
@@ -167,11 +332,17 @@ Vidíme, že pokud se nesnažíme konstruovat funkce s patologickým předpisem,
   Rovnost \ref{eq:derivace nasobku} plyne z \ref{eq:derivace soucinu}, pokud za $g$ vezmeme konstantní funkci.
 \end{důkaz}
 
+\begin{důsledek}
+\begin{equation*} 
+(a_nx^n+a_{n-1}x^{n-1}+\hdots+a_1x+a_0)'=na_nx^{n-1}+(n-1)a_{n-1}x^{n-2}+\hdots + a_1
+\end{equation*}
+\end{důsledek}
+
 \begin{příklad}
   Najděte rovnici tečny ke grafu funkce $f(x)=x^{2}-4x+3$ v bodě $(1,f(1))$.\par
-\textit{Řešení:} Derivace $f'(x)=2x-4$ má v bodě $x=1$ hodnotu $f'(1)=-2,$ což bude směrnice tečny. Tečna je popsána rovnicí $y=-2x+b$ a prochází bodem $(x,y)=(1,f(1))=(1,0),$ z toho $b=2.$ Tečna je tedy popsána rovnicí $y=-2x+2.$
+\textit{Řešení:} Směrnice tečny je $f'(1)=-2$, tedy její rovnice je $y=-2x+b$ pro dosud neznámé $b\in \mathbb{R}.$ Tečna prochází bodem $(x,y)=(1,f(1))=(1,0),$ z toho $b=2.$
 \end{příklad}
-\begin{příklad}
+\begin{příklad}\label{pr:trik na derivaci soucinu 1}
   $f(x)=\sqrt{x}.\ f'(x)=\ ?$\par
 \textit{Řešení:}
 \begin{align*}
@@ -181,11 +352,18 @@ Vidíme, že pokud se nesnažíme konstruovat funkce s patologickým předpisem,
 	(\sqrt{x})' &= \frac{1}{2 \sqrt{x}} \\
 	\textnormal{neboli } \left(x^{\frac{1}{2}}\right)' &= \frac{1}{2}x^{\frac{1}{2}-1}
 \end{align*}
-Vidíme, že ač za definiční obor pro $f(x)=\sqrt{x}$ můžeme vzít $[0,\infty)$, derivace existuje jen na $(0,\infty).$
+Vidíme, že ač za definiční obor pro $f(x)=\sqrt{x}$ můžeme vzít $[0,\infty)$, derivace existuje jen na $(0,\infty).$ Postup má jednu nevýhodu: při používání věty o derivaci součinu jsme předpokládali, že derivace $\sqrt{x}$ existuje. Tedy ve skutečnosti je výsledek našeho výpočtu následující: pokud derivace $\sqrt{x}$ existuje, pak musí být rovna $\frac{1}{2 \sqrt{x}}.$
 \end{příklad}
 
 \begin{úloha}
-  $f(x)=\frac{1}{x}.\ f'(x)=\ ?$
+  Spočítejte $(\sqrt{x})'$ přímo z definice.
+\end{úloha}
+
+\begin{úloha}\label{ul:trik na derivaci soucinu 2}
+  $f(x)=\frac{1}{x}.\ f'(x)=\ ?$ Spočítejte přímo z definice a pomocí triku využívajícího větu o derivaci součinu.
+\end{úloha}
+
+\begin{úloha}	Dokážete podobným trikem jako v Příkladu \ref{pr:trik na derivaci soucinu 1} a Úloze \ref{ul:trik na derivaci soucinu 2} odvodit vzoreček pro $\left(\frac{f}{g}\right)'?$
 \end{úloha}
 
 \begin{definice}[Složená funkce]
@@ -194,10 +372,14 @@ Vidíme, že ač za definiční obor pro $f(x)=\sqrt{x}$ můžeme vzít $[0,\inf
 \item definiční obor $A$ a obor hodnot $C$,
 \item předpis $(g\circ f)(x) := g(f(x))$
 \end{itemize}
+
+\begin{center}
+	\begin{tikzcd}
+		A \arrow{r}{f} \arrow[swap]{dr}{g\circ f} & B \arrow{d}{g} & x\arrow{r}{f} \arrow[swap]{dr}{g\circ f} & f(x)\arrow{d}{g}\\
+							  & C & & g(f(x))
+	\end{tikzcd}
+\end{center}
 \end{definice}
-\begin{Todo}
-  komutativni diagram
-\end{Todo}
 
 \begin{příklad}\label{pr:slozena funkce}
 	$f\colon [-\frac{5}{9},\infty)\to [0,\infty),\ f(x)=9x+5,\ g\colon [0,\infty)\to [0,\infty),\ g(x)=\sqrt{x}.$ Složená funkce je $g\circ f\colon [-\frac{5}{9},\infty)\to [0,\infty)$ s předpisem $(g\circ f)(x)=\sqrt{9x+5}$
@@ -212,17 +394,18 @@ Vidíme, že ač za definiční obor pro $f(x)=\sqrt{x}$ můžeme vzít $[0,\inf
 \end{věta}
 \begin{náčrt důkazu}
   \begin{align*}
-	  (g\circ f)'(x) &= \lim_{h\to 0}\frac{g(f(x+h))-g(f(x))}{f(x+h)-f(x)}\frac{f(x+h)-f(x)}{h} \\
+	  (g\circ f)'(x) &= \lim_{h\to 0}\frac{g(f(x+h))-g(f(x))}{h} \\
+			 &= \lim_{h\to 0}\frac{g(f(x+h))-g(f(x))}{f(x+h)-f(x)}\frac{f(x+h)-f(x)}{h} \\
 			 &= \lim_{h\to 0}\left(\frac{g(f(x+h))-g(f(x))}{f(x+h)-f(x)}\right)\lim_{h\to 0}\left(\frac{f(x+h)-f(x)}{h}\right) \\
 			 &= \lim_{k\to 0}\left(\frac{g(f(x)+k)-g(f(x))}{k}\right)\lim_{h\to 0}\left(\frac{f(x+h)-f(x)}{h}\right) \\
 			 &= g'(f(x))f'(x)
   \end{align*}
-  Na dokončení důkazu bychom museli vysvětlit, proč jde na prvním řádku rozšířit zlomek číslem $f(x+h)-f(x)$ (číslo musí být nenulové), a že můžeme od limity $h\to 0$ přejít substitucí $k:=f(x+h)-f(x)$ na limitu $k\to 0.$
+  Na dokončení důkazu bychom museli vysvětlit, proč jde na druhém řádku rozšířit zlomek číslem $f(x+h)-f(x)$ (číslo musí být nenulové), a že můžeme od limity $h\to 0$ přejít substitucí $k:=f(x+h)-f(x)$ na limitu $k\to 0.$
 \end{náčrt důkazu}
 
 \begin{příklad}[Pokračování příkladu \ref{pr:slozena funkce}]
-  $h(x)=\sqrt{9x+5}.\ h'(x)= ?$\par
-  \textit{Řešení:} $h=g\circ f$ z příkladu \ref{pr:slozena funkce}, takže 
+  $h(x)=\sqrt{9x+5}.\ h'(x)=\ ?$\par
+  \textit{Řešení:} $h=g\circ f$ z Příkladu \ref{pr:slozena funkce}, takže 
 \begin{equation*}
   (\sqrt{9x+5})' = h'(x)=g'(f(x))\cdot f'(x)=\frac{1}{2 \sqrt{9x+5}}\cdot 9 = \frac{9}{2 \sqrt{9x+5}}
 \end{equation*}
@@ -237,7 +420,27 @@ Vidíme, že ač za definiční obor pro $f(x)=\sqrt{x}$ můžeme vzít $[0,\inf
   Protože $h'(3)=-\frac{3}{4},$ tečna má rovnici $y=-\frac{3}{4}x+b.$ Dosazením bodu $(3,4)$ dostaneme $b=\frac{25}{4}.$ Rovnice jde napsat v elegantním tvaru $\textcolor{blue}{3}x+\textcolor{violet}{4}y=\textcolor{red}{25}.$
 \end{příklad}
 
-\begin{věta*}[Vlastnosti funkce plynoucí z derivace]
+\begin{definice}[Vlastnosti funkce]
+  Nechť $f\colon A\to \mathbb{R}, x\in A.$ Říkáme, že
+  \begin{itemize}
+	  \item $f$ je na $A$ rostoucí, pokud $\forall y,z\in A\colon y<z \Rightarrow  f(y)<f(z)$
+	  \item $f$ je na $A$ klesající, pokud $\forall y,z\in A\colon y<z \Rightarrow  f(y)>f(z)$
+	  \item $f$ má na $A$ minimum v bodě $x$, pokud $\forall y\in A\colon f(x)\leq f(y).$ Značíme ho $\min_{y\in A}f(y):=f(x).$
+	  \item $f$ má na $A$ maximum v bodě $x$, pokud $\forall y\in A\colon f(x)\geq f(y)$ Značíme ho $\max_{y\in A}f(y):=f(x).$
+	  \item $f$ má na $A$ lokální minimum v bodě $x$, pokud existuje $\epsilon>0$ takové, že $\forall y\in(x-\epsilon,x+\epsilon)\cap A\colon f(x)\leq f(y)$
+	  \item $f$ má na $A$ lokální maximum v bodě $x$, pokud existuje $\epsilon>0$ takové, že $\forall y\in(x-\epsilon,x+\epsilon)\cap A\colon f(x) \geq f(y)$
+  \end{itemize}
+\end{definice}
+
+\begin{úloha}\label{pr:minimum kvadraticke funkce}
+	$f(x)=3x^{2}-6x+7.\ \min_{x\in \mathbb{R}}f(x)=\ ?$ Řešte doplněním na čtverec.
+\end{úloha}
+
+\begin{úloha}
+	Nabývá funkce $f(x)=\frac{1}{\sqrt{x+3}}$ na $[0,\infty)$ minima/maxima? Pokud ano, najděte je.
+\end{úloha}
+
+\begin{věta*}[Vlastnosti funkce plynoucí z derivace]\label{veta:Vlastnosti funkce plynoucí z derivace}
   Nechť $f\colon (a,b)\to \mathbb{R}$ má na $(a,b)$ derivaci. Pak
   \begin{itemize}
 	  \item Pokud $f'>0$ na $(a,b)$, je $f$ rostoucí na $(a,b)$
@@ -247,8 +450,8 @@ Vidíme, že ač za definiční obor pro $f(x)=\sqrt{x}$ můžeme vzít $[0,\inf
   \end{itemize}
 \end{věta*}
 
-\begin{úloha}
-  Najděte souřadnice vrcholu paraboly, jejíž rovnice je $y=3x^{2}-6x+7$
+\begin{úloha}[Pokračování Úlohy \ref{pr:minimum kvadraticke funkce}]
+	$f(x)=3x^{2}-6x+7.\ \min_{x\in \mathbb{R}}f(x)=\ ?$ Řešte využitím Věty \ref{veta:Vlastnosti funkce plynoucí z derivace}.
 \end{úloha}
 
 \begin{úloha}
