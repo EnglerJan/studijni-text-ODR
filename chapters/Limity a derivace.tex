@@ -19,13 +19,13 @@ Pojďme se nad tím zamyslet. Představme si, že jedeme po nekonečně dlouhé 
 \end{příklad}
 
 \begin{příklad}\label{pr:x(t)=t^2}
-  Zkusme jet tak, aby naše poloha byla $x(t)=t^{2}$. To by šlo docílit tak, že bychom jeli ve vakuu (bez odporu vzduchu) a měli stále nohu na plynu. Teprve zkusme začít měřit po 3 sekundách na 1 sekundu $(t=3, \Delta t = 1):$
+  Zkusme jet tak, aby naše poloha byla $x(t)=t^{2}$. To by šlo docílit tím, že bychom jeli ve vakuu (bez odporu vzduchu) a měli stále nohu na plynu. Teprve zkusme začít měřit po 3 sekundách na 1 sekundu $(t=3, \Delta t = 1):$
   \begin{equation*}
     \frac{\Delta x}{\Delta t}=\frac{(t+\Delta t)^{2}-t^{2}}{\Delta t}=\frac{(3+1)^{2}-3^{2}}{1}=7
   \end{equation*}
   Pak zkusme $t=3, \Delta t=3$
   \begin{equation*}
-    \frac{\Delta x}{\Delta t}=\frac{(t+\Delta t)^{2}-t^{2}}{\Delta t}=\frac{(3+3)^{2}-3^{2}}{3}=\frac{25}{3}>7
+    \frac{\Delta x}{\Delta t}=\frac{(t+\Delta t)^{2}-t^{2}}{\Delta t}=\frac{(3+3)^{2}-3^{2}}{3}=9>7
   \end{equation*}
   Měření přes delší časový interval nám \uv{zvětšilo} rychlost. Zkusme $t=3, \Delta t=0.5$:
   \begin{equation*}
@@ -60,9 +60,9 @@ a tudíž Achilles želvu nikdy nedoběhne.
 \begin{paradox}[Třetí Zenónův paradox: Letící šíp]\label{paradox:zenon 3} Představme si letící šíp. Šíp letí nějaký čas, který se skládá z jednotlivých momentů. V každém jednotlivém momentu šíp neurazí žádnou vzdálenost. Tudíž šíp za celkový čas nemůže urazit žádnou vzdálenost. Pohyb je nemožný. 
 \end{paradox}
 
-Všechny tři paradoxy rozdělují pohyb na nekonečně mnoho dílčích částí a pak tvrdí, že na realizaci \uv{pohybu} bychom nějak museli těchto nekonečně mnoho částí složit dohromady. V paradoxech \ref{paradox:zenon 1} a \ref{paradox:zenon 2} se sčítá nekonečně mnoho čísel, což se později naučíme pomocí pojmu \emph{limity posloupnosti}. V paradoxu \ref{paradox:zenon 3} se sčítá \uv{nulový pohyb} přes všechny momenty v čase, a tvrdí se, že se nemůže nastřádat na nenulový pohyb. My se to ale naučíme: této operaci se říká \emph{integrál}.
+Všechny tři paradoxy rozdělují pohyb na nekonečně mnoho dílčích částí a pak tvrdí, že na realizaci \uv{pohybu} bychom nějak museli těchto nekonečně mnoho částí složit dohromady, což nejde. V paradoxech \ref{paradox:zenon 1} a \ref{paradox:zenon 2} se sčítá nekonečně mnoho čísel, což se později naučíme pomocí pojmu \emph{nekonečné řady}. V paradoxu \ref{paradox:zenon 3} se sčítá \uv{nulový pohyb} přes všechny momenty v čase, a tvrdí se, že se nemůže nasčítat na nenulový pohyb. My se to ale naučíme: této operaci se říká \emph{integrál}.
 
-Problém zmraženého šípu vyřešil Isaac Newton. On si představoval, že šíp sledovuje na \emph{velmi malém časovém intervalu}, v rámci kterého se rychlost téměř nemění. Pokud je rychlost téměř konstantní, vracíme se k Příkladu \ref{pr:x(t)=vt+x_0} a tam vzoreček \ref{eq:rychlost zš} fungoval. Dopustíme se chyby, ale čím menší interval budeme uvažovat, tím menší bude chyba. Zkusme to!
+Problém zmraženého šípu vyřešil Isaac Newton. On si představoval, že šíp sleduje na \emph{velmi malém časovém intervalu}, v rámci kterého se rychlost téměř nemění. Pokud je rychlost téměř konstantní, vracíme se k Příkladu \ref{pr:x(t)=vt+x_0} a tam vzoreček \ref{eq:rychlost zš} fungoval. Dopustíme se chyby, ale čím menší interval budeme uvažovat, tím menší bude chyba. Zkusme to!
 
 \begin{příklad}[Pokračování Příkladu \ref{pr:x(t)=t^2}]
   \begin{align*}
@@ -72,14 +72,14 @@ Problém zmraženého šípu vyřešil Isaac Newton. On si představoval, že š
   	t=3,\ \Delta t=0.001 &\Rightarrow \frac{\Delta x}{\Delta t} = \frac{(3+0.001)^{2}-3^{2}}{0.001}=6.001 \\
   	t=3,\ \Delta t=h &\Rightarrow \frac{\Delta x}{\Delta t} = \frac{(3+h)^{2}-3^{2}}{h}=6+h \\
   \end{align*}
-  Nemůžeme sice dosadit $\Delta t=0,$ ale můžeme dosadit libovolně malé $\Delta t$, a výsledek tím bude libovolně blízko číslu 6. Je tedy rozumné definovat rychlost \emph{v čase} $t=3$ jako výsledek \emph{limitního procesu}, při kterém kdy pořád zmenšujeme $\Delta t.$ Výsledek limitního procesu značíme
+  Nemůžeme sice dosadit $\Delta t=0,$ ale můžeme dosadit libovolně malé $\Delta t$, a výsledek tím bude libovolně blízko číslu 6. Je tedy rozumné definovat rychlost v čase $t=3$ jako výsledek \emph{limitního procesu}, při kterém pořád zmenšujeme $\Delta t.$ Výsledek limitního procesu značíme
   \begin{equation*}
 	  \lim_{h\to 0}\frac{(3+h)^{2}-3^{2}}{h}=6
   \end{equation*}
   a říkáme mu \emph{derivace funkce $x(t)=t^{2}$ v bodě $t=3$.} Derivace značíme čárkou, píšeme $x'(3)=6.$
 \end{příklad}
 
-Základní myšlenka tedy spočívá v tom, že funkci $x(t)$ na malém časovém intervalu aproximujeme afinní funkcí $v\cdot t+x_0$ s snažíme se odhadnout parametr $v.$ Nejlepší možná aproximace funkce afinní funkcí nám dá \emph{tečnu ke grafu} dané funkce. Z tohoto soudku k pojmu derivace přišel Gottfried Willhelm Leibniz, který pro derivace používal zápis $\frac{dx}{dt}(3)=6.$
+Základní myšlenka tedy spočívá v tom, že funkci $x(t)$ na malém časovém intervalu aproximujeme afinní funkcí $v\cdot t+x_0$ s snažíme se odhadnout parametr $v.$ Nejlepší možná aproximace funkce afinní funkcí nám dá \emph{tečnu ke grafu} dané funkce. Z tohoto soudku k pojmu derivace přišel Gottfried Wilhelm Leibniz, který pro derivace používal zápis $\frac{dx}{dt}(3)=6.$
 
 \newpage
 \section{Rigorózní zavedení}
@@ -114,7 +114,7 @@ Funkce $f\colon A\to B$ udává počet dnů v měsíci v nepřestupném roce. Ne
 	\begin{equation*}
 	  \forall a\in A\colon b\neq f(a).
 	\end{equation*}
-	Například funkce $g$ z předchozího bodu má obě tyto vlastnosti.
+	Například funkce $g\colon \mathbb{R}\to \mathbb{R}, g(x)=x^{2}$ má obě tyto vlastnosti: $g(3)=g(-3),$ $\forall a\in \mathbb{R}\colon -1\neq g(a).$
 \end{itemize}
 \end{poznámka}
 \begin{definice}[Limita funkce] \label{def:Limita funkce}
@@ -165,11 +165,11 @@ Teď je to snadné, s volbou $\delta:= \epsilon$ bude výrok \ref{eq:epsilon-del
 
 \begin{příklad}\label{pr:x^2 v bode 3}
 	Nechť $f(x)=x^{2}. \lim_{x\to 3}f(x)=\ ?$\par
-	\textit{Řešení:} uhodneme, že výsledek má být $9.$ Chceme ke každému $\epsilon>0$ najít $\delta>0$ takové, že
+	\textit{Řešení:} uhodneme, že výsledek má být $9.$ Spočítejme to z definice. Chceme ke každému $\epsilon>0$ najít $\delta>0$ takové, že
 \begin{equation*}
 	\forall x\in (3-\delta,3+\delta)\setminus\{3\}\colon x^{2}\in (9-\epsilon,9+\epsilon)
 \end{equation*}
-Očividně, pokud $x=3$, pak $x^{2}\in (9-\epsilon,9+\epsilon),$ takže si nijak neuškodíme, pokud budeme dokazovat
+Očividně, pokud $x=3$, pak $x^{2}=9\in (9-\epsilon,9+\epsilon),$ takže si nijak neuškodíme, pokud budeme dokazovat
 \begin{equation*}
 	\forall x\in (3-\delta,3+\delta)\colon x^{2}\in (9-\epsilon,9+\epsilon)
 \end{equation*}
@@ -443,7 +443,7 @@ Vidíme, že ač za definiční obor pro $f(x)=\sqrt{x}$ můžeme vzít $[0,\inf
 \end{příklad}
 
 \begin{úloha}
-  Spočítejte $(\sqrt{x})'$ přímo z definice.
+  Spočítejte $(\sqrt{x})'$ přímo z definice a tím ověřte, že existuje.
 \end{úloha}
 
 \begin{úloha}\label{ul:trik na derivaci soucinu 2}
@@ -487,7 +487,7 @@ Vidíme, že ač za definiční obor pro $f(x)=\sqrt{x}$ můžeme vzít $[0,\inf
 			 &= \lim_{k\to 0}\left(\frac{g(f(x)+k)-g(f(x))}{k}\right)\lim_{h\to 0}\left(\frac{f(x+h)-f(x)}{h}\right) \\
 			 &= g'(f(x))f'(x)
   \end{align*}
-  Na dokončení důkazu bychom museli vysvětlit, proč jde na druhém řádku rozšířit zlomek číslem $f(x+h)-f(x)$ (číslo musí být nenulové), a že můžeme od limity $h\to 0$ přejít substitucí $k:=f(x+h)-f(x)$ na limitu $k\to 0.$
+  Pro dokončení důkazu bychom museli vysvětlit, proč jde na druhém řádku rozšířit zlomek číslem $f(x+h)-f(x)$ (číslo musí být nenulové), a že můžeme od limity $h\to 0$ přejít substitucí $k:=f(x+h)-f(x)$ na limitu $k\to 0.$
 \end{náčrt důkazu}
 
 \begin{příklad}[Pokračování příkladu \ref{pr:slozena funkce}]
@@ -511,12 +511,13 @@ Vidíme, že ač za definiční obor pro $f(x)=\sqrt{x}$ můžeme vzít $[0,\inf
 \begin{definice}[Vlastnosti funkce]
   Nechť $f\colon A\to \mathbb{R}, x\in A.$ Říkáme, že
   \begin{itemize}
-	  \item $f$ je na $A$ rostoucí, pokud $\forall y,z\in A\colon y<z \Rightarrow  f(y)<f(z)$
-	  \item $f$ je na $A$ klesající, pokud $\forall y,z\in A\colon y<z \Rightarrow  f(y)>f(z)$
-	  \item $f$ má na $A$ minimum v bodě $x$, pokud $\forall y\in A\colon f(x)\leq f(y).$ Značíme ho $\min_{y\in A}f(y):=f(x).$
-	  \item $f$ má na $A$ maximum v bodě $x$, pokud $\forall y\in A\colon f(x)\geq f(y)$ Značíme ho $\max_{y\in A}f(y):=f(x).$
-	  \item $f$ má na $A$ lokální minimum v bodě $x$, pokud existuje $\epsilon>0$ takové, že $\forall y\in(x-\epsilon,x+\epsilon)\cap A\colon f(x)\leq f(y)$
-	  \item $f$ má na $A$ lokální maximum v bodě $x$, pokud existuje $\epsilon>0$ takové, že $\forall y\in(x-\epsilon,x+\epsilon)\cap A\colon f(x) \geq f(y)$
+	  \item $f$ je na $A$ rostoucí, pokud $\forall y,z\in A\colon y<z \Rightarrow  f(y)<f(z),$
+	  \item $f$ je na $A$ klesající, pokud $\forall y,z\in A\colon y<z \Rightarrow  f(y)>f(z),$
+	  \item $f$ má na $A$ minimum v bodě $x$, pokud $\forall y\in A\colon f(x)\leq f(y).$ Značíme ho $\min_{y\in A}f(y):=f(x),$
+	  \item $f$ má na $A$ maximum v bodě $x$, pokud $\forall y\in A\colon f(x)\geq f(y)$ Značíme ho $\max_{y\in A}f(y):=f(x),$
+	  \item $f$ má na $A$ lokální minimum v bodě $x$, pokud existuje $\epsilon>0$ takové, že $\forall y\in(x-\epsilon,x+\epsilon)\cap A\colon f(x)\leq f(y),$
+	  \item $f$ má na $A$ lokální maximum v bodě $x$, pokud existuje $\epsilon>0$ takové, že $\forall y\in(x-\epsilon,x+\epsilon)\cap A\colon f(x) \geq f(y),$
+	  \item $f$ má na $A$ lokální extrém v bodě $x$, pokud v něm má lokální minimum nebo lokální maximum.
   \end{itemize}
 \end{definice}
 
