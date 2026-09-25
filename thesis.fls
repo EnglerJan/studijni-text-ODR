@@ -744,8 +744,6 @@ INPUT ./preamble/user/macros.tex
 INPUT ./preamble/user/macros.tex
 INPUT ./preamble/user/macros.tex
 INPUT preamble/user/macros.tex
-INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/hologo/hologo.sty
-INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/hologo/hologo.sty
 INPUT ./preamble/user/math.tex
 INPUT ./preamble/user/math.tex
 INPUT ./preamble/user/math.tex
@@ -767,9 +765,18 @@ INPUT chapters/Úvod.aux
 INPUT ./chapters/Limity a derivace.aux
 INPUT ./chapters/Limity a derivace.aux
 INPUT chapters/Limity a derivace.aux
-INPUT ./chapters/Diferencialni rovnice.aux
-INPUT ./chapters/Diferencialni rovnice.aux
-INPUT chapters/Diferencialni rovnice.aux
+INPUT ./chapters/Volny pad.aux
+INPUT ./chapters/Volny pad.aux
+INPUT chapters/Volny pad.aux
+INPUT ./chapters/Exponenciala.aux
+INPUT ./chapters/Exponenciala.aux
+INPUT chapters/Exponenciala.aux
+INPUT ./chapters/Harmonicky oscilator.aux
+INPUT ./chapters/Harmonicky oscilator.aux
+INPUT chapters/Harmonicky oscilator.aux
+INPUT ./chapters/cool_quote.aux
+INPUT ./chapters/cool_quote.aux
+INPUT chapters/cool_quote.aux
 INPUT ./chapters/Summary.aux
 INPUT ./chapters/Summary.aux
 INPUT chapters/Summary.aux
@@ -889,12 +896,30 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/nowacki/iwona/ex-iwonab.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/nowacki/iwona/ex-iwonab.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/nowacki/iwona/ex-iwonab.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
-INPUT ./chapters/Diferencialni rovnice.tex
-INPUT ./chapters/Diferencialni rovnice.tex
-OUTPUT chapters/Diferencialni rovnice.aux
-INPUT ./chapters/Diferencialni rovnice.tex
-INPUT ./chapters/Diferencialni rovnice.tex
-INPUT chapters/Diferencialni rovnice.tex
+INPUT ./chapters/Volny pad.tex
+INPUT ./chapters/Volny pad.tex
+OUTPUT chapters/Volny pad.aux
+INPUT ./chapters/Volny pad.tex
+INPUT ./chapters/Volny pad.tex
+INPUT chapters/Volny pad.tex
+INPUT ./chapters/Exponenciala.tex
+INPUT ./chapters/Exponenciala.tex
+OUTPUT chapters/Exponenciala.aux
+INPUT ./chapters/Exponenciala.tex
+INPUT ./chapters/Exponenciala.tex
+INPUT chapters/Exponenciala.tex
+INPUT ./chapters/Harmonicky oscilator.tex
+INPUT ./chapters/Harmonicky oscilator.tex
+OUTPUT chapters/Harmonicky oscilator.aux
+INPUT ./chapters/Harmonicky oscilator.tex
+INPUT ./chapters/Harmonicky oscilator.tex
+INPUT chapters/Harmonicky oscilator.tex
+INPUT ./chapters/cool_quote.tex
+INPUT ./chapters/cool_quote.tex
+OUTPUT chapters/cool_quote.aux
+INPUT ./chapters/cool_quote.tex
+INPUT ./chapters/cool_quote.tex
+INPUT chapters/cool_quote.tex
 INPUT ./chapters/Summary.tex
 INPUT ./chapters/Summary.tex
 OUTPUT chapters/Summary.aux
@@ -911,9 +936,18 @@ INPUT chapters/Úvod.aux
 INPUT ./chapters/Limity a derivace.aux
 INPUT ./chapters/Limity a derivace.aux
 INPUT chapters/Limity a derivace.aux
-INPUT ./chapters/Diferencialni rovnice.aux
-INPUT ./chapters/Diferencialni rovnice.aux
-INPUT chapters/Diferencialni rovnice.aux
+INPUT ./chapters/Volny pad.aux
+INPUT ./chapters/Volny pad.aux
+INPUT chapters/Volny pad.aux
+INPUT ./chapters/Exponenciala.aux
+INPUT ./chapters/Exponenciala.aux
+INPUT chapters/Exponenciala.aux
+INPUT ./chapters/Harmonicky oscilator.aux
+INPUT ./chapters/Harmonicky oscilator.aux
+INPUT chapters/Harmonicky oscilator.aux
+INPUT ./chapters/cool_quote.aux
+INPUT ./chapters/cool_quote.aux
+INPUT chapters/cool_quote.aux
 INPUT ./chapters/Summary.aux
 INPUT ./chapters/Summary.aux
 INPUT chapters/Summary.aux

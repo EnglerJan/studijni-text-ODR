@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.5.10)  25 SEP 2026 01:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.5.10)  25 SEP 2026 22:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1565,9 +1565,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2025/texmf-dist/tex/latex/cmbright/omlcmbrm.fd
 File: omlcmbrm.fd 2005/04/13 v8.1 (WaS)
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)) (./preamble/environments/todo-like.tex) (./preamble/hacks/custom-reference-boxes.tex) (./preamble/hacks/fix-qed.tex) (./preamble/hacks/fix-hyperref.tex) (./preamble/hacks/floatrow-parskip.tex) (./preamble/user/main.tex (./preamble/user/macros.tex) (/usr/local/texlive/2025/texmf-dist/tex/generic/hologo/hologo.sty
-Package: hologo 2025-11-11 v1.16 A logo collection with bookmark support (HO)
-) (./preamble/user/math.tex)))
+) (/usr/local/texlive/2025/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)) (./preamble/environments/todo-like.tex) (./preamble/hacks/custom-reference-boxes.tex) (./preamble/hacks/fix-qed.tex) (./preamble/hacks/fix-hyperref.tex) (./preamble/hacks/floatrow-parskip.tex) (./preamble/user/main.tex (./preamble/user/macros.tex) (./preamble/user/math.tex)))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -1577,7 +1575,7 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (./thesis.aux (./frontmatter/title.aux)
 Package babel Info: 'czech' activates 'czech' shorthands.
 (babel)             Reported on input line 17.
- (./chapters/Úvod.aux) (./chapters/Limity a derivace.aux) (./chapters/Diferencialni rovnice.aux) (./chapters/Summary.aux))
+ (./chapters/Úvod.aux) (./chapters/Limity a derivace.aux) (./chapters/Volny pad.aux) (./chapters/Exponenciala.aux) (./chapters/Harmonicky oscilator.aux) (./chapters/cool_quote.aux) (./chapters/Summary.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
@@ -1788,8 +1786,13 @@ Package microtype Info: Loading generic protrusion settings for font family
 File: omxiwona.fd 2008/07/22 v0.995 font definition file for OMX/iwona (MW)
 )
 Package babel Info: 'czech' activates 'czech' shorthands.
-(babel)             Reported on input line 66.
- [2{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [3] [4]
+(babel)             Reported on input line 68.
+ [2{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [3]
+
+Package paralist Warning: Incorrect label; no or multiple counters.
+(paralist)                The label is: (i) on input line 93.
+
+[4]
 Underfull \vbox (badness 5203) has occurred while \output is active []
 
  [5]
@@ -1797,30 +1800,30 @@ Underfull \vbox (badness 8000) has occurred while \output is active []
 
  [6] [7] [8] [9]
 
-LaTeX Warning: Command \v invalid in math mode on input line 373.
+LaTeX Warning: Command \v invalid in math mode on input line 374.
 
 
-LaTeX Warning: Command \v invalid in math mode on input line 373.
+LaTeX Warning: Command \v invalid in math mode on input line 374.
 
 
-LaTeX Warning: Command \v invalid in math mode on input line 373.
+LaTeX Warning: Command \v invalid in math mode on input line 374.
 
 
-LaTeX Warning: Command \v invalid in math mode on input line 373.
+LaTeX Warning: Command \v invalid in math mode on input line 374.
 
 
-LaTeX Warning: Command \v invalid in math mode on input line 375.
+LaTeX Warning: Command \v invalid in math mode on input line 376.
 
 
-LaTeX Warning: Command \v invalid in math mode on input line 375.
+LaTeX Warning: Command \v invalid in math mode on input line 376.
 
 
-LaTeX Warning: Command \v invalid in math mode on input line 377.
+LaTeX Warning: Command \v invalid in math mode on input line 378.
 
 [10] [11] [12] [13]) [14]
-\openout2 = `"chapters/Diferencialni rovnice.aux"'.
+\openout2 = `"chapters/Volny pad.aux"'.
 
- (./chapters/Diferencialni rovnice.tex
+ (./chapters/Volny pad.tex
  2.
 ) [15
 
@@ -1828,22 +1831,55 @@ LaTeX Warning: Command \v invalid in math mode on input line 377.
 
 
 ]
+\openout2 = `chapters/Exponenciala.aux'.
+
+ (./chapters/Exponenciala.tex
+ 3.
+[16
+
+
+
+
+] [17] [18] [19]
+Underfull \vbox (badness 5331) has occurred while \output is active []
+
+ [20] [21] [22] [23]) [24]
+\openout2 = `"chapters/Harmonicky oscilator.aux"'.
+
+ (./chapters/Harmonicky oscilator.tex
+ 4.
+) [25
+
+
+
+
+]
+\openout2 = `chapters/cool_quote.aux'.
+
+ (./chapters/cool_quote.tex
+ 5.
+) [26
+
+
+
+
+]
 \openout2 = `chapters/Summary.aux'.
 
- (./chapters/Summary.tex) [16
+ (./chapters/Summary.tex) [27
 
 
 
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 58.
+LaTeX Warning: Empty bibliography on input line 61.
 
 
-Package silence Warning: There were 16 warning(s) and 0 error(s).
+Package silence Warning: There were 17 warning(s) and 0 error(s).
 (silence)                I've killed 3 warning(s) and 0 error(s).
 
-(./thesis.aux (./frontmatter/title.aux) (./chapters/Úvod.aux) (./chapters/Limity a derivace.aux) (./chapters/Diferencialni rovnice.aux) (./chapters/Summary.aux))
+(./thesis.aux (./frontmatter/title.aux) (./chapters/Úvod.aux) (./chapters/Limity a derivace.aux) (./chapters/Volny pad.aux) (./chapters/Exponenciala.aux) (./chapters/Harmonicky oscilator.aux) (./chapters/cool_quote.aux) (./chapters/Summary.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1857,18 +1893,18 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 59641 strings out of 467533
- 1317113 string characters out of 5419495
- 2251915 words of memory out of 5000000
- 87173 multiletter control sequences out of 15000+600000
- 729817 words of font info for 234 fonts, out of 8000000 for 9000
+ 59519 strings out of 467533
+ 1315265 string characters out of 5419495
+ 2249272 words of memory out of 5000000
+ 86931 multiletter control sequences out of 15000+600000
+ 730976 words of font info for 245 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 126i,20n,127p,1135b,1911s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 126i,20n,127p,1135b,1937s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmro12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/tex-gyre/qzcmi.pfb>
-Output written on thesis.pdf (19 pages, 488817 bytes).
+Output written on thesis.pdf (30 pages, 536183 bytes).
 PDF statistics:
- 442 PDF objects out of 1000 (max. 8388607)
- 337 compressed objects within 4 object streams
- 96 named destinations out of 1000 (max. 500000)
- 53971 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 661 PDF objects out of 1000 (max. 8388607)
+ 530 compressed objects within 6 object streams
+ 177 named destinations out of 1000 (max. 500000)
+ 54075 words of extra memory for PDF output out of 61914 (max. 10000000)
 

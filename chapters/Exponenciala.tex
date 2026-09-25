@@ -1,0 +1,356 @@
+\chapter{Exponenciální růst}
+
+\section{Bakterie, radioaktivita, tranzistory, Gangnam Style a rozpínání vesmíru}
+
+\newpage
+\section{Nevlastní limity}
+Důležitá vlastnost exponenciálního růstu je, že roste nade všechny meze, tj. není shora ohraničený žádným číslem. Pokud funkce $f(x)$ pro zvětšující se $x$ roste nade všechny meze, píšeme
+\begin{equation*}
+	\lim_{x\to \infty}f(x)=\infty
+\end{equation*}
+\begin{definice}[Nevlastní limity, limity v nevlastním bodě] Mějme funkci $f$, bod $c\in \mathbb{R}$ a číslo $L\in \mathbb{R}$ tak, aby \uv{vše dávalo smysl}. Definujeme limity v nevlastních bodech $\{\pm \infty\}$ vztahy
+  \begin{align*}
+	  \lim_{x\to \infty}f(x)=L &\iff \forall\ \epsilon>0\ \exists x_0>0\ \forall x>x_0\colon f(x)\in (L-\epsilon, L+\epsilon), \\
+	  \lim_{x\to -\infty}f(x)=L &\iff \forall\ \epsilon>0\ \exists x_0<0\ \forall x<x_0\colon f(x)\in (L-\epsilon, L+\epsilon), \\
+\end{align*}
+nevlastní limity ${\pm \infty}$ ve vlastních bodech ($c\in \mathbb{R}$) vztahy
+\begin{align*}
+	  \lim_{x\to c}f(x)=\infty &\iff \forall\ N>0\ \exists \delta>0\ \forall x\in(c-\delta,c+\delta)\setminus \{c\}\colon f(x)>N, \\
+	  \lim_{x\to c}f(x)=-\infty &\iff \forall\ N<0\ \exists \delta>0\ \forall x\in(c-\delta,c+\delta)\setminus \{c\}\colon f(x)<N, \\
+  \end{align*}
+  a nevlastní limity ${\pm \infty}$ v nevlastních bodech $\{\pm \infty\}$ vztahy
+\begin{align*}
+	  \lim_{x\to \infty}f(x)=\infty &\iff \forall\ N>0\ \exists x_0>0\ \forall x>x_0\colon f(x)>N, \\
+	  \lim_{x\to -\infty}f(x)=\infty &\iff \forall\ N>0\ \exists x_0<0\ \forall x<x_0\colon f(x)>N, \\
+	  \lim_{x\to \infty}f(x)=-\infty &\iff \forall\ N<0\ \exists x_0>0\ \forall x>x_0\colon f(x)<N, \\
+	  \lim_{x\to -\infty}f(x)=-\infty &\iff \forall\ N<0\ \exists x_0<0\ \forall x<x_0\colon f(x)<N. \\
+  \end{align*}
+  \uv{Aby vše dávalo smysl} znamená kupříkladu, že pokud chceme mluvit o limitě $\lim_{x\to \infty},$ musí definiční obor $f$ obsahovat interval $(x_0,\infty)$ pro nějaké $x_0\in \mathbb{R}.$
+\end{definice}
+
+\begin{úloha}
+	$\lim_{x\to \infty}\frac{1}{x}=\ ?$
+\end{úloha}
+
+\begin{úloha}
+	$\lim_{x\to \infty}x^{2}=\ ?$
+\end{úloha}
+
+\begin{úloha}
+	$\lim_{x\to \infty}\frac{3x+5}{x-10}=\ ?$
+\end{úloha}
+
+\begin{úloha}
+	$\lim_{x\to 2}\frac{1}{|x-2|}=\ ?$
+\end{úloha}
+
+\begin{úloha}
+	$\lim_{x\to 2}\frac{1}{x-2}=\ ?$
+\end{úloha}
+
+\section{Zavedení funkce exp}
+
+\begin{definice}[Funkce exp]
+  Funkce $\exp(t)$ je jednoznačné řešení úlohy
+  \begin{align*}
+	  x'(t)&=x(t)\\
+	  x(0)&=1
+  \end{align*}
+  Číslo $e:= \exp(1)$ nazýváme \emph{Eulerovo číslo}.
+\end{definice}
+
+Pro nás bude důležité, že $\exp$ je rostoucí bijekce (díky tomu pak zkonstruujeme logaritmus). To si níže dokážeme, ale budeme na to potřebovat technickou větu, jejíž důkaz je nad rámec textu. Intuitivně říká, že spojité funkce \uv{neskáčou}, tj. že pokud funkce nabývá hodnot $f(a)$ a $f(b),$ musí nabývat i všech hodnot mezi.
+\begin{věta*}[Věta o nabývání mezihodnot]\label{veta:nabyvani mezihodnot}
+  Nechť $f\colon A\to \mathbb{R}$ je spojitá, $a,b\in A.$ Pak
+  \begin{equation*}
+	  \forall z\in (\min\{f(a),f(b)\},\max\{f(a),f(b)\})\ \exists c\in (a,b)\colon f(c)=z
+  \end{equation*}
+\end{věta*}
+
+\begin{věta}[Vlastnosti funkce exp]\label{veta:vlastnosti exp}\leavevmode
+\begin{enumerate}[(i)]
+	\item Funkce $\exp$ je dobře definovaná na celém $\mathbb{R}$
+	\item $(\exp(t))'=(\exp(t))''=\hdots=(\exp(t))^{(n)}=\hdots=\exp(t),\ \exp(0)=1$
+	\item $\exp(t+s)=\exp(t)\cdot \exp(s)$
+\item $\forall n\in \mathbb{N}\colon \exp(n\cdot t)=\exp(t)^{n}.$ Speciálně $\exp(n)=e^{n}$
+	\item $\exp(-t)=\frac{1}{\exp(t)}$
+	\item $\exp$ je rostoucí na $\mathbb{R}$
+	\item $\displaystyle\lim_{t\to \infty}\exp(t)=\infty,\ \displaystyle\lim_{t\to -\infty}\exp(t)=0$
+	\item $\exp$ je bijekce
+\end{enumerate}
+\end{věta}
+
+\begin{důkaz}
+  Bod (i) plyne z \PL ovy věty. Bod (ii) plyne přímo z definice opakovaným derivováním $\exp$.
+   Bod (iii) dokážeme následovně: definujeme $x_1(t):= \exp(t+s),\ x_2(t):=\exp(t)\cdot \exp(s)$ a ukážeme, že obě funkce řeší úlohu
+  \begin{align*}
+	  x'(t)&= x(t)\\
+	  x(0) &= \exp(s)
+  \end{align*}
+  z \PL ovy věty pak vyplyne, že $\forall t\in \mathbb{R}\colon x_1(t)=x_2(t).$ Pro funkci $x_1$ dostaneme užitím Věty \ref{veta:derivace slozene funkce}
+  \begin{align*}
+	  x_1'(t)&=(\exp(t+s))'=\exp(t+s)\cdot (t+s)' = \exp(t+s) = x_1(t) \\
+	  x_1(0)&=\exp(0+s)=\exp(s)
+  \end{align*}
+  A pro funkci $x_2$
+  \begin{align*}
+    x_2'(t)&=(\exp(t)\exp(s))'=\exp(s)(\exp(t))'=\exp(s)\exp(t)=x_2(t) \\
+    x_2(0)&=\exp(0)\exp(s)=\exp(s)
+  \end{align*}
+  Bod (iv) plyne z bodu (iii) následovně:
+  \begin{equation*}
+	  \exp(n\cdot t)=\exp\underbrace{(t+\hdots+t)}_{n \text{ krát}}=\underbrace{\exp(t)\cdot \hdots \cdot \exp(t) }_{n \text{ krát}}= \exp(t)^{n}
+  \end{equation*}
+  Bod (v) plyne taky z (iii):
+  \begin{align*}
+  	\exp(t+(-t)) &= \exp(t)\exp(-t) \\
+  	\exp(0) &= \exp(t)\exp(-t) \\
+	1 &= \exp(t)\exp(-t) \Rightarrow  \exp(-t)=\frac{1}{\exp(t)}\\
+  \end{align*}
+  Abychom dokázali (vi), stačí podle Věty \ref{veta:Vlastnosti funkce plynoucí z derivace} ukázat, že $\forall t\in \mathbb{R}\colon \exp(t)>0.$ Pro spor předpokládejme, že existuje nějaké $t^{*}\in \mathbb{R}$ splňující $\exp(t^{*})\leq 0$. Pokud $\exp(t^{*})<0$, můžeme mezi $0$ a $t^{*}$ najít jiný bod $t^{**}\in \mathbb{R},$ pro který $\exp(t^{**})=0$ (to plyne z toho, že $\exp$ má derivaci, tudíž je spojitá, takže můžeme použít Větu \ref{veta:nabyvani mezihodnot}).
+
+  Jenže pak
+  \begin{equation*}
+    1=\exp(0)=\exp(t^{**}-t^{**})=\exp(t^{**})\exp(-t^{**})=0\cdot \exp(-t^{**})=0,
+  \end{equation*}
+  spor.
+
+  Bod (vii) plyne z toho, že $e=\exp(1)>\exp(0)=1$, takže posloupnost čísel 
+  \begin{equation*}
+    \exp(0)=1,\ \exp(1)=e,\ \exp(2)=e^{2},\ \exp(3)=e^{3}, \hdots
+  \end{equation*}
+  roste nade všechny meze. Takže ke každému $N>0$ umíme najít $n\in \mathbb{N}$ takové, že
+  \begin{equation*}
+    \exp(n)>N.
+  \end{equation*}
+  Jenže $\exp$ je rostoucí, takže $t>n \Rightarrow \exp(t)>\exp(n)>N$. Celkově jsme ukázali
+  \begin{equation*}
+    \forall N>0\ \exists n>0\ \forall t>n\colon \exp(t)>N
+  \end{equation*}
+  neboli $\lim_{t\to \infty}\exp(t)=\infty.$ Naopak, pro záporná čísla máme
+  \begin{equation*}
+    t<-n \Rightarrow \exp(t)<\exp(-n)=\frac{1}{\exp(n)}<\frac{1}{N}
+  \end{equation*}
+  takže platí
+  \begin{equation*}
+    \forall N>0\ \exists n>0\ \forall t<-n\colon 0<\exp(t)<\frac{1}{N}
+  \end{equation*}
+  čtenář se snadno přesvědčí, že z tohoto plyne $\displaystyle\lim_{t\to -\infty}\exp(t)=0.$
+  Dokažme bod (viii). Protože $\exp$ je rostoucí, musí být injektivní. Zbývá tedy ukázat, že je surjektivní. Protože $\lim_{t\to -\infty}\exp(t)=0,\ \lim_{t\to \infty}\exp(t)=\infty$, umíme pro libovolné $\epsilon\in(0,1), N\in(1,\infty)$ najít $t_0<0, t_0>0$ takové, že
+  \begin{align*}
+	\exp(t_0) < \epsilon,\ \exp(t_1)>N
+  \end{align*}
+  Pak z Věty \ref{veta:nabyvani mezihodnot} umíme najít $t_0^{*}\in (t_0,0), t_1^{*}\in (0,t_1)$ takové, že 
+  \begin{align*}
+	\exp(t_0^{*}) = \epsilon,\ \exp(t_1^{*})=N
+  \end{align*}
+  Tedy podle Věty \ref{veta:nabyvani mezihodnot} funkce $\exp$ na intervalu $(t_0^{*},t_1^{*})$ nabývá všech hodnot na intervalu $(\epsilon,N).$ Protože $\epsilon>0, N>0$ byli libovolné, dostáváme, že $\exp$ na $(-\infty, \infty)$ nabývá všech hodnot na intervalu $(0,\infty).$ Důkaz je hotov.
+\end{důkaz}
+
+\begin{úloha}
+  Řešte úlohu 
+  \begin{align*}
+  	x'(t) &= 3x(t) \\
+  	x(0) &= 4
+  \end{align*}
+  tak, že uvažujete \emph{ansatz} $x(t)=a\exp(bt)$ a nastavíte správně konstanty $a,b\in \mathbb{R}.$ Spočítejte $\lim_{t\to \infty} x(t).$
+\end{úloha}
+
+\begin{poznámka}
+  Ansatz znamená uhodnutí, v jakém tvaru má vycházet řešení matematické úlohy, s dosud neurčenými parametry (stupněmi volnosti). Parametry se pak dopočítávají tak, aby řešení opravdu odpovídalo zadání.
+\end{poznámka}
+
+\begin{úloha}
+  Řešte úlohu
+  \begin{align*}
+	  x''(t)+4x'(t)+3x(t) &= 0 \\
+  	x(0) &= 1 \\
+	x'(0) &= -3
+  \end{align*}
+  pomocí ansatzu $x(t)=\exp(\lambda t).$
+\end{úloha}
+
+\begin{úloha}
+  Řešte úlohu
+  \begin{align*}
+	  x''(t)+4x'(t)+3x(t) &= 0 \\
+  	x(0) &= 2 \\
+	x'(0) &= -2
+  \end{align*}
+  pomocí ansatzu $x(t)=\exp(\lambda t).$
+\end{úloha}
+
+\begin{úloha}
+  Řešte úlohu
+  \begin{align*}
+	  x''(t)+4x'(t)+3x(t) &= 0 \\
+  	x(0) &= 3 \\
+	x'(0) &= -7
+  \end{align*}
+  pomocí ansatzu $x(t)=\exp(\lambda t).$
+\end{úloha}
+
+\begin{úloha}
+  Najděte co nejvíc řešení rovnice
+  \begin{equation*}
+	  x''(t)-6x'(t)+8x(t) = 0
+  \end{equation*}
+  a spočítejte pro každé řešení $\lim_{t\to \infty}x(t).$
+\end{úloha}
+
+\begin{úloha}
+  Dokažte: pokud $x_1, x_2$ řeší rovnici
+  \begin{equation*}
+    a_2x''(t)+a_1x'(t)+a_0=0
+  \end{equation*}
+  a $\alpha, \beta\in \mathbb{R}$, pak stejnou rovnici řeší i $\alpha x_1+\beta x_2.$
+\end{úloha}
+
+\begin{úloha}
+  Zkuste stejným postupem vyřešit rovnici
+  \begin{equation*}
+    x''(t)+x(t)=0
+  \end{equation*}
+\end{úloha}
+
+\begin{úloha}
+  Najděte co nejvíc řešení rovnice
+\begin{equation*}
+  x''(t)-2x'(t)+x(t)=0
+\end{equation*}
+První zkuste ansatz $x(t)=\exp(\lambda t).$ Pak zkuste substituci $y(t):= \exp(-t)x(t)$
+\end{úloha}
+
+\begin{úloha}[Těžší]
+  Najděte řešení rovnice
+\begin{align*}
+	x'''(t)-3x''(t)+4x(t)&=0 \\
+	x(0)&= -1 \\
+	x'(0) &= 2 \\
+	x''(0) &= 3
+\end{align*}
+Prvně zkuste ansatz $\exp(\lambda t),$ a pak vymyslete substituci takovou, která vám dá zbytek řešení. Alternativně můžete řešení uhádnout a ověřit, že je řešením.
+\end{úloha}
+
+\section{Zavedení funkce ln}
+\begin{definice}[Inverzní funkce]
+  Nechť $f\colon A\to B$ je bijekce. Funkce k ní inverzní je taková funkce $f^{-1}\colon B\to A,$ že platí
+  \begin{align*}
+	  \forall b\in B\colon\ f(f^{-1}(b))&=b \\
+	  \forall a\in A\colon\ f^{-1}(f(a))&=a
+  \end{align*}
+\end{definice}
+
+\begin{definice}[Přirozený logaritmus]
+  Definujeme funkci $\ln\colon (0,\infty)\to \mathbb{R}$ jako funkci inverzní k $\exp\colon \mathbb{R}\to (0,\infty).$
+\end{definice}
+
+\begin{věta}[Vlastnosti přirozeného logaritmu]\leavevmode
+\begin{enumerate}[(i)]
+  \item $(\ln(x))'=\frac{1}{x}$
+  \item $\ln(xy)=\ln(x)\ln(y)$
+  \item $\ln\left(\frac{1}{x}\right)=-\ln(x)$
+  \item $\ln(x^{n})=n \ln(x)$
+  \item $\ln$ je rostoucí bijekce
+  \item $\displaystyle\lim_{x\to \infty}\ln(x)=\infty$
+\end{enumerate}
+\end{věta}
+\begin{náčrt důkazu}
+  Body (ii)-(vi) plynou z Věty \ref{veta:vlastnosti exp}. Ukažme si trik, kterým dospějeme k (i):
+  \begin{align*}
+	  \exp(\ln(x)) &= x\hspace{1em} \rvert \frac{d}{dx} \\
+  	\exp(\ln(x))\cdot(\ln(x))' &= 1 \\
+	x \cdot(\ln(x))' &= 1 \\
+	(\ln(x))' &= \frac{1}{x}
+  \end{align*}
+  Opět tento postup není matematicky rigorózní, protože už předpokládá, že derivace $\ln(x)$ existuje.
+\end{náčrt důkazu}
+
+\begin{úloha}
+	$(\ln(x^{3}+5))=\ ?$
+\end{úloha}
+
+\begin{úloha}
+  $(\ln(f(x)))'=\ ?$
+\end{úloha}
+
+\begin{příklad}
+Vyřešte úlohu
+\begin{align*}
+	x'(t) &= 3x(t) \\
+	x(0) &= 4
+\end{align*}
+pomocí substituce $y(t):= \ln(x(t)).$
+\end{příklad}
+
+\begin{příklad}
+Najděte co nejvíc řešení
+\begin{align*}
+	x''(t)-2x'(t)+x(t) &= 0 \\
+\end{align*}
+pomocí substituce $y(t):=\ln(x(t)).$
+\end{příklad}
+
+\begin{příklad}[Poločas přeměny]
+  Počet jader $N(t)$ radioaktivního materiálu, které se v čase $t$ dosud nepřeměnily, splňuje
+  \begin{align*}
+  	N'(t) &= -\lambda N(t)\\
+  	N(0) &= N_0
+  \end{align*}
+  kde $\lambda>0, N_0>0.$ Za jakou dobu se přemění polovina jader materiálu? Za jakou dobu zbude osmina jader nepřeměněných?\par
+  \textit{Řešení:} Řešení rovnice je
+  \begin{equation*}
+    N(t)=N_0\exp(-\lambda t)
+  \end{equation*}
+  Hledáme čas $t_{1/2},$ pro který bude platit
+  \begin{align*}
+	  N(t_{1/2})&=\frac{1}{2}N_0 \\
+	  N_0 \exp(-\lambda t_{1/2})&= \frac{1}{2}N_0 \\
+	  \exp(-\lambda t_{1/2})&= \frac{1}{2} \\
+	  \Rightarrow  t_{1/2} &= -\frac{1}{\lambda}\ln\left(\frac{1}{2}\right)=\frac{\ln(2)}{\lambda}
+  \end{align*}
+  Podobně můžeme spočítat čas $t_{1/8},$ po kterém zbude osmina materiálu:
+  \begin{equation*}
+	  t_{1/8}=\frac{\ln(8)}{\lambda}
+  \end{equation*}
+  Z vlastností logaritmu plyne, že $t_{1/8}=3t_{1/2}.$ Obecně $t_{1/2^{n}}=n t_{1/2}.$
+\end{příklad}
+
+\section{Vyčíslení funkce exp}
+Pokud za námi příjde doktor a zeptá se nás, jaká úroveň radiace je pro jeho pacienta bezpečná, můžeme pomocí funkcí $\exp$ a $\ln$ vyřešit příslušnou diferenciální rovnici a napsat výsledek. Doktora ovšem neuspokojí výsledek $\exp(2.6).$ Zadefinovali jsme si speciální funkce a dokázali řadu elegantních vlastností, ale naše nové funkce neumíme \emph{vyčíslit}. Pojďme to napravit.
+
+Víme, že pro malé $h$ platí
+\begin{equation*}
+  \frac{\exp(t+h)-\exp(t)}{h} \approx (\exp(t))'=\exp(t)
+\end{equation*}
+Takže 
+\begin{equation*}
+  \exp(t+h) \approx \exp(t)+h\cdot \exp(t) = (1+h)\exp(t)
+\end{equation*}
+a aproximace je tím lepší, čím menší je $h$. Můžeme tedy začít od $t=0$ a malými krůčky $h$ se posouvat:
+\begin{align*}
+	\exp(h) &\approx (1+h)\exp(0) = 1+h \\
+	\exp(2h) &\approx (1+h)\exp(h) = (1+h)^{2} \\
+	\exp(3h) &\approx (1+h)\exp(2h) = (1+h)^{3} \\
+		 &\vdots
+\end{align*}
+Pokud chceme vyčíslit $\exp(x),$ rozdělíme si interval $[0,x]$ na malé krůčky $h=\frac{x}{N}$, kde $N\in \mathbb{N}$ je velké:
+\begin{equation*}
+  0,\ \frac{x}{N},\ 2\frac{x}{N},\ 3\frac{x}{N},\ \hdots,\ x
+\end{equation*}
+a tudíž
+\begin{equation*}
+  \exp(x)\approx \left(1+\frac{x}{N}\right)^{N}
+\end{equation*}
+
+\begin{příklad}
+  Aproximujeme si Eulerovo číslo $e=\exp(1).$ Červeně jsou vyznačeny správné cifry (zatím nevíme, jak sami spočítat počet správných cifer, porovnáváme to s hodnotou ve standardních softwarových knihovnách).
+  \begin{align*}
+	  \left(1+\frac{1}{10}\right)^{10}&\approx \textcolor{red}{2}.5937424601000023 \\
+	  \left(1+\frac{1}{100}\right)^{100}&\approx \textcolor{red}{2.7}048138294215285 \\
+	  \left(1+\frac{1}{1000}\right)^{1000}&\approx \textcolor{red}{2.71}69239322355936 \\
+	  \left(1+\frac{1}{10^{4}}\right)^{10^{4}}&\approx \textcolor{red}{2.718}1459268249255 \\
+	  \left(1+\frac{1}{10^{5}}\right)^{10^{5}}&\approx \textcolor{red}{2.7182}682371922975 \\
+	  \left(1+\frac{1}{10^{6}}\right)^{10^{6}}&\approx \textcolor{red}{2.71828}04690957534
+  \end{align*}
+\end{příklad}

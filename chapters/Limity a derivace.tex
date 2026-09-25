@@ -45,7 +45,7 @@ Stojí před námi hádanka, která lidstvo trápila 2000 let. Antickým filosof
 \begin{equation*}
 	\SI{50}{m}+\SI{25}{m}+\hdots + \frac{100}{2^{n-1}}\SI{}{m} = \left(100-\frac{100}{2^{n-1}}\right)\SI{}{m} < \SI{100}{m}
 \end{equation*}
-Tedy po konečně mnoho krocích neuběhnete \SI{100}{m}. Nekonečně mnoho úkonů nelze provést, tudíž nelze uběhnout \SI{100}{m}.
+Tedy po konečně mnoho krocích neuběhnete \SI{100}{m}. Nekonečně mnoho kroků nelze provést, tudíž nelze uběhnout \SI{100}{m}.
 \end{paradox}
 
 \begin{paradox}[Druhý Zenónův paradox: Achilles a želva]\label{paradox:zenon 2}
@@ -60,9 +60,11 @@ a tudíž Achilles želvu nikdy nedoběhne.
 \begin{paradox}[Třetí Zenónův paradox: Letící šíp]\label{paradox:zenon 3} Představme si letící šíp. Šíp letí nějaký čas, který se skládá z jednotlivých momentů. V každém jednotlivém momentu šíp neurazí žádnou vzdálenost. Tudíž šíp za celkový čas nemůže urazit žádnou vzdálenost. Pohyb je nemožný. 
 \end{paradox}
 
-Všechny tři paradoxy rozdělují pohyb na nekonečně mnoho dílčích částí a pak tvrdí, že na realizaci \uv{pohybu} bychom nějak museli těchto nekonečně mnoho částí složit dohromady, což nejde. V paradoxech \ref{paradox:zenon 1} a \ref{paradox:zenon 2} se sčítá nekonečně mnoho čísel, což se později naučíme pomocí pojmu \emph{nekonečné řady}. V paradoxu \ref{paradox:zenon 3} se sčítá \uv{nulový pohyb} přes všechny momenty v čase, a tvrdí se, že se nemůže nasčítat na nenulový pohyb. My se to ale naučíme: této operaci se říká \emph{integrál}.
+Všechny tři paradoxy rozdělují pohyb na nekonečně mnoho dílčích částí a pak tvrdí, že na realizaci \uv{pohybu} bychom nějak museli těchto nekonečně mnoho částí složit dohromady, a že to nejde. V paradoxech \ref{paradox:zenon 1} a \ref{paradox:zenon 2} se sčítá nekonečně mnoho čísel, což se později naučíme pomocí pojmu \emph{nekonečné řady}. V paradoxu \ref{paradox:zenon 3} se sčítá \uv{nulový pohyb} přes všechny momenty v čase, a tvrdí se, že se nemůže nasčítat na nenulový pohyb. My se to ale naučíme: této operaci se říká \emph{integrál}.
 
-Problém zmraženého šípu vyřešil Isaac Newton. On si představoval, že šíp sleduje na \emph{velmi malém časovém intervalu}, v rámci kterého se rychlost téměř nemění. Pokud je rychlost téměř konstantní, vracíme se k Příkladu \ref{pr:x(t)=vt+x_0} a tam vzoreček \ref{eq:rychlost zš} fungoval. Dopustíme se chyby, ale čím menší interval budeme uvažovat, tím menší bude chyba. Zkusme to!
+%TODO: fancy font na vedce/filosofy
+
+Problém zmraženého šípu (a tímpádem příkladu \ref{eq: 0/0}) vyřešil Isaac Newton. On si představoval, že šíp sleduje na \emph{velmi malém časovém intervalu}, v rámci kterého se rychlost téměř nemění. Pokud je rychlost téměř konstantní, vracíme se k Příkladu \ref{pr:x(t)=vt+x_0} a tam vzoreček \ref{eq:rychlost zš} fungoval. Dopustíme se chyby, ale čím menší interval budeme uvažovat, tím menší bude chyba. Zkusme to!
 
 \begin{příklad}[Pokračování Příkladu \ref{pr:x(t)=t^2}]
   \begin{align*}
@@ -81,16 +83,25 @@ Problém zmraženého šípu vyřešil Isaac Newton. On si představoval, že š
 
 Základní myšlenka tedy spočívá v tom, že funkci $x(t)$ na malém časovém intervalu aproximujeme afinní funkcí $v\cdot t+x_0$ s snažíme se odhadnout parametr $v.$ Nejlepší možná aproximace funkce afinní funkcí nám dá \emph{tečnu ke grafu} dané funkce. Z tohoto soudku k pojmu derivace přišel Gottfried Wilhelm Leibniz, který pro derivace používal zápis $\frac{dx}{dt}(3)=6.$
 
+%TODO: obrazek tecny ke grafu
+
 \newpage
-\section{Rigorózní zavedení}
+\section{Limity}
 V této sekci si zavedeme derivace a naučíme se je počítat. Před tím nás ale čekají přípravné práce.
-\begin{definice}[Funkce] \label{def:Funkce} Funkce (= zobrazení) se skládá z následujících dat:
-\begin{itemize}
-	\item Množiny $A$, zvané \emph{definiční obor},
-	\item Množiny $B$, zvané \emph{obor hodnot},
-	\item Pravidla, které každému prvku $a\in A$ přiřadí právě jeden prvek $f(a)\in B$. Tomuto pravidlu říkáme předpis funkce.
-\end{itemize}
-Značení $f\colon A\to B$ znamená, že $A$ je definiční obor funkce $f$ a $B$ je její obor hodnot.
+\begin{definice}[Funkce] 
+
+\begin{enumerate}[(\alph*)]\leavevmode
+	\item Funkce (= zobrazení) se skládá z následujících dat:
+	\begin{itemize}
+		\item Množiny $A$, zvané \emph{definiční obor},
+		\item Množiny $B$, zvané \emph{obor hodnot},
+		\item Pravidla, které každému prvku $a\in A$ přiřadí právě jeden prvek $f(a)\in B$. Tomuto pravidlu říkáme předpis funkce.
+	\end{itemize}
+	Značení $f\colon A\to B$ znamená, že $A$ je definiční obor funkce $f$ a $B$ je její obor hodnot.
+	\item $f$ je injektivní (prostá), pokud $\forall a_1,a_2\in A\colon f(a_1)=f(a_2)\Rightarrow a_1=a_2,$
+	\item $f$ je surjektivní (na), pokud $\forall b\in B\ \exists a\in A\colon f(a)=b.$
+	\item $f$ je bijekce, pokud je injektivní i surjektivní.
+\end{enumerate}
 \end{definice}
 \newcommand{\Leden}{\textnormal{Leden}}
 \newcommand{\Unor}{\textnormal{Únor}}
@@ -104,19 +115,9 @@ Značení $f\colon A\to B$ znamená, že $A$ je definiční obor funkce $f$ a $B
 		f(\Brezen)&=31 \\
 			 &\vdots
 	\end{align*}
-Funkce $f\colon A\to B$ udává počet dnů v měsíci v nepřestupném roce. Není daná žádným matematickým vzorečkem, její definiční obor neobsahuje čísla. 
+Funkce $f\colon A\to B$ udává počet dnů v měsíci v nepřestupném roce. Není daná žádným matematickým vzorečkem, její definiční obor neobsahuje čísla. Je surjektivní, není injektivní.
 \end{příklad}
 
-\begin{poznámka}
-\leavevmode
-\begin{itemize}
-	\item Může se stát, že dva různé prvky $a_1\neq a_2\in A$ funkce přiřadí na stejný prvek $f(a_1)=f(a_2).$ Také se může stát, že existuje prvek $b\in B$, který není obrazem žádného $a\in A$, tedy
-	\begin{equation*}
-	  \forall a\in A\colon b\neq f(a).
-	\end{equation*}
-	Například funkce $g\colon \mathbb{R}\to \mathbb{R}, g(x)=x^{2}$ má obě tyto vlastnosti: $g(3)=g(-3),$ $\forall a\in \mathbb{R}\colon -1\neq g(a).$
-\end{itemize}
-\end{poznámka}
 \begin{definice}[Limita funkce] \label{def:Limita funkce}
 	Nechť $c\in \mathbb{R}$ a $f$ je funkce, jejíž obor hodnot je $\mathbb{R}$ a její definiční obor obsahuje $(c-\Delta,c+\Delta)\setminus\{c\}$ pro nějaké $\Delta>0$. Limita funkce $f$ v bodě $c$, pokud existuje, je číslo $L$ splňující
 \begin{equation*}
@@ -322,7 +323,7 @@ Pokud navíc $M\neq 0,$ existuje limita i pro $\frac{f}{g}$ a platí
 		  f+g,\ f\cdot g,\ \alpha f
 		\end{equation*}
 	Navíc pokud $g\neq 0$ na $(a,b)$, je na $(a,b)$ spojitá i $\frac{f}{g}.$
-	\item Polynomy jsou spojité funkce na celém $\mathbb{R}$. (Zde bereme $a=-\infty, b=+\infty,\ \mathbb{R}=(-\infty,+\infty)$)
+	\item Polynomy jsou spojité funkce na celém $\mathbb{R}$.
 \end{itemize}
 \end{důsledek}
 
@@ -332,10 +333,10 @@ Pokud navíc $M\neq 0,$ existuje limita i pro $\frac{f}{g}$ a platí
 \begin{align*}
 	\lim_{h\to 0}\sqrt{x+h}-\sqrt{x}&=\lim_{h\to 0}\frac{(\sqrt{x+h}-\sqrt{x})(\sqrt{x+h}+\sqrt{x})}{\sqrt{x+h}+\sqrt{x}} = \lim_{h\to 0} \frac{h}{\sqrt{x+h}+\sqrt{x}} \\
 					&=  \frac{\lim_{h\to 0} h}{\lim_{h\to 0} \left(\sqrt{x+h}+\sqrt{x}\right)} = \frac{0}{2 \sqrt{x}}=0 \\
-	\Rightarrow \lim_{h\to 0}\sqrt{x+h}&=\lim_{h\to 0}\left(\sqrt{x+h}-\sqrt{x}\right)+ \lim_{h\to 0} \sqrt{x} = 0+\sqrt{x}=\sqrt{x}
 \end{align*}
 \end{příklad}
-
+\vspace{-4em}
+\section{Derivace}
 \begin{definice}[Derivace funkce]
   Mějme funkci $f\colon (a,b)\to \mathbb{R},\ x\in (a,b).$ Derivace funkce $f$ v bodě $x$, pokud existuje, je číslo
   \begin{equation*}
@@ -460,19 +461,23 @@ Vidíme, že ač za definiční obor pro $f(x)=\sqrt{x}$ můžeme vzít $[0,\inf
 \item předpis $(g\circ f)(x) := g(f(x))$
 \end{itemize}
 
+\begingroup
+\shorthandoff{"}
 \begin{center}
 	\begin{tikzcd}
-		A \arrow{r}{f} \arrow[swap]{dr}{g\circ f} & B \arrow{d}{g} & x\arrow{r}{f} \arrow[swap]{dr}{g\circ f} & f(x)\arrow{d}{g}\\
+		A \ar[r, "f"] \ar[rd, swap, "g\circ f"] & B \ar[d, "g"] & x\ar[r, mapsto, "f"] \ar[rd, mapsto, swap, "g\circ f"] & f(x)\ar[d, mapsto, "g"]\\
 							  & C & & g(f(x))
 	\end{tikzcd}
 \end{center}
+\endgroup
+
 \end{definice}
 
 \begin{příklad}\label{pr:slozena funkce}
 	$f\colon [-\frac{5}{9},\infty)\to [0,\infty),\ f(x)=9x+5,\ g\colon [0,\infty)\to [0,\infty),\ g(x)=\sqrt{x}.$ Složená funkce je $g\circ f\colon [-\frac{5}{9},\infty)\to [0,\infty)$ s předpisem $(g\circ f)(x)=\sqrt{9x+5}$
 \end{příklad}
 
-\begin{věta}[Derivace složené funkce]
+\begin{věta}[Derivace složené funkce]\label{veta:derivace slozene funkce}
   Nechť $f\colon A\to B$ a $g\colon B\to C,$ kde $A,B,C\subset \mathbb{R}.$ Pak pro $x\in A$ platí
   \begin{equation*}
 	  (g\circ f)'(x)=g'(f(x))\cdot f'(x),
@@ -529,6 +534,7 @@ Vidíme, že ač za definiční obor pro $f(x)=\sqrt{x}$ můžeme vzít $[0,\inf
 	Nabývá funkce $f(x)=\frac{1}{\sqrt{x+3}}$ na $[0,\infty)$ minima/maxima? Pokud ano, najděte je.
 \end{úloha}
 
+Následující věta intuitivně říká: pokud je směrnice tečny kladná, funkce roste, pokud záporná, funkce klesá. Pokud je tečna vodorovná (má nulovou směrnici), funkce se v tom bodě \uv{otáčí}, má buď lokální minimum nebo lokální maximum.
 \begin{věta*}[Vlastnosti funkce plynoucí z derivace]\label{veta:Vlastnosti funkce plynoucí z derivace}
   Nechť $f\colon (a,b)\to \mathbb{R}$ má na $(a,b)$ derivaci. Pak
   \begin{itemize}
