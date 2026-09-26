@@ -75,7 +75,7 @@ Pro nás bude důležité, že $\exp$ je rostoucí bijekce (díky tomu pak zkons
 	\item $\exp(t+s)=\exp(t)\cdot \exp(s)$
 \item $\forall n\in \mathbb{N}\colon \exp(n\cdot t)=\exp(t)^{n}.$ Speciálně $\exp(n)=e^{n}$
 	\item $\exp(-t)=\frac{1}{\exp(t)}$
-	\item $\exp$ je rostoucí na $\mathbb{R}$
+	\item $\exp$ je kladná a rostoucí na $\mathbb{R}$
 	\item $\displaystyle\lim_{t\to \infty}\exp(t)=\infty,\ \displaystyle\lim_{t\to -\infty}\exp(t)=0$
 	\item $\exp$ je bijekce
 \end{enumerate}
@@ -222,18 +222,17 @@ Pro nás bude důležité, že $\exp$ je rostoucí bijekce (díky tomu pak zkons
 První zkuste ansatz $x(t)=\exp(\lambda t).$ Pak zkuste substituci $y(t):= \exp(-t)x(t)$
 \end{úloha}
 
-\begin{úloha}[Těžší]
-  Najděte řešení rovnice
-\begin{align*}
-	x'''(t)-3x''(t)+4x(t)&=0 \\
-	x(0)&= -1 \\
-	x'(0) &= 2 \\
-	x''(0) &= 3
-\end{align*}
-Prvně zkuste ansatz $\exp(\lambda t),$ a pak vymyslete substituci takovou, která vám dá zbytek řešení. Alternativně můžete řešení uhádnout a ověřit, že je řešením.
-\end{úloha}
+% \begin{úloha}[Těžší]
+%   Najděte řešení rovnice
+% \begin{align*}
+% 	x'''(t)-3x''(t)+4x(t)&=0 \\
+% 	x(0)&= -1 \\
+% 	x'(0) &= 2 \\
+% 	x''(0) &= 3
+% \end{align*}
+% Prvně zkuste ansatz $\exp(\lambda t),$ a pak vymyslete substituci takovou, která vám dá zbytek řešení. Alternativně můžete řešení uhádnout a ověřit, že je řešením.
+% \end{úloha}
 
-\newpage
 \section{Zavedení funkce ln}
 \begin{definice}[Inverzní funkce]
   Nechť $f\colon A\to B$ je bijekce. Funkce k ní inverzní je taková funkce $f^{-1}\colon B\to A,$ že platí
@@ -247,7 +246,7 @@ Prvně zkuste ansatz $\exp(\lambda t),$ a pak vymyslete substituci takovou, kter
   Definujeme funkci $\ln\colon (0,\infty)\to \mathbb{R}$ jako funkci inverzní k $\exp\colon \mathbb{R}\to (0,\infty).$
 \end{definice}
 
-\begin{věta}[Vlastnosti přirozeného logaritmu]\leavevmode
+\begin{věta}[Vlastnosti přirozeného logaritmu]\label{veta:vlastnosti prirozeneho logaritmu}\leavevmode
 \begin{enumerate}[(i)]
   \item $(\ln(x))'=\frac{1}{x}$
   \item $\ln(xy)=\ln(x)\ln(y)$
@@ -313,7 +312,7 @@ Najděte pomocí substituce $y(t):=\ln(x(t))$ co nejvíc řešení rovnice
 \end{příklad}
 
 \section{Vyčíslení funkce exp}
-Pokud za námi příjde doktor a zeptá se nás, jaká úroveň radiace je pro jeho pacienta bezpečná, můžeme pomocí funkcí $\exp$ a $\ln$ vyřešit příslušnou diferenciální rovnici a napsat výsledek. Doktora ovšem neuspokojí výsledek $\exp(2.6).$ Zadefinovali jsme si speciální funkce a dokázali řadu elegantních vlastností, ale naše nové funkce neumíme \emph{vyčíslit}. Pojďme to napravit.
+Zadefinovali jsme si speciální funkce a dokázali řadu elegantních vlastností, ale naše nové funkce neumíme \emph{vyčíslit}. Pojďme to napravit.
 
 Víme, že pro malé $h$ platí
 \begin{equation*}
@@ -350,3 +349,66 @@ a tudíž
 	  \left(1+\frac{1}{10^{6}}\right)^{10^{6}}&\approx \textcolor{red}{2.71828}04690957534
   \end{align*}
 \end{příklad}
+
+\section{Obecná mocnina}
+Definice mocniny z $a>0$ pro exponent $n\in \mathbb{N}$ je přímočará:
+\begin{equation}\label{eq:mocnina N}
+	a^{n}=\underbrace{a\cdot \hdots \cdot a}_{n\ \text{krát}}
+\end{equation}
+Pro takto zavedenou mocninu si můžeme všimnout, že platí
+\begin{equation}\label{eq:mocnina homomorfismus}
+  a^{n+m}=a^{n}a^{m},\ n,m\in \mathbb{N}
+\end{equation}
+což je v analogii s
+\begin{equation*}
+  \exp(x+y)=\exp(x)\exp(y).
+\end{equation*}
+Jak rozšířit definici \ref{eq:mocnina N} pro $n,m\not\in \mathbb{N}?$ Pokud bychom měli definovat $a^{0}$ tak, aby pořád platilo \ref{eq:mocnina homomorfismus}, musí být
+\begin{equation}\label{eq:mocnina 0}
+  a^{n}=a^{n+0}=a^{n}a^{0} \; \Rightarrow \; a^{0}:=1
+\end{equation}
+Pokud bychom měli definovat $a^{-n},\ n\in\mathbb{N}$ tak, aby pořád platilo \ref{eq:mocnina homomorfismus} a \ref{eq:mocnina 0}, musí být
+\begin{equation}\label{eq:mocnina Z}
+  1=a^{0}=a^{n-n}=a^{n}a^{-n} \; \Rightarrow \; a^{-n}:=\frac{1}{a^{n}},\ n\in \mathbb{N}.
+\end{equation}
+Takto definovaná mocnina splňuje
+\begin{equation}\label{eq:mocnina opakovane}
+ a^{n\cdot m} = (a^{n})^{m},\ n,m\in \mathbb{Z}.
+\end{equation}
+Pokud bychom měli definovat $a^{\frac{n}{m}},\ n\in \mathbb{Z},\ m\in \mathbb{Z}\setminus \{0\}$ tak, aby pořád platilo \ref{eq:mocnina opakovane}, musí být
+\begin{equation}\label{eq:mocnina Q}
+	(a^{\frac{n}{m}})^{m} = a^{\frac{n}{m}\cdot m}=a^{n} \; \Rightarrow \; a^{\frac{n}{m}}:=\sqrt[m]{a^{n}}.
+\end{equation}
+Takto definovaná mocnina splňuje
+\begin{alignat}{4}\label{eq:ln mocniny}
+	m\cdot \ln(a^{\frac{n}{m}})=\ln\left( (a^{\frac{n}{m}})^{m}\right)=\ln(a^{n})=n\ln(a) &\Rightarrow \; \ln(a^{\frac{n}{m}})&&=\frac{n}{m}\ln(a)\notag \\
+	&\Rightarrow  \; \ln(a^{q})&&=q\ln(a),\ q\in \mathbb{Q}
+\end{alignat}
+Pokud bychom měli definovat $a^{x}, x\in \mathbb{R}$ tak, aby pořád platilo \ref{eq:ln mocniny}, musí být
+\begin{equation*}
+	\ln(a^{x})=x\ln(a) \; \Rightarrow \; a^{x}:=\exp(x \ln(a))
+\end{equation*}
+
+\begin{definice}[Obecná mocnina a logaritmus]
+	Definujeme pro $a>0, x\in \mathbb{R}$ \emph{mocninu o základu} $a$
+  \begin{equation*}
+    a^{x} := \exp(x \ln(a))
+  \end{equation*}
+  Dále definujeme \emph{logaritmus o základu} $a$ jako funkci inverzní k $f(x)=a^{x},$ značíme ji $\log_a(x):=f^{-1}(x).$
+\end{definice}
+
+\begin{věta}[Vlastnosti obecné mocniny a logaritmu]\leavevmode
+\begin{enumerate}[(i)]
+	\item Funkce $f(x)=a^{x},\ f\colon \mathbb{R}\to (0,\infty)$ má vlastnosti \ref{eq:mocnina homomorfismus}, \ref{eq:mocnina 0}, \ref{eq:mocnina Z}, \ref{eq:mocnina opakovane},  \ref{eq:mocnina Q}, \ref{eq:ln mocniny}.
+	\item $(a^{x})'=\ln(a)a^{x}$
+	\item $a^{x}$ je rostoucí bijekce pro $a>1,$ konstantní pro $a=1$ a klesající bijekce pro $a<1$
+	\item Pro $a>1$ platí $\lim_{x\to -\infty}a^{x}=0,\hspace{.85em} \lim_{x\to \infty}a^{x}=\infty$ \\
+		Pro $a<1$ platí $\lim_{x\to -\infty}a^{x}=\infty,\ \lim_{x\to \infty}a^{x}=0$
+	\item Speciálně $\exp(x)=e^{x}.$
+	\item Funkce $g(x)=\log_a(x)\ g\colon (0,\infty)\to \mathbb{R}$ splňuje $\log_a(x)=\frac{\ln(x)}{\ln(a)}.$ Proto sdílí s přirozeným logaritmem všechny vlastnosti z Věty \ref{veta:vlastnosti prirozeneho logaritmu} až na to, že $(\log_a(x))'=\frac{1}{\ln(a)x}$
+	\item Speciálně $\ln(x)=\log_e(x).$
+\end{enumerate}
+\end{věta}
+\begin{důkaz}
+  Cvičení. Vše plyne z vlastností $\ln$ a $\exp.$
+\end{důkaz}

@@ -12,27 +12,28 @@
 \contentsline {section}{\numberline {3.1}Bakterie, radioaktivita, tranzistory, Gangnam Style a rozpínání vesmíru}{15}{section*.8}%
 \contentsline {section}{\numberline {3.2}Nevlastní limity}{16}{section*.9}%
 \contentsline {section}{\numberline {3.3}Zavedení funkce exp}{17}{section*.10}%
-\contentsline {section}{\numberline {3.4}Zavedení funkce ln}{21}{section*.11}%
+\contentsline {section}{\numberline {3.4}Zavedení funkce ln}{20}{section*.11}%
 \contentsline {section}{\numberline {3.5}Vyčíslení funkce exp}{22}{section*.12}%
-\contentsline {chapter}{\numberline {4}Harmonický oscilátor}{24}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Závaží na pružině}{24}{section*.13}%
-\contentsline {section}{\numberline {4.2}Zavedení funkcí sin, cos}{24}{section*.14}%
-\contentsline {section}{\numberline {4.3}Komplexní exponenciála}{24}{section*.15}%
-\contentsline {section}{\numberline {4.4}Tlumený oscilátor}{24}{section*.16}%
-\contentsline {chapter}{\numberline {5}Pohyby planet}{25}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Integrál}{26}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Plocha pod grafem}{26}{section*.17}%
-\contentsline {section}{\numberline {6.2}Primitivní funkce}{26}{section*.18}%
-\contentsline {section}{\numberline {6.3}Metoda separace proměnných}{26}{section*.19}%
-\contentsline {chapter}{\numberline {7}Lineární rovnice}{27}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Lineární homogenní rovnice}{27}{section*.20}%
-\contentsline {section}{\numberline {7.2}Lineární nehomogenní rovnice}{27}{section*.21}%
-\contentsline {section}{\numberline {7.3}Metoda integračního faktoru}{27}{section*.22}%
-\contentsline {chapter}{\numberline {8}Numerické řešení diferenciálních rovnic}{28}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Explicitní Eulerova metoda}{28}{section*.23}%
-\contentsline {section}{\numberline {8.2}Aproximace čísla $\pi $}{28}{section*.24}%
-\contentsline {chapter}{\numberline {9}Mocninné řady}{29}{chapter.9}%
-\contentsline {chapter}{\numberline {10}WIP}{30}{chapter.10}%
-\contentsline {section}{\numberline {10.1}Závěr}{31}{section*.25}%
-\contentsline {chapter}{Summary and Outlook}{32}{chapter*.26}%
+\contentsline {section}{\numberline {3.6}Obecná mocnina}{23}{section*.13}%
+\contentsline {chapter}{\numberline {4}Harmonický oscilátor}{25}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Závaží na pružině}{25}{section*.14}%
+\contentsline {section}{\numberline {4.2}Zavedení funkcí sin, cos}{26}{section*.15}%
+\contentsline {section}{\numberline {4.3}Komplexní exponenciála}{27}{section*.16}%
+\contentsline {section}{\numberline {4.4}Tlumený oscilátor}{27}{section*.17}%
+\contentsline {chapter}{\numberline {5}Pohyby planet}{28}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Integrál}{29}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Plocha pod grafem}{29}{section*.18}%
+\contentsline {section}{\numberline {6.2}Primitivní funkce}{29}{section*.19}%
+\contentsline {section}{\numberline {6.3}Metoda separace proměnných}{29}{section*.20}%
+\contentsline {chapter}{\numberline {7}Lineární rovnice}{30}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Lineární homogenní rovnice}{30}{section*.21}%
+\contentsline {section}{\numberline {7.2}Lineární nehomogenní rovnice}{30}{section*.22}%
+\contentsline {section}{\numberline {7.3}Metoda integračního faktoru}{30}{section*.23}%
+\contentsline {chapter}{\numberline {8}Numerické řešení diferenciálních rovnic}{31}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Explicitní Eulerova metoda}{31}{section*.24}%
+\contentsline {section}{\numberline {8.2}Aproximace čísla $\pi $}{31}{section*.25}%
+\contentsline {chapter}{\numberline {9}Mocninné řady}{32}{chapter.9}%
+\contentsline {chapter}{\numberline {10}WIP}{33}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Závěr}{34}{section*.26}%
+\contentsline {chapter}{Summary and Outlook}{35}{chapter*.27}%
 \contentsfinish 

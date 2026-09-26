@@ -814,6 +814,11 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/czech.lbx
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/czech.lbx
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/czech.lbx
 OUTPUT thesis.bcf
+INPUT thesis.bbl
+INPUT ./thesis.bbl
+INPUT ./thesis.bbl
+INPUT ./thesis.bbl
+INPUT thesis.bbl
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/colorprofiles/sRGB.icc
 INPUT ./frontmatter/title.tex
 INPUT ./frontmatter/title.tex
@@ -852,10 +857,10 @@ INPUT thesis.toc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmtt12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 OUTPUT thesis.toc
 INPUT ./chapters/Úvod.tex
 INPUT ./chapters/Úvod.tex
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 OUTPUT chapters/Úvod.aux
 INPUT ./chapters/Úvod.tex
 INPUT ./chapters/Úvod.tex
@@ -883,7 +888,6 @@ OUTPUT chapters/Limity a derivace.aux
 INPUT ./chapters/Limity a derivace.tex
 INPUT ./chapters/Limity a derivace.tex
 INPUT chapters/Limity a derivace.tex
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr17.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmss17.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
@@ -905,6 +909,7 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/iwona/omxiwona.fd
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/nowacki/iwona/ex-iwonab.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/nowacki/iwona/ex-iwonab.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/nowacki/iwona/ex-iwonab.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT ./chapters/Volny pad.tex
 INPUT ./chapters/Volny pad.tex

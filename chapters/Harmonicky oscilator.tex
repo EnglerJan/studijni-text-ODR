@@ -1,7 +1,87 @@
 \chapter{Harmonický oscilátor}
-Začátečníci na lodi mají sklon pádlovat následujícím způsobem: chvíli zaberou na jednu stranu, a jak se jim začne otáčet loď, zaberu na druhou stranu. Tudíž působí silou, která je úměrná výchylce od rovnovážné polohy a jde proti této výchylce. V této kapitole si ukážeme, že toto je nejhorší možná strategie. Vede to totiž na \emph{nekonečně trvající, periodické kmitání}.
+\begin{chapquote}{Hermann von Helmholtz}
+	Když si mladý Galileo, tehdy student v Pise, jednoho dne během bohoslužby všiml, jak se lustr kývá sem a tam, a počítáním svého pulsu se přesvědčil, že délka kmitů nezávisí na úhlu, o který se lustr pohyboval, kdo by mohl tušit, že tento objev nám umožní pomocí kyvadla dosáhnout takové přesnosti při měření času, jaká byla dosud považována za nemožnou, a že umožní námořníkovi zmítanému bouří i v těch nejvzdálenějších oceánech určit, v jakém stupni zeměpisné délky právě pluje?
+\end{chapquote}
 
 \section{Závaží na pružině}
+Mějme závaží na pružině, na kterou nepůsobí vnější síly, zpočátku v rovnovážné poloze. Sledujme jeho výchylku $x(t)$ definovanou tak, že $x=0$ odpovídá rovnovážné poloze. Můžeme provést dva experimenty:
+\begin{enumerate}[(A)]
+	\item Závaží vychýlíme o $x(0)=x_0$
+	\item Závaží nevychýlíme, ale strčíme do něj, aby mělo rychlost $x'(0)=v_0$
+\end{enumerate}
+Proti nám působí síla pružiny $F=-kx$ snažící se vrátit závaží do rovnovážné polohy. Z 2. Newtonova zákona tedy dostáváme
+\begin{align}
+	mx''(t) &= -kx(t)\notag \\
+	x''(t)+\frac{k}{m}x(t) &= 0\notag \\
+	\Aboxed{x''(t)+\omega^{2}x(t) &= 0,}\label{eq:harmonicky oscilator}
+\end{align}
+kde jsme definovali $\omega:=\sqrt{\frac{k}{m}}$. Rovnice \ref{eq:harmonicky oscilator} se nazývá \emph{rovnice harmonického oscilátoru}. Její řešení teď budeme studovat, zatím pro $\omega=1$. Později povolíme $\omega\neq 1$ a vysvětlíme si význam tohoto parametru.
+
+Ze skušenosti víme, že kmitání pružiny je periodické. Tuto vlastnost budeme matematicky studovat.
+\begin{definice}[Periodická funkce]
+  Funkce $f\colon \mathbb{R}\to \mathbb{R}$ je periodická, pokud existuje $T>0$ splňující
+  \begin{equation}\label{eq:periodicka funkce}
+    \forall t\in \mathbb{R}\colon f(t+T)=f(t).
+  \end{equation}
+  Perioda funkce je nejmenší číslo splňující \ref{eq:periodicka funkce}.
+\end{definice}
 \section{Zavedení funkcí sin, cos}
+\begin{definice}
+  Mějme úlohy
+  \begin{alignat*}{5}
+	  x''(t)+x(t) &= 0 & x''(t)+x(t) &= 0 \\
+	  x(0) &= 0 & \quad (\text{A}) \hspace{8em}       x(0) &= 1 \quad (\text{B}) \\
+	  	x'(0) &= 1 & 		           x'(0) &= 0
+  \end{alignat*}
+  Řešení úlohy (A) nazveme $\sin(t)$, řešení úlohy (B) nazveme $\cos(t).$
+\end{definice}
+
+\begin{poznámka}
+  Pojďme se zamyslet, jak se asi bude řešení vyvíjet. Uvažujme $\sin(t)$. Závaží má počáteční polohu $x(0)=0$ a rychlost $x'(0)=1$, takže ze začátku bude výchylka růst přibližně lineárně:
+  \begin{Todo}
+    obrazek
+  \end{Todo}
+  Jenže pak $x>0,$ takže $x''=-x<0,$ takže závaží začne zpomalovat.
+
+  Pořád je $x>0,$ takže rychlost se pořád zmenšuje a někdy musí dosáhnout hodnoty $0$. Tedy $\exists t^{*}>0\colon x'(t^{*})=0.$
+
+  Jenže pořád je $x>0$, takže rychlost získá záporné znaménko. Závaží se vrací k rovnovážné poloze. 
+
+  Závaží se vrátí do rovnovážné polohy, tedy $\exists t^{**}>t^{*}\colon x(t^{**})=0.$
+
+  Situace v čase $t^{**}$ je podobná jako v čase $0$, jen rychlost míří opačným směrem, uděláme proto oblouček opačným směrem.
+
+  Níže si dokážeme, že naše kvalitativní analýza je správně. Mimo jiné i zjistíme, že $t^{*}=2t^{*},\ x(t^{*})=1,\ x'(t^{**})=-x'(0),\ x(t+2t^{**})=x(t),\ \hdots,\ $ což z kvalitativní analýzy nejde vidět. Navíc číslo $t^{**}$ už dobře znáte -- je to \emph{Ludolfovo číslo} $\pi$.
+\end{poznámka}
+
+\begin{úloha}
+  Najděte řešení úlohy
+\begin{align*}
+	x''(t)+x(t) &= 0 \\
+	x(0) &= x_0 \\
+	x'(0) &= v_0
+\end{align*}
+
+\begin{věta}[Vlastnosti sin, cos]\leavevmode
+\begin{enumerate}[(i)]
+	\item $\sin(0)=0,\ \cos(0)=1$
+	\item $(\sin(t))'=\cos(t),\ (\cos(t))'=-\sin(t),$ tedy obě funkce mají derivace všech řádů
+	\item $\sin(t+s)=\sin(t)\cos(s)+\cos(t)\sin(s)$ \\
+		$\cos(t+s)=\cos(t)\cos(s)-\sin(t)\sin(s)$
+	\item $\cos^{2}(t)+\sin^{2}(t)=1$
+	\item $\forall t\in \mathbb{R}\colon -1\leq \sin(t)\leq 1,\ -1\leq \cos(t)\leq 1$
+	\item $\sin(-t)=-\sin(t),\ \cos(-t)=\cos(t)$
+	\item $\exists$ číslo $\pi>0$ takové, že $\sin$ je rostoucí na $(-\frac{\pi}{2},\frac{\pi}{2}),$\\
+		$\sin(\frac{\pi}{2})=1,\ \sin(\pi)=0,\ \sin(\frac{3\pi}{2})=-1,\ \sin(2\pi)=0$ \\
+		$\cos(\frac{\pi}{2})=0,\ \cos(\pi)=-1,\ \cos(\frac{3\pi}{2})=0,\ \cos(2\pi)=1$
+	\begin{Todo}
+	  zarovnat
+	\end{Todo}
+	\item $\sin, \cos$ jsou periodické funkce s periodou $2\pi.$
+\end{enumerate}
+\end{věta}
+
+\end{úloha}
+
 \section{Komplexní exponenciála}
 \section{Tlumený oscilátor}
