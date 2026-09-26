@@ -4,12 +4,12 @@
 \end{chapquote}
 
 \section{Závaží na pružině}
-Mějme závaží na pružině, na kterou nepůsobí vnější síly, zpočátku v rovnovážné poloze. Sledujme jeho výchylku $x(t)$ definovanou tak, že $x=0$ odpovídá rovnovážné poloze. Můžeme provést dva experimenty:
+Mějme závaží na pružině, na kterou nepůsobí vnější síly, zpočátku v rovnovážné poloze. Sledujme jeho výchylku od rovnovážné polohy $x(t)$. Můžeme provést dva experimenty:
 \begin{enumerate}[(A)]
 	\item Závaží vychýlíme o $x(0)=x_0$
-	\item Závaží nevychýlíme, ale strčíme do něj, aby mělo rychlost $x'(0)=v_0$
+	\item Závaží nevychýlíme, ale strčíme do něj, aby mělo rychlost $x'(0)=v_0.$
 \end{enumerate}
-Proti nám působí síla pružiny $F=-kx$ snažící se vrátit závaží do rovnovážné polohy. Z 2. Newtonova zákona tedy dostáváme
+Proti nám působí síla pružiny $F=-kx$ snažící se vrátit závaží do rovnovážné polohy. Z druhého Newtonova zákona tedy dostáváme
 \begin{align}
 	mx''(t) &= -kx(t)\notag \\
 	x''(t)+\frac{k}{m}x(t) &= 0\notag \\
@@ -54,13 +54,14 @@ Ze skušenosti víme, že kmitání pružiny je periodické. Tuto vlastnost bude
   Níže si dokážeme, že naše kvalitativní analýza je správně. Mimo jiné i zjistíme, že $t^{*}=2t^{*},\ x(t^{*})=1,\ x'(t^{**})=-x'(0),\ x(t+2t^{**})=x(t),\ \hdots,\ $ což z kvalitativní analýzy nejde vidět. Navíc číslo $t^{**}$ už dobře znáte -- je to \emph{Ludolfovo číslo} $\pi$.
 \end{poznámka}
 
-\begin{úloha}
+\begin{úloha}\label{ul:harmonicky oscilator}
   Najděte řešení úlohy
 \begin{align*}
 	x''(t)+x(t) &= 0 \\
 	x(0) &= x_0 \\
 	x'(0) &= v_0
 \end{align*}
+\end{úloha}
 
 \begin{věta}[Vlastnosti sin, cos]\leavevmode
 \begin{enumerate}[(i)]
@@ -68,9 +69,9 @@ Ze skušenosti víme, že kmitání pružiny je periodické. Tuto vlastnost bude
 	\item $(\sin(t))'=\cos(t),\ (\cos(t))'=-\sin(t),$ tedy obě funkce mají derivace všech řádů
 	\item $\sin(t+s)=\sin(t)\cos(s)+\cos(t)\sin(s)$ \\
 		$\cos(t+s)=\cos(t)\cos(s)-\sin(t)\sin(s)$
+	\item $\sin(-t)=-\sin(t),\ \cos(-t)=\cos(t)$
 	\item $\cos^{2}(t)+\sin^{2}(t)=1$
 	\item $\forall t\in \mathbb{R}\colon -1\leq \sin(t)\leq 1,\ -1\leq \cos(t)\leq 1$
-	\item $\sin(-t)=-\sin(t),\ \cos(-t)=\cos(t)$
 	\item $\exists$ číslo $\pi>0$ takové, že $\sin$ je rostoucí na $(-\frac{\pi}{2},\frac{\pi}{2}),$\\
 		$\sin(\frac{\pi}{2})=1,\ \sin(\pi)=0,\ \sin(\frac{3\pi}{2})=-1,\ \sin(2\pi)=0$ \\
 		$\cos(\frac{\pi}{2})=0,\ \cos(\pi)=-1,\ \cos(\frac{3\pi}{2})=0,\ \cos(2\pi)=1$
@@ -80,8 +81,52 @@ Ze skušenosti víme, že kmitání pružiny je periodické. Tuto vlastnost bude
 	\item $\sin, \cos$ jsou periodické funkce s periodou $2\pi.$
 \end{enumerate}
 \end{věta}
+\begin{důkaz}
+  Bod (i) plyne z definice. Dokažme bod (ii). Označme $x(t):= \sin(t),$ $y(t):=(\sin(t))'.$ Pak platí
+  \begin{alignat*}{6}
+	  x''(t)+x(t) &= 0 &                                         x'''(t)+x'(t) &= 0 &                                                y''(t)+y(t) &= 0 \\
+	  x(0)        &= 0 & \hspace{2em} \Longrightarrow \hspace{4em}       x'(0) &= 1 \quad & \hspace{2em} \Longrightarrow \hspace{4em}       y(0) &= 1 \\
+	  x'(0)       &= 1 & 		                                    x''(0) &= -x(0)=0& 		                                       y'(0) &= 0
+  \end{alignat*}
+Z \PL ovy věty plyne, že $(\sin(t))'=\cos(t).$ Druhý vztah se ukáže analogicky.
 
-\end{úloha}
+Dokažme bod (iii). Označme $x(t):=\sin(t+s).$ Efektivně to znamená, že sledujeme pořád to stejné kmitání pružiny, ale zapli jsme stopky v čase $s$. Za čas $s$ se sice změnila poloha (od počáteční $\sin(0)=0$) a rychlost (od počáteční $\sin'(0)=1$), ale pořád sledujeme kmitání pružiny, takže bude popsáno kombinací funkcí $\sin$ a $\cos$ stejně, jako v úloze \ref{ul:harmonicky oscilator}. V matematických symbolech: $x(t)$ splňuje
+\begin{align*}
+	x'(t)&=(\sin(t+s))'=\cos(t+s), \\
+	x''(t)&=(\cos(t+s))'=-\sin(t+s)=-x(t),
+\end{align*}
+takže $x(t)$ řeší úlohu
+\begin{align*}
+	x''(t)+x(t)&=0 \\
+	x(0)&=\sin(s) \\
+	x'(0)&=\cos(s).
+\end{align*}
+Stejnou úlohu řeší i $y(t):=\sin(t)\cos(s)+\sin(s)\cos(t),$ z \PL ovy věty tedy $x(t)=y(t).$ Druhý vztah se ukáže analogicky. 
+
+Ukažme bod (iv). Funkce $x(t)=\sin(-t)$ splňuje
+\begin{align*}
+	x'(t) &= (\sin(-t))'=-\cos(-t) \\
+	x''(t) &= (-\cos(-t))'=-\sin(-t)=-x(t)
+\end{align*}
+takže $x(t)$ řeší úlohu
+\begin{align*}
+	x''(t)+x(t) &= 0 \\
+	x(0) &= 0 \\
+	x'(0) &= -1.
+\end{align*}
+Z \PL ovy věty plyne, že $x(t)=-\sin(t).$
+
+Bod (v) plyne z bodů (iii), (iv):
+\begin{equation*}
+  1=\cos(t-t)=\cos(t)\cos(-t)-\sin(t)\sin(-t)=\cos^{2}(t)+\sin^{2}(t)
+\end{equation*}
+
+Bod (vi) plyne z bodu (v).
+
+Dokažme bod (vii).
+
+\end{důkaz}
+
 
 \section{Komplexní exponenciála}
 \section{Tlumený oscilátor}
