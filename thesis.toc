@@ -1,24 +1,38 @@
 \babel@toc {czech}{}\relax 
 \contentsline {chapter}{Obsah}{ii}{chapter*.1}%
-\contentsline {chapter}{Úvod}{iii}{chapter*.2}%
+\contentsline {chapter}{Úvod}{iv}{chapter*.2}%
 \contentsline {chapter}{\numberline {1}Limity a Derivace}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Paradox pohybu}{1}{section*.3}%
-\contentsline {section}{\numberline {1.2}Limity}{4}{section*.4}%
-\contentsline {section}{\numberline {1.3}Derivace}{9}{section*.5}%
-\contentsline {chapter}{\numberline {2}Volný pád}{15}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Volný pád}{15}{section*.6}%
-\contentsline {section}{\numberline {2.2}Picard-Lindelöfova věta. Princip determinismu}{15}{section*.7}%
-\contentsline {chapter}{\numberline {3}Exponenciální růst}{16}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Bakterie, radioaktivita, tranzistory, Gangnam Style a rozpínání vesmíru}{16}{section*.8}%
-\contentsline {section}{\numberline {3.2}Nevlastní limity}{17}{section*.9}%
-\contentsline {section}{\numberline {3.3}Zavedení funkce exp}{18}{section*.10}%
+\contentsline {section}{\numberline {1.2}Limity}{3}{section*.4}%
+\contentsline {section}{\numberline {1.3}Derivace}{8}{section*.5}%
+\contentsline {chapter}{\numberline {2}Volný pád}{14}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Volný pád}{14}{section*.6}%
+\contentsline {section}{\numberline {2.2}Picard-Lindelöfova věta. Princip determinismu}{14}{section*.7}%
+\contentsline {chapter}{\numberline {3}Exponenciální růst}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Bakterie, radioaktivita, tranzistory, Gangnam Style a rozpínání vesmíru}{15}{section*.8}%
+\contentsline {section}{\numberline {3.2}Nevlastní limity}{16}{section*.9}%
+\contentsline {section}{\numberline {3.3}Zavedení funkce exp}{17}{section*.10}%
 \contentsline {section}{\numberline {3.4}Zavedení funkce ln}{21}{section*.11}%
-\contentsline {section}{\numberline {3.5}Vyčíslení funkce exp}{23}{section*.12}%
-\contentsline {chapter}{\numberline {4}Harmonický oscilátor}{25}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Kmitání pružiny}{25}{section*.13}%
-\contentsline {section}{\numberline {4.2}Zavedení funkcí sin, cos}{25}{section*.14}%
-\contentsline {section}{\numberline {4.3}Komplexní exponenciála}{25}{section*.15}%
-\contentsline {section}{\numberline {4.4}Tlumený oscilátor}{25}{section*.16}%
-\contentsline {chapter}{\numberline {5}WIP}{26}{chapter.5}%
-\contentsline {chapter}{Summary and Outlook}{27}{chapter*.17}%
+\contentsline {section}{\numberline {3.5}Vyčíslení funkce exp}{22}{section*.12}%
+\contentsline {chapter}{\numberline {4}Harmonický oscilátor}{24}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Závaží na pružině}{24}{section*.13}%
+\contentsline {section}{\numberline {4.2}Zavedení funkcí sin, cos}{24}{section*.14}%
+\contentsline {section}{\numberline {4.3}Komplexní exponenciála}{24}{section*.15}%
+\contentsline {section}{\numberline {4.4}Tlumený oscilátor}{24}{section*.16}%
+\contentsline {chapter}{\numberline {5}Pohyby planet}{25}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Integrál}{26}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Plocha pod grafem}{26}{section*.17}%
+\contentsline {section}{\numberline {6.2}Primitivní funkce}{26}{section*.18}%
+\contentsline {section}{\numberline {6.3}Metoda separace proměnných}{26}{section*.19}%
+\contentsline {chapter}{\numberline {7}Lineární rovnice}{27}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Lineární homogenní rovnice}{27}{section*.20}%
+\contentsline {section}{\numberline {7.2}Lineární nehomogenní rovnice}{27}{section*.21}%
+\contentsline {section}{\numberline {7.3}Metoda integračního faktoru}{27}{section*.22}%
+\contentsline {chapter}{\numberline {8}Numerické řešení diferenciálních rovnic}{28}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Explicitní Eulerova metoda}{28}{section*.23}%
+\contentsline {section}{\numberline {8.2}Aproximace čísla $\pi $}{28}{section*.24}%
+\contentsline {chapter}{\numberline {9}Mocninné řady}{29}{chapter.9}%
+\contentsline {chapter}{\numberline {10}WIP}{30}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Závěr}{31}{section*.25}%
+\contentsline {chapter}{Summary and Outlook}{32}{chapter*.26}%
 \contentsfinish 

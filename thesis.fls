@@ -774,6 +774,21 @@ INPUT chapters/Exponenciala.aux
 INPUT ./chapters/Harmonicky oscilator.aux
 INPUT ./chapters/Harmonicky oscilator.aux
 INPUT chapters/Harmonicky oscilator.aux
+INPUT ./chapters/Kepler.aux
+INPUT ./chapters/Kepler.aux
+INPUT chapters/Kepler.aux
+INPUT ./chapters/Integral.aux
+INPUT ./chapters/Integral.aux
+INPUT chapters/Integral.aux
+INPUT ./chapters/Linearni rovnice.aux
+INPUT ./chapters/Linearni rovnice.aux
+INPUT chapters/Linearni rovnice.aux
+INPUT ./chapters/Numericke reseni.aux
+INPUT ./chapters/Numericke reseni.aux
+INPUT chapters/Numericke reseni.aux
+INPUT ./chapters/Mocninne rady.aux
+INPUT ./chapters/Mocninne rady.aux
+INPUT chapters/Mocninne rady.aux
 INPUT ./chapters/cool_quote.aux
 INPUT ./chapters/cool_quote.aux
 INPUT chapters/cool_quote.aux
@@ -799,11 +814,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/czech.lbx
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/czech.lbx
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/czech.lbx
 OUTPUT thesis.bcf
-INPUT thesis.bbl
-INPUT ./thesis.bbl
-INPUT ./thesis.bbl
-INPUT ./thesis.bbl
-INPUT thesis.bbl
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/colorprofiles/sRGB.icc
 INPUT ./frontmatter/title.tex
 INPUT ./frontmatter/title.tex
@@ -840,11 +850,12 @@ INPUT ./thesis.toc
 INPUT ./thesis.toc
 INPUT thesis.toc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmtt12.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 OUTPUT thesis.toc
 INPUT ./chapters/Úvod.tex
 INPUT ./chapters/Úvod.tex
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmtt12.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc
 OUTPUT chapters/Úvod.aux
 INPUT ./chapters/Úvod.tex
 INPUT ./chapters/Úvod.tex
@@ -878,7 +889,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmss17.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmssbx10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmro12.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/cmbright/ot1cmbr.fd
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/cmbright/ot1cmbr.fd
@@ -914,6 +924,57 @@ OUTPUT chapters/Harmonicky oscilator.aux
 INPUT ./chapters/Harmonicky oscilator.tex
 INPUT ./chapters/Harmonicky oscilator.tex
 INPUT chapters/Harmonicky oscilator.tex
+INPUT ./chapters/Kepler.tex
+INPUT ./chapters/Kepler.tex
+OUTPUT chapters/Kepler.aux
+INPUT ./chapters/Kepler.tex
+INPUT ./chapters/Kepler.tex
+INPUT chapters/Kepler.tex
+INPUT ./chapters/Integral.tex
+INPUT ./chapters/Integral.tex
+OUTPUT chapters/Integral.aux
+INPUT ./chapters/Integral.tex
+INPUT ./chapters/Integral.tex
+INPUT chapters/Integral.tex
+INPUT ./chapters/Linearni rovnice.tex
+INPUT ./chapters/Linearni rovnice.tex
+OUTPUT chapters/Linearni rovnice.aux
+INPUT ./chapters/Linearni rovnice.tex
+INPUT ./chapters/Linearni rovnice.tex
+INPUT chapters/Linearni rovnice.tex
+INPUT ./chapters/Numericke reseni.tex
+INPUT ./chapters/Numericke reseni.tex
+OUTPUT chapters/Numericke reseni.aux
+INPUT ./chapters/Numericke reseni.tex
+INPUT ./chapters/Numericke reseni.tex
+INPUT chapters/Numericke reseni.tex
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cmbright/cmbrbx10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cmbright/cmbrbx10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cmbright/cmbrmb10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cmbright/cmbrmb10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/nowacki/iwona/ex-iwonab.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/nowacki/iwona/ex-iwonab.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmmib10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmmib10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cmbright/cmbrmi10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cmbright/cmbrmi10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
+INPUT ./chapters/Mocninne rady.tex
+INPUT ./chapters/Mocninne rady.tex
+OUTPUT chapters/Mocninne rady.aux
+INPUT ./chapters/Mocninne rady.tex
+INPUT ./chapters/Mocninne rady.tex
+INPUT chapters/Mocninne rady.tex
 INPUT ./chapters/cool_quote.tex
 INPUT ./chapters/cool_quote.tex
 OUTPUT chapters/cool_quote.aux
@@ -945,6 +1006,21 @@ INPUT chapters/Exponenciala.aux
 INPUT ./chapters/Harmonicky oscilator.aux
 INPUT ./chapters/Harmonicky oscilator.aux
 INPUT chapters/Harmonicky oscilator.aux
+INPUT ./chapters/Kepler.aux
+INPUT ./chapters/Kepler.aux
+INPUT chapters/Kepler.aux
+INPUT ./chapters/Integral.aux
+INPUT ./chapters/Integral.aux
+INPUT chapters/Integral.aux
+INPUT ./chapters/Linearni rovnice.aux
+INPUT ./chapters/Linearni rovnice.aux
+INPUT chapters/Linearni rovnice.aux
+INPUT ./chapters/Numericke reseni.aux
+INPUT ./chapters/Numericke reseni.aux
+INPUT chapters/Numericke reseni.aux
+INPUT ./chapters/Mocninne rady.aux
+INPUT ./chapters/Mocninne rady.aux
+INPUT chapters/Mocninne rady.aux
 INPUT ./chapters/cool_quote.aux
 INPUT ./chapters/cool_quote.aux
 INPUT chapters/cool_quote.aux
@@ -953,6 +1029,7 @@ INPUT ./chapters/Summary.aux
 INPUT chapters/Summary.aux
 INPUT thesis.run.xml
 OUTPUT thesis.run.xml
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrmb10.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx6.pfb
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb

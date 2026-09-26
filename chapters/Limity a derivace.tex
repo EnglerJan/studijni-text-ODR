@@ -38,33 +38,8 @@ Problém je, že vzoreček \ref{eq:rychlost zš} udává \emph{průměrnou rychl
 \begin{equation}\label{eq: 0/0}
   \frac{\Delta x}{\Delta t} = \frac{x(t)-x(t)}{0}=\frac{0}{0}
 \end{equation}
-Stojí před námi hádanka, která lidstvo trápila 2000 let. Antickým filosofům z Eleje se zdál pojem pohybu tak zvláštní, že ho zavrhli a řekli, že žádný pohyb vlastně neexistuje. Zenón Elejský vymyslel několik paradoxů, které měli prokázat logickou nesmyslnost pohybu. Bohužel se nedochovali jeho původní spisy a musíme čerpat z Aristotelova komentáře. Aristoteles mluví o čtyřech paradoxech, přičemž ten čtvrtý je velmi vágní, pojďme si představit první tři.
 
-\begin{paradox}[První Zenónův paradox: Dichotomie (dělení na poloviny)]\label{paradox:zenon 1}
-	Závodíte na Olympijských hrách ve sprintu na \SI{100}{m}. Abyste uběhli \SI{100}{m}, musíte uběhnout prvních \SI{50}{m}. Pak musíte uběhnout dalších \SI{25}{m}, pak dalších \SI{12,5}{m} atd. Po $n$ krocích tohoto procesu uběhnete 
-\begin{equation*}
-	\SI{50}{m}+\SI{25}{m}+\hdots + \frac{100}{2^{n-1}}\SI{}{m} = \left(100-\frac{100}{2^{n-1}}\right)\SI{}{m} < \SI{100}{m}
-\end{equation*}
-Tedy po konečně mnoho krocích neuběhnete \SI{100}{m}. Nekonečně mnoho kroků nelze provést, tudíž nelze uběhnout \SI{100}{m}.
-\end{paradox}
-
-\begin{paradox}[Druhý Zenónův paradox: Achilles a želva]\label{paradox:zenon 2}
-	Achilles běží rychlostí \SI{1}{m/s}, želva \SI{0,1}{m/s}. Závodí spolu, přičemž želva dostane náskok \SI{9}{s}, takže když vystartuje Achilles, želva už urazila \SI{0,9}{m}. Doběhne Achilles želvu? Když Achilles urazí vzdálenost \SI{0,9}{m}, o kterou měla želva náskok, bude mu to trvat \SI{0,9}{s} a želva mezi tím urazí vzdálenost \SI{0,09}{m}. O tuto vzdálenost navíc musí Achilles dobíhat želvu, bohužel, za \SI{0,09}{s} k tomu potřebných želva urazí zase \SI{0,009}{m}. Po $n$ krocích urazí běžci vzdálenosti
-\begin{align*}
-	\text{Želva:} \quad &\SI{0,9}{m}+\SI{0,09}{m}+\hdots +9\cdot 10^{-n+1}\SI{}{m}+9\cdot 10^{-n}\SI{}{m}\\
-	\text{Achilles:} \quad &\SI{0,9}{m}+\SI{0,09}{m}+\hdots +9\cdot 10^{-n+1}\SI{}{m}
-\end{align*}
-a tudíž Achilles želvu nikdy nedoběhne.
-\end{paradox}
-
-\begin{paradox}[Třetí Zenónův paradox: Letící šíp]\label{paradox:zenon 3} Představme si letící šíp. Šíp letí nějaký čas, který se skládá z jednotlivých momentů. V každém jednotlivém momentu šíp neurazí žádnou vzdálenost. Tudíž šíp za celkový čas nemůže urazit žádnou vzdálenost. Pohyb je nemožný. 
-\end{paradox}
-
-Všechny tři paradoxy rozdělují pohyb na nekonečně mnoho dílčích částí a pak tvrdí, že na realizaci \uv{pohybu} bychom nějak museli těchto nekonečně mnoho částí složit dohromady, a že to nejde. V paradoxech \ref{paradox:zenon 1} a \ref{paradox:zenon 2} se sčítá nekonečně mnoho čísel, což se později naučíme pomocí pojmu \emph{nekonečné řady}. V paradoxu \ref{paradox:zenon 3} se sčítá \uv{nulový pohyb} přes všechny momenty v čase, a tvrdí se, že se nemůže nasčítat na nenulový pohyb. My se to ale naučíme: této operaci se říká \emph{integrál}.
-
-%TODO: fancy font na vedce/filosofy
-
-Problém zmraženého šípu (a tímpádem příkladu \ref{eq: 0/0}) vyřešil Isaac Newton. On si představoval, že šíp sleduje na \emph{velmi malém časovém intervalu}, v rámci kterého se rychlost téměř nemění. Pokud je rychlost téměř konstantní, vracíme se k Příkladu \ref{pr:x(t)=vt+x_0} a tam vzoreček \ref{eq:rychlost zš} fungoval. Dopustíme se chyby, ale čím menší interval budeme uvažovat, tím menší bude chyba. Zkusme to!
+Problém vyřešil Isaac Newton. On si představoval, že šíp sleduje na \emph{velmi malém časovém intervalu}, v rámci kterého se rychlost téměř nemění. Pokud je rychlost téměř konstantní, vracíme se k Příkladu \ref{pr:x(t)=vt+x_0} a tam vzoreček \ref{eq:rychlost zš} fungoval. Dopustíme se chyby, ale čím menší interval budeme uvažovat, tím menší bude chyba. Zkusme to!
 
 \begin{příklad}[Pokračování Příkladu \ref{pr:x(t)=t^2}]
   \begin{align*}
@@ -81,7 +56,7 @@ Problém zmraženého šípu (a tímpádem příkladu \ref{eq: 0/0}) vyřešil I
   a říkáme mu \emph{derivace funkce $x(t)=t^{2}$ v bodě $t=3$.} Derivace značíme čárkou, píšeme $x'(3)=6.$
 \end{příklad}
 
-Základní myšlenka tedy spočívá v tom, že funkci $x(t)$ na malém časovém intervalu aproximujeme afinní funkcí $v\cdot t+x_0$ s snažíme se odhadnout parametr $v.$ Nejlepší možná aproximace funkce afinní funkcí nám dá \emph{tečnu ke grafu} dané funkce. Z tohoto soudku k pojmu derivace přišel Gottfried Wilhelm Leibniz, který pro derivace používal zápis $\frac{dx}{dt}(3)=6.$
+Základní myšlenka tedy spočívá v tom, že funkci $x(t)$ na malém časovém intervalu okolo bodu $t$ aproximujeme afinní funkcí $x_0+v\cdot t$ a snažíme se nastavit parametry $x_0$ a $v$ tak, aby aproximace byla co nejlepší.
 
 %TODO: obrazek tecny ke grafu
 

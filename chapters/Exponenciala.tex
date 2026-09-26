@@ -1,4 +1,5 @@
 \chapter{Exponenciální růst}
+V následujících dvou kapitolách si představíme základní funkce $\exp, \sin, \cos$, které jistě už znáte. Narozdíl od SŠ (a i většiny kurzů na VŠ) si je ale \uv{nevycucáme z prstu}, ale systematicky odvodíme jako řešení diferenciálních rovnic. Z příslušných rovnic pak vyčteme všechny vlastnosti těchto funkcí.
 
 \section{Bakterie, radioaktivita, tranzistory, Gangnam Style a rozpínání vesmíru}
 
@@ -232,6 +233,7 @@ První zkuste ansatz $x(t)=\exp(\lambda t).$ Pak zkuste substituci $y(t):= \exp(
 Prvně zkuste ansatz $\exp(\lambda t),$ a pak vymyslete substituci takovou, která vám dá zbytek řešení. Alternativně můžete řešení uhádnout a ověřit, že je řešením.
 \end{úloha}
 
+\newpage
 \section{Zavedení funkce ln}
 \begin{definice}[Inverzní funkce]
   Nechť $f\colon A\to B$ je bijekce. Funkce k ní inverzní je taková funkce $f^{-1}\colon B\to A,$ že platí
@@ -267,32 +269,26 @@ Prvně zkuste ansatz $\exp(\lambda t),$ a pak vymyslete substituci takovou, kter
 \end{náčrt důkazu}
 
 \begin{úloha}
-	$(\ln(x^{3}+5))=\ ?$
+	$(\ln(x^{3}+5))'=\ ?$
 \end{úloha}
 
 \begin{úloha}
-  $(\ln(f(x)))'=\ ?$
-\end{úloha}
-
-\begin{příklad}
-Vyřešte úlohu
+Vyřešte pomocí substituce $y(t):= \ln(x(t))$ úlohu
 \begin{align*}
 	x'(t) &= 3x(t) \\
-	x(0) &= 4
+	x(0) &= 4.
 \end{align*}
-pomocí substituce $y(t):= \ln(x(t)).$
-\end{příklad}
+\end{úloha}
 
-\begin{příklad}
-Najděte co nejvíc řešení
+\begin{úloha}
+Najděte pomocí substituce $y(t):=\ln(x(t))$ co nejvíc řešení rovnice
 \begin{align*}
-	x''(t)-2x'(t)+x(t) &= 0 \\
+	x''(t)-2x'(t)+x(t) &= 0. \\
 \end{align*}
-pomocí substituce $y(t):=\ln(x(t)).$
-\end{příklad}
+\end{úloha}
 
 \begin{příklad}[Poločas přeměny]
-  Počet jader $N(t)$ radioaktivního materiálu, které se v čase $t$ dosud nepřeměnily, splňuje
+  Počet jader $N(t)$ radioaktivního materiálu, které se v čase $t$ dosud nepřeměnila, splňuje
   \begin{align*}
   	N'(t) &= -\lambda N(t)\\
   	N(0) &= N_0
