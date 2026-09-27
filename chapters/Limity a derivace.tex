@@ -343,6 +343,17 @@ Dále definujeme druhou, třetí, $\hdots, n$-tou derivaci rekurzivně
 \end{equation*}
 \end{příklad}
 
+\begin{věta}[Existence derivace implikuje spojitost]
+	Pokud $f$ má v bodě $x$ derivaci, je v tomto bodě spojitá.
+\end{věta}
+\begin{důkaz}
+	\begin{align*}
+		\lim_{h\to 0}f(x+h) &= f(x)+\lim_{h\to 0}\left(\frac{f(x+h)-f(x)}{h}h\right) \\
+				    &= f(x)+ \lim_{h\to 0}\left(\frac{f(x+h)-f(x)}{h}\right)\lim_{h\to 0}h \\
+				    &= f(x) + f'(x)\cdot 0 = f(x)
+	\end{align*}
+\end{důkaz}
+
 Dále nás bude zajímat, jak se derivace chovají, když funkce sčítáme a násobíme. Asi nás nepřekvapí, že bude platit $(f+g)'=f'+g'.$ Na první pohled ale není jasné, jak má vyjít $(fg)'$. Představme si, že prodáváme chleba, a za jeden týden prodáme \SI{300}{kg} chleba za \SI{100}{Kč/kg}. Další týden prodáme o \textcolor{red}{\SI{5}{kg}} chleba víc a zdražíme ho o \textcolor{blue}{\SI{10}{Kč/kg}}. O kolik víc vyděláme? Samozřejmě odpověď je triviální, ale pojďme ji spočítat přibližně bez toho, aniž bychom přímo násobili $305\times 110$. Za chleba navíc bychom (při staré ceně) vydělali $\textcolor{red}{\SI{5}{kg}}\times\SI{100}{Kč/kg}$ a zdražením (při původní kiláži prodaného chleba) bychom vydělali $\SI{300}{kg}\times\textcolor{blue}{\SI{10}{Kč}},$ tedy změna výdělku jde aproximovat jako
 \begin{equation*}
 	\SI{300}{kg}\times\textcolor{blue}{\SI{10}{Kč}}+\textcolor{red}{\SI{5}{kg}}\times\SI{100}{Kč/kg}
@@ -356,9 +367,8 @@ Obecně vznikne tento vzorec následovně: pro dvě funkce $f,g$ vyčíslené v 
 	(fg)(x+h)    &\approx (fg)(x) + h\left[(fg)'(x)\right] \\
 	\Rightarrow  (fg)'(x) &= f(x)\textcolor{red}{g'(x)}+\textcolor{blue}{f'(x)}g(x)
 \end{align*}
-Chyba, které jsme se dopustili, je řádově $h^{2}$, a tudíž je zanedbatelná (v limitě zmizí).
+Chyba, které jsme se dopustili, je řádově $h^{2}$, a tudíž je zanedbatelná.
 
-\newpage
 \begin{věta}[Derivace součtu, součinu a násobku]
   Nechť $f,g\colon (a,b)\to \mathbb{R},\ x\in (a,b), \alpha\in \mathbb{R}$. Pak platí
   \begin{align}
@@ -382,12 +392,6 @@ Chyba, které jsme se dopustili, je řádově $h^{2}$, a tudíž je zanedbateln�
 		  &=\lim_{h\to 0}f(x+h)\frac{g(x+h)-g(x)}{h}+\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}g(x)\\
 		  &=(\lim_{h\to 0}f(x+h))\left(\lim_{h\to 0}\frac{g(x+h)-g(x)}{h}\right)+\left(\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\right)g(x)\\
 		  &= f(x)g'(x)+f'(x)g(x)
-  \end{align*}
-  Využili jsme toho, že pokud $f$ má v $x$ derivaci, je tam spojitá. To plyne z výpočtu
-  \begin{align*}
-	  \lim_{h\to 0}f(x+h) &= f(x)+\lim_{h\to 0}\left(\frac{f(x+h)-f(x)}{h}h\right) \\
-			      &= f(x)+ \lim_{h\to 0}\left(\frac{f(x+h)-f(x)}{h}\right)\lim_{h\to 0}h \\
-			      &= f(x) + f'(x)\cdot 0 = f(x)
   \end{align*}
   Rovnost \ref{eq:derivace nasobku} plyne z \ref{eq:derivace soucinu}, pokud za $g$ vezmeme konstantní funkci.
 \end{důkaz}

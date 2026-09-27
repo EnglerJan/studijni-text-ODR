@@ -1,8 +1,44 @@
-\chapternotnumbered{Úvod}\label{ch:Úvod}
+\chapternotnumbered{Pozor, nebezpečí}
 
-V rukou (nebo elektronickém zařízení) držíte studijní text k přednáškám o diferenciálních rovnicích, určen zdatnějším studentům středních škol, kteří alespoň umí řešit rovnice a pracovat se základními funkcemi.
+V rukou (nebo elektronickém zařízení) držíte studijní text k přednáškám o diferenciálních rovnicích, určen zdatnějším studentům středních škol, kteří umí řešit rovnice, práci se základními funkcemi, komplexní čísla a vektory. Text je hlavně určený pro to, abych z něho učil, a aby studenti měli referenci na to, co jsme už udělali a co budeme dělat. Není to určeno pro samostudium, z několika důvodů
+\begin{enumerate}
+	\item Každý student má jiné vstupní znalosti, takže nelze pokrýt všechny prerekvizity
+	\item Nechce se mi všechno sepisovat do detailu a kreslit všechny obrázky. Samozřejmě při výkladu na tabuli obrázky kreslím a vysvětluju věci detailně.
+	\item Nechce se mi sepisovat řešení všech úloh. Úlohy dám studentům na řešení, aby se taky nad něčím potrápili. Až si nebudou vědět rady, poradím jim.
+\end{enumerate}
+Pokud se chystáte tento text i tak číst jako samostudium, vězte, že
+\begin{enumerate}
+	\item Výklad se skládá hlavně z definic a důkazů. Na pochopení textu musíte znát základní logické spojky \uv{ne}, \uv{a}, \uv{nebo}, \uv{protože}, \uv{právě tehdy když}, kvantifikátory $\forall$ a $\exists$, a ovládat důkaz sporem.
+	\item Zároveň byste měli znát středoškolskou fyziku, abyste rozuměli velké řadě příkladů. Je částečně sporné, jestli se jedná o studijní text z matematiky nebo fyziky. Já se snažím tento umělý rozdíl, vytvořený tím jak jsou (nelogicky) vyučované přeměty na všech úrovních studia, zamazat. Taky se nebojíme fašovat do chemie, epidemiologie, a analýzy virálních YouTube videí z roku 2012.
+	\item Jsou tu úlohy a příklady. Úlohy máte řešit sami, příklady jsou řešené v textu. Je to pro mě, abych si napsal jak vzorově něco řešit, když je to důležité -- u většiny příkladů je (pro mě) řešení jasné a nemusím si ho psát. Na druhou stranu si nemyslím, že někdo kdo se s těmito tématy setkává poprvé dokáže všechny úlohy vyřešit sám. Úlohy jsou i přesto koncipované tak, že na sebe navazují, takže nekonečně inteligentní čtenář by si s tím měl umět poradit.
+\end{enumerate}
+Nad psaním tohoto textu jsem strávil o řád nebo dva více času, než jsem čekal. Proto bych byl hrozně rád, kdyby ho někdo přečetl a dal mi zpětnou vazbu (z řad těch, co umí diferenciální rovnice, i z řad těch, co se to tady poprvé učí). To i přes to, že jsem Vám v minulém odstavci vyjmenovával důvody, proč byste to neměli číst.
 
-%TODO: napsat uvod
-\begin{itemize}
-\item \Nref{ch:Tips}
-\end{itemize}
+Diferenciální rovnice jsou ta nejúžasnější věc, co můžete studovat. Kdekoliv se něco mění, má nějaký vnitřní mechanismus, je tam diferenciální rovnice. Proto bych chtěl toto téma zpřístupnit co nejvíce lidem. V budoucnu bych rád natočil sérii videopřednášek určených pro širší publikum (které nemá trpělivost na třístránkové důkazy o tom, že funkce sinus je periodická). Nejspíše ta videa budou ale, narozdíl od tohoto textu, anglicky. Bohužel ještě netuším, jak výklad podat srozumitelně bez všech formalit. Problém je, že v průběhu studia na ZŠ/SŠ/VŠ se učí spousta nesmyslů, jako například \uv{najdi všechna řešení nerovnice}
+\begin{equation*}
+  \sqrt{x-3}+\sqrt{62x-5}<123
+\end{equation*}
+a pak nezbývá čas na zajímavé (a důležité!) věci, jako proč planety obíhají kolem Slunce zrovna po elipsách, nebo jak dlouho budu střízlivět po náročné sobotní párty, nebo proč na začátku každé pandemie budou všechny zpravodajství strašit s tím, že nárůst nakažených je exponenciální, když to je naprostý nesmysl.
+
+Předměty na SŠ se tak stávají samoúčelné a každý si učí něco jiného. Místo toho, aby se v prváku vysvětlilo, co je derivace, a z toho počítala kinematika a dynamika, pletou se hlavy studentů nesmyslnými formulacemi typu
+\begin{center}
+  Rychlost hmotného bodu je rovna dráze, kterou hmotný bod urazí za jednu sekundu.
+\end{center}
+
+Klasický protiargument je: středoškoláci jsou moc hloupí na to, aby pochopili, co je derivace. 
+
+Opravdu? Tak proč je učíme rychlost, zrychlení, zákon elektromagnetické indukce? Vždyť tomu nemůžou rozumět... A pokud je ten problém, že 15letý člověk má nějaký mentální blok proti pochopení co je derivace (opravdu nemá...), jak to je na vysokých školách?
+
+Není to o nic lepší. Taky tam jsou matematika a fyzika vyučovaná jako oddělené předměty, a zatímco matematici zavádí všechno naprosto precizně, neukazují aplikace jejich výsledků, fyzici ukazují aplikace, ale před tím nevysvětlí pořádně základní pojmy, a pak člověk tápe nad tím, jestli z druhého Newtonova zákona jde odvodit první Newtonův zákon (nejde!) Pamatuju si, když nám v matematice zavedli distribuce a řekli, že distribuce nejdou konzistentně násobit. Další týden na přednášce elektrodynamiky jsme násobili distribuce.
+
+Musím tedy odstranit všechen přebytečný balast a nechat jen to, na čem záleží, a zatím nevím, jak na to.
+
+Strávil jsem nespočet hodin nad těmito tématy a myslím, že jsem si (ty elementární věci) uspořádal v hlavě. Kdo má zájem, ať čte dál.
+
+Děkuji Jonášovi Dujavovi za \LaTeX ový template. Link: \href{https://github.com/jdujava}{https://github.com/jdujava}
+
+Přeji příjemné večery strávené nad tímto textem.
+\begin{flushright}
+Engler Jan\\
+Kontakt: \texttt{hockye@seznam.cz}
+\end{flushright}
