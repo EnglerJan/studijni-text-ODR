@@ -36,7 +36,7 @@ Problém je, že vzoreček \ref{eq:rychlost zš} udává \emph{průměrnou rychl
   \frac{\Delta x}{\Delta t} = \frac{x(t)-x(t)}{0}=\frac{0}{0}
 \end{equation}
 
-Problém vyřešil Isaac Newton. On si představoval, že šíp sleduje na \emph{velmi malém časovém intervalu}, v rámci kterého se rychlost téměř nemění. Pokud je rychlost téměř konstantní, vracíme se k Příkladu \ref{pr:x(t)=vt+x_0} a tam vzoreček \ref{eq:rychlost zš} fungoval. Dopustíme se chyby, ale čím menší interval budeme uvažovat, tím menší bude chyba. Zkusme to!
+Problém vyřešil Isaac Newton. On si představoval, že šíp sleduje na \emph{velmi malém časovém intervalu}, v rámci něhož se rychlost moc nemění. Pokud je rychlost téměř konstantní, vracíme se k Příkladu \ref{pr:x(t)=vt+x_0} a tam vzoreček \ref{eq:rychlost zš} fungoval. Dopustíme se chyby, ale čím menší interval budeme uvažovat, tím menší bude chyba. Zkusme to!
 
 \begin{příklad}[Pokračování Příkladu \ref{pr:x(t)=t^2}]
   \begin{align*}
@@ -53,27 +53,37 @@ Problém vyřešil Isaac Newton. On si představoval, že šíp sleduje na \emph
   a říkáme mu \emph{derivace funkce $x(t)=t^{2}$ v bodě $t=3$.} Derivace značíme čárkou, píšeme $x'(3)=6.$
 \end{příklad}
 
-Základní myšlenka tedy spočívá v tom, že funkci $x(t)$ na malém časovém intervalu okolo bodu $t$ aproximujeme afinní funkcí $x_0+v\cdot t$ a snažíme se nastavit parametry $x_0$ a $v$ tak, aby aproximace byla co nejlepší.
+Obecně definujeme derivaci funkce $f$ v bodě $x$
+\begin{equation*}
+	f'(x):= \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}
+\end{equation*}
+Pak platí
+\begin{align*}
+	f'(x) &\approx \frac{f(x+h)-f(x)}{h} \\
+	\Rightarrow f(x+h)&\approx f(x)+hf'(x) \quad \text{a aproximace je tím lepší, čím lepší je }h
+\end{align*}
+Například
+\begin{equation*}
+	(3+h)^{2}\approx 9+6h
+\end{equation*}
 
-%TODO: obrazek tecny ke grafu
+\begin{úloha}
+Nakreslete bod $(3,9),$ grafy funkcí $f(x)=x^{2}$ a $g(x)=9+6(x-3).$ Co vidíte? Umíte to zopakovat pro bod $(x_0,x_0^{2})?$ Jak to souvisí s tím, kde je funkce klesající, roustoucí a kde nabývá minima?
+\end{úloha}
 
 \newpage
 \section{Limity}
 V této sekci si zavedeme derivace a naučíme se je počítat. Před tím nás ale čekají přípravné práce.
 \begin{definice}[Funkce] 
 
-\begin{enumerate}[(\alph*)]\leavevmode
-	\item Funkce (= zobrazení) se skládá z následujících dat:
-	\begin{itemize}
-		\item Množiny $A$, zvané \emph{definiční obor},
-		\item Množiny $B$, zvané \emph{obor hodnot},
-		\item Pravidla, které každému prvku $a\in A$ přiřadí právě jeden prvek $f(a)\in B$. Tomuto pravidlu říkáme předpis funkce.
-	\end{itemize}
-	Značení $f\colon A\to B$ znamená, že $A$ je definiční obor funkce $f$ a $B$ je její obor hodnot.
-	\item $f$ je injektivní (prostá), pokud $\forall a_1,a_2\in A\colon f(a_1)=f(a_2)\Rightarrow a_1=a_2,$
-	\item $f$ je surjektivní (na), pokud $\forall b\in B\ \exists a\in A\colon f(a)=b.$
-	\item $f$ je bijekce, pokud je injektivní i surjektivní.
-\end{enumerate}
+\leavevmode
+Funkce (= zobrazení) se skládá z následujících dat:
+\begin{itemize}
+	\item Množiny $A$, zvané \emph{definiční obor},
+	\item Množiny $B$, zvané \emph{obor hodnot},
+	\item Pravidla, které každému prvku $a\in A$ přiřadí právě jeden prvek $f(a)\in B$. Tomuto pravidlu říkáme předpis funkce.
+\end{itemize}
+Značení $f\colon A\to B$ znamená, že $A$ je definiční obor funkce $f$ a $B$ je její obor hodnot.
 \end{definice}
 \newcommand{\Leden}{\textnormal{Leden}}
 \newcommand{\Unor}{\textnormal{Únor}}
@@ -87,7 +97,7 @@ V této sekci si zavedeme derivace a naučíme se je počítat. Před tím nás 
 		f(\Brezen)&=31 \\
 			 &\vdots
 	\end{align*}
-Funkce $f\colon A\to B$ udává počet dnů v měsíci v nepřestupném roce. Není daná žádným matematickým vzorečkem, její definiční obor neobsahuje čísla. Je surjektivní, není injektivní.
+Funkce $f\colon A\to B$ udává počet dnů v měsíci v nepřestupném roce. Není daná žádným matematickým vzorečkem, její definiční obor neobsahuje čísla.
 \end{příklad}
 
 \begin{definice}[Limita funkce] \label{def:Limita funkce}
@@ -168,7 +178,7 @@ Pozor, na odhad členu $|x-3|$ jsme využili $\delta\leq \frac{\epsilon}{7}$ a n
 \begin{důkaz}
 	Zvolme $\delta:=\min\{\frac{\epsilon}{7},1\}.$ Pak platí
 \begin{equation*}
-  \forall x\in \mathbb{R}\colon |x-3|<\delta \Rightarrow |x+3|<7
+  \forall x\in \mathbb{R}\colon |x-3|<\delta \Rightarrow |x+3|<6+\delta\leq 7
 \end{equation*}
 Takže
 \begin{equation*}
@@ -314,11 +324,11 @@ Pokud navíc $M\neq 0,$ existuje limita i pro $\frac{f}{g}$ a platí
   \begin{equation*}
 	  f'(x) := \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}
   \end{equation*}
-  Pokud existuje $f'(x)$ pro všechna $x\in (a,b)$, značíme odpovídající funkci $f'$ nebo také $\tfrac{df}{dx}:= f'.$\par
-Dále definujeme druhou, třetí, $\hdots, n$-tou derivaci rekurzivně
-  \begin{equation*}
-	   f'':=(f')',\ f^{(3)}:=(f'')',\ \hdots, f^{(n)}:=(f^{(n-1)})'.
-  \end{equation*}
+Také značíme $\frac{df}{dx}(x)=f'(x).$ Dále definujeme derivace vyšších řádů
+\begin{alignat*}{5}
+	f''&:=(f')',\ &f^{(3)}&:=(f'')',\ \hdots, &f^{(n)}&:=(f^{(n-1)})', \\
+	\text{nebo taky}\quad \frac{d^{2}f}{dx^{2}}&:=f'',\ &\frac{d^{3}f}{dx^{3}}&:=f^{(3)},\ \hdots, &\frac{d^{n}f}{dx^{n}}&:=f^{(n)}.
+  \end{alignat*}
 \end{definice}
 
 \begin{úloha}
@@ -398,7 +408,7 @@ Chyba, které jsme se dopustili, je řádově $h^{2}$, a tudíž je zanedbateln�
 
 \begin{důsledek}
 \begin{equation*} 
-(a_nx^n+a_{n-1}x^{n-1}+\hdots+a_1x+a_0)'=na_nx^{n-1}+(n-1)a_{n-1}x^{n-2}+\hdots + a_1
+(a_nx^n+a_{n-1}x^{n-1}+\hdots+a_1x+a_0)'=na_nx^{n-1}+(n-1)a_{n-1}x^{n-2}+\hdots + a_1.
 \end{equation*}
 \end{důsledek}
 
@@ -495,7 +505,7 @@ Vidíme, že ač za definiční obor pro $f(x)=\sqrt{x}$ můžeme vzít $[0,\inf
 	  \item $f$ je na $A$ rostoucí, pokud $\forall y,z\in A\colon y<z \Rightarrow  f(y)<f(z),$
 	  \item $f$ je na $A$ klesající, pokud $\forall y,z\in A\colon y<z \Rightarrow  f(y)>f(z),$
 	  \item $f$ má na $A$ minimum v bodě $x$, pokud $\forall y\in A\colon f(x)\leq f(y).$ Značíme ho $\min_{y\in A}f(y):=f(x),$
-	  \item $f$ má na $A$ maximum v bodě $x$, pokud $\forall y\in A\colon f(x)\geq f(y)$ Značíme ho $\max_{y\in A}f(y):=f(x),$
+	  \item $f$ má na $A$ maximum v bodě $x$, pokud $\forall y\in A\colon f(x)\geq f(y).$ Značíme ho $\max_{y\in A}f(y):=f(x),$
 	  \item $f$ má na $A$ lokální minimum v bodě $x$, pokud existuje $\epsilon>0$ takové, že $\forall y\in(x-\epsilon,x+\epsilon)\cap A\colon f(x)\leq f(y),$
 	  \item $f$ má na $A$ lokální maximum v bodě $x$, pokud existuje $\epsilon>0$ takové, že $\forall y\in(x-\epsilon,x+\epsilon)\cap A\colon f(x) \geq f(y),$
 	  \item $f$ má na $A$ lokální extrém v bodě $x$, pokud v něm má lokální minimum nebo lokální maximum.

@@ -780,6 +780,9 @@ INPUT chapters/Integral.aux
 INPUT ./chapters/Linearni rovnice.aux
 INPUT ./chapters/Linearni rovnice.aux
 INPUT chapters/Linearni rovnice.aux
+INPUT ./chapters/Separace promennych.aux
+INPUT ./chapters/Separace promennych.aux
+INPUT chapters/Separace promennych.aux
 INPUT ./chapters/Numericke reseni.aux
 INPUT ./chapters/Numericke reseni.aux
 INPUT chapters/Numericke reseni.aux
@@ -811,11 +814,6 @@ INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/czech.lbx
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/czech.lbx
 INPUT /usr/local/texlive/2025/texmf-dist/tex/latex/biblatex/lbx/czech.lbx
 OUTPUT thesis.bcf
-INPUT thesis.bbl
-INPUT ./thesis.bbl
-INPUT ./thesis.bbl
-INPUT ./thesis.bbl
-INPUT thesis.bbl
 INPUT /usr/local/texlive/2025/texmf-dist/tex/generic/colorprofiles/sRGB.icc
 INPUT ./frontmatter/title.tex
 INPUT ./frontmatter/title.tex
@@ -924,6 +922,12 @@ OUTPUT chapters/Linearni rovnice.aux
 INPUT ./chapters/Linearni rovnice.tex
 INPUT ./chapters/Linearni rovnice.tex
 INPUT chapters/Linearni rovnice.tex
+INPUT ./chapters/Separace promennych.tex
+INPUT ./chapters/Separace promennych.tex
+OUTPUT chapters/Separace promennych.aux
+INPUT ./chapters/Separace promennych.tex
+INPUT ./chapters/Separace promennych.tex
+INPUT chapters/Separace promennych.tex
 INPUT ./chapters/Numericke reseni.tex
 INPUT ./chapters/Numericke reseni.tex
 OUTPUT chapters/Numericke reseni.aux
@@ -994,6 +998,9 @@ INPUT chapters/Integral.aux
 INPUT ./chapters/Linearni rovnice.aux
 INPUT ./chapters/Linearni rovnice.aux
 INPUT chapters/Linearni rovnice.aux
+INPUT ./chapters/Separace promennych.aux
+INPUT ./chapters/Separace promennych.aux
+INPUT chapters/Separace promennych.aux
 INPUT ./chapters/Numericke reseni.aux
 INPUT ./chapters/Numericke reseni.aux
 INPUT chapters/Numericke reseni.aux

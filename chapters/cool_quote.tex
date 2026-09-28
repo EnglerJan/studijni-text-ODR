@@ -50,3 +50,63 @@ Všechny tři paradoxy rozdělují pohyb na nekonečně mnoho dílčích část�
 \end{enumerate}
 Teoretická analýza je úzce provázaná s vývojem numerických metod. Například pokud chci mluvit o tom, že přibližné řešení je \uv{blízko} skutečnému řešení, potřebuji existenci a jednoznačnost skutečného řešení. Pokud rovnice není stabilní, to jest dvě blízká řešení se průběhem času vzdalují, musíme na to dávat pozor v numerickém řešení, protože to pravděpodobně znamená, že s časem bude růst chyba aproximace. Pokud počítám pohyb hmotného bodu, při kterém se zachovává energie, chci použít numerickou metodu, která tento požadavek respektuje.
 
+
+
+
+\begin{definice}[Kuželosečka]
+  \item Rovina je množina bodů $(x,y,z)\in \mathbb{R}^{3}$ taková, že $ax+by+cz=d$ pro nějaké $a,b,c,d\in \mathbb{R}.$ Půdorysna je rovina s rovnicí $z=0.$
+  \item Kuželová plocha je množina bodů $(x,y,z)\in \mathbb{R}^{3}$ taková, že $z^{2}=k^{2}(x^{2}+y^{2})$ pro nějaké $k>0.$ Povrchové přímky kuželu jsou přímky, které náleží kuželové ploše.
+  \item Kuželosečka je průsečík kuželové plochy s rovinou.
+\end{definice}
+
+Z definice plyne, že kuželosečka slňuje
+\begin{align*}
+	cz&=d-ax-by \\
+	\Rightarrow  k^{2}\alpha^{2}(x^{2}+y^{2})&=(d-ax-by)^{2}
+\end{align*}
+a naopak by šlo ukázat, že množina řešení jakékoliv rovnice tvaru
+\begin{equation*}
+  a_0x^{2}+a_1xy+a_2y^{2}+a_3x+a_4y+a_5=0
+\end{equation*}
+je buď prázdná, nebo se dá vyjádřit jako kuželosečka. Zatím ale není jasné, co geometricky znamenají koeficienty $a_0,\hdots,a_5.$ Pojďme na tom zapracovat.
+
+\begin{věta}[Dandelin-Queteletova věta]
+	Mějme kuželovou plochu $\mathcal{P}$ a rovinu $\rho$. Označme $\alpha$ úhel, který svírá $\rho$ s půdorysnou, a $\beta$ úhel, který svírájí povrchové přímky $\mathcal{P}$ s půdorysnou. Prvně předpokládejme $\alpha\neq \beta.$ Sestrojme obě koule $\kappa_1,\kappa_2$ vepsané $\mathcal{P}$ a $\rho$. Body doteku koulí s rovinou $\rho$ nazvěme $F_1, F_2.$ Průnik koulí a roviny jsou dvě kružnice $k_1:=\kappa_1\cap\rho,\ k_2:=\kappa_2\cap\rho$. Zvolme libovolnou povrchovou přímku $p\subset \mathcal{P}$ a označme $P_1:=p\cap k_1,\ P_2:=p\cap k_2,\ 2a:=|P_1P_2|.$ Pak platí:
+  \begin{enumerate}[(i)]
+	  \item Pokud $\alpha<\beta,$ každý bod $X$ na kuželosečce $\mathcal{P}\cap \rho$ splňuje
+\begin{equation*}
+	|XF_1|+|XF_2|=2a \qquad (\text{elipsa})
+\end{equation*}
+	\item Pokud $\alpha>\beta,$ každý bod $X$ na kuželosečce $\mathcal{P}\cap \rho$ splňuje
+\begin{equation*}
+	||XF_1|-|XF_2||=2a \qquad (\text{hyperbola})
+\end{equation*}
+\end{enumerate}
+Pokud $\alpha=\beta$, můžeme sestrojit jen jednu vepsanou kouli $\kappa$, $F:=\kappa\cap\rho,$ $k:=\kappa\cap \mathcal{P}$. Nechť $\pi$ je rovina určená kružnicí $k$, označme průsečnici rovin $d:=\pi\cap \rho.$ Pak každý bod na kuželosečce $\mathcal{P}\cap \rho$ splňuje
+\begin{equation*}
+	|XF|=|Xd| \qquad (\text{parabola})
+\end{equation*}
+\end{věta}
+\begin{Todo}
+  obrazek
+\end{Todo}
+\begin{důkaz}
+  Použijeme pozorování, že pro kružnici $k$ a bod $X$ vně $k$ můžeme sestrojit dvě tečny ke $k$ procházející bodem $X$, a body doteku tečen s kružnicí $P_1, P_2$ splňují
+  \begin{equation}\label{eq:tecny}
+    |PP_1|=|PP_2|
+  \end{equation}
+  Dokazujme bod (i). Pro bod $X$ na kuželosečce označme $p^X\subset \mathcal{P}$ povrchovou přímku, která prochází bodem $X$. Označme $P_1^X:=p^X\cap k_1,\ P_2^X:=p^X\cap k_2.$ Definujme $2a:=|P_1^XP_2^X|.$ Z \ref{eq:tecny} plyne
+  \begin{equation*}
+    |XF_1|=|XP_1^X|,\ |XF_2|=|XP_2^X|  
+\end{equation*}
+  Na druhou stranu z rotační symetrie $\mathcal{P}$ a $k_1,k_2$ plyne 
+  \begin{equation*}
+    \forall X\in \mathcal{P}\cap \rho\colon\ |P_1^XP_2^X|=|P_1P_2|=2a,
+  \end{equation*}
+  takže
+  \begin{equation*}
+    |XF_1|+|XF_2|=|XP_1^X|+|XP_2^X|=|P_1^XP_2^X|=2a.
+  \end{equation*}
+  Bod (ii) se ukáže stejně, akorát $|P_1^XP_2^X|=||XP_1^X|-|XP_2^X||.$
+  Ukažme (iii). 
+\end{důkaz}

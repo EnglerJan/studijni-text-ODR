@@ -49,9 +49,9 @@ Ze skušenosti víme, že kmitání pružiny je periodické. Tuto vlastnost bude
 
   Závaží se vrátí do rovnovážné polohy, tedy $\exists t^{**}>t^{*}\colon x(t^{**})=0.$
 
-  Situace v čase $t^{**}$ je podobná jako v čase $0$, jen rychlost míří opačným směrem, uděláme proto oblouček opačným směrem.
+  Situace v čase $t^{**}$ je podobná jako v čase $0$, jen rychlost míří opačným směrem, uděláme proto oblouček opačným směrem. V nějakém čase $t^{***}>t^{**}$ se vrátíme do rovnovážné polohy $x(t^{***})=0.$
 
-  Níže si dokážeme, že naše kvalitativní analýza je správně. Mimo jiné i zjistíme, že $t^{*}=2t^{*},\ x(t^{*})=1,\ x'(t^{**})=-x'(0),\ x(t+2t^{**})=x(t),\ \hdots,\ $ což z kvalitativní analýzy nejde vidět. Navíc číslo $t^{**}$ už dobře znáte -- je to \emph{Ludolfovo číslo} $\pi$.
+  Níže si dokážeme, že naše kvalitativní analýza je správně. Mimo jiné i zjistíme, že $t^{*}=2t^{*},\ x(t^{*})=1,\ x'(t^{**})=-x'(0),\ x(t+2t^{**})=x(t),\ \hdots,\ $ což zatím nejde vidět. Z toho pak plyne, že při druhém návratu do rovnovážné polohy v čase $t^{***}$ se začne závaží pohybovat stejně, jak v čase 0. Děj je tedy periodický s periodou $t^{***},$ a navíc $t^{***}=2t^{**}.$ Číslo $t^{**}$ už dobře znáte -- je to \emph{Ludolfovo číslo} $\pi$.
 \end{poznámka}
 
 \begin{úloha}\label{ul:harmonicky oscilator}
@@ -76,7 +76,7 @@ Ze skušenosti víme, že kmitání pružiny je periodické. Tuto vlastnost bude
 		$\sin(\frac{\pi}{2})=1,\ \sin(\pi)=0,\ \sin(\frac{3\pi}{2})=-1,\ \sin(2\pi)=0$ \\
 		$\cos(\frac{\pi}{2})=0,\ \cos(\pi)=-1,\ \cos(\frac{3\pi}{2})=0,\ \cos(2\pi)=1$
 	\begin{Todo}
-	  zarovnat
+	  zarovnat, prejmenovat x,y,x,y -> x,y,z,w
 	\end{Todo}
 	\item $\sin, \cos$ jsou periodické funkce s periodou $2\pi.$
 \end{enumerate}
@@ -90,7 +90,7 @@ Ze skušenosti víme, že kmitání pružiny je periodické. Tuto vlastnost bude
   \end{alignat*}
 Z \PL ovy věty plyne, že $(\sin(t))'=\cos(t).$ Druhý vztah se ukáže analogicky.
 
-Dokažme bod (iii). Označme $x(t):=\sin(t+s).$ Efektivně to znamená, že sledujeme pořád to stejné kmitání pružiny, ale zapli jsme stopky v čase $s$. Za čas $s$ se sice změnila poloha (od počáteční $\sin(0)=0$) a rychlost (od počáteční $\sin'(0)=1$), ale pořád sledujeme kmitání pružiny, takže bude popsáno kombinací funkcí $\sin$ a $\cos$ stejně, jako v úloze \ref{ul:harmonicky oscilator}. V matematických symbolech: $x(t)$ splňuje
+Dokažme bod (iii). Označme $x(t):=\sin(t+s).$ Znamená to, že sledujeme pořád to stejné kmitání, ale zapli jsme stopky v čase $s$. Za čas $s$ se sice změnila poloha a rychlost, ale pořád sledujeme to stejné kmitání, takže bude popsáno kombinací funkcí $\sin$ a $\cos$ stejně, jako v úloze \ref{ul:harmonicky oscilator}. V matematických symbolech: $x(t)$ splňuje
 \begin{align*}
 	x'(t)&=(\sin(t+s))'=\cos(t+s), \\
 	x''(t)&=(\cos(t+s))'=-\sin(t+s)=-x(t),
@@ -114,7 +114,7 @@ takže $x(t)$ řeší úlohu
 	x(0) &= 0 \\
 	x'(0) &= -1.
 \end{align*}
-Z \PL ovy věty plyne, že $x(t)=-\sin(t).$ Podobně se ukáže $\cos(t)=\cos(-t).$
+Z \PL ovy věty plyne, že $x(t)=-\sin(t).$ Podobně $\cos(t)=\cos(-t).$
 
 Bod (v) plyne z bodů (iii), (iv):
 \begin{equation*}
@@ -123,7 +123,7 @@ Bod (v) plyne z bodů (iii), (iv):
 
 Bod (vi) plyne z bodu (v).
 
-Dokažme body (vii) a (viii). Protože $\sin'(0)=1$ a $\sin'=\cos$ je spojitá, platí
+Dokažme body (vii) a (viii). Protože $\sin'(0)=1$ a $\sin'(t)=\cos(t)$ je spojitá, platí
 \begin{align*}
 	\lim_{t\to 0}\sin'(t)=1 \quad &\Rightarrow \quad \exists \delta>0\ \forall t\in(-\delta,\delta)\colon\ \sin'(t)>0 \\
 				      &\Rightarrow \quad \exists \delta>0\colon \sin \text{ je rostoucí na } (-\delta,\delta)
@@ -137,48 +137,18 @@ Ze spojitosti $\cos(t)$ dostáváme $\cos\left(\frac{\pi}{2}\right)=0.$ Skutečn
 \begin{equation*}
 	\sin^{2}\left(\frac{\pi}{2}\right)+\underbrace{\cos^{2}\left(\frac{\pi}{2}\right)}_{=0}=1 \quad \Rightarrow \quad \sin\left(\frac{\pi}{2}\right)=\pm 1
 \end{equation*}
-a protože $\sin$ je na $(0,\frac{\pi}{2})$ rostoucí, platí $\sin\left(\frac{\pi}{2}\right)>\sin(0)=0,$ takže $\sin\left(\frac{\pi}{2}\right)=1.$ Funkce $x(t):=\sin\left(t+\frac{\pi}{2}\right)$ tedy řeší úlohu
+a protože $\sin$ je na $(0,\frac{\pi}{2})$ rostoucí, platí $\sin\left(\frac{\pi}{2}\right)>\sin(0)=0,$ takže $\sin\left(\frac{\pi}{2}\right)=1.$ Nyní ze součtových vzorců postupně odvodíme
+\newcommand{\pia}{\frac{\pi}{2}}
 \begin{align*}
-	x''(t)+x(t) &= 0 \\
-	x(0) &= \sin\left(\frac{\pi}{2}\right)=1 \\
-	x'(0) &= \cos\left(\frac{\pi}{2}\right)=0
+	\sin(\pi) &= \sin\left(\pia\!+\!\pia\right)=\sin(\pia)\cos(\pia)\!+\!\cos(\pia)\sin(\pia)=1\!\cdot\! 0+0\!\cdot\! 1 = 0 \\
+	\cos(\pi) &= \cos\left(\pia\!+\!\pia\right)\!=\cos\left(\pia\right)\cos\left(\pia\right)\!-\!\sin\left(\pia\right)\sin\left(\pia\right)=0\!\cdot\! 0-1\!\cdot\! 1=-1 \\
+	\sin(2\pi) &= \sin(\pi\!+\!\pi)=\sin(\pi)\cos(\pi)\!+\!\cos(\pi)\sin(\pi)=0\cdot(-1)+(-1)\cdot0=0 \\
+	\cos(2\pi) &= \cos(\pi\!+\!\pi)=\cos(\pi)\cos(\pi)\!-\!\sin(\pi)\sin(\pi)=(-1)\cdot(-1)-0\cdot0=1, \\
+	\sin(t+2\pi)&=\sin(t)\cos(2\pi)\!+\!\cos(t)\sin(2\pi)=\sin(t)\cdot 1+ \cos(t)\cdot 0 = \sin(t) \\
+	\cos(t+2\pi) &= \cos(t)\cos(2\pi)\!-\!\sin(t)\sin(2\pi)=\cos(t)\cdot1-\sin(t)\cdot0 = \cos(t)
 \end{align*}
-a z \PL ovy věty plyne $\sin\left(t+\frac{\pi}{2}\right)=x(t)=\cos(t)$ (závaží je v maximu a otáčí se). Funkce $y(t):=\sin(t+\pi)$ tímpádem řeší úlohu
-\begin{align*}
-	y''(t)+y(t) &= 0 \\
-	y(0) &= \sin(\pi) \\
-	y'(0) &= \cos(\pi) \\
-\end{align*}
-Bokem si spočítejme $\sin(\pi), \cos(\pi):$
-\begin{align*}
-	\sin(\pi)&=\sin\left(\frac{\pi}{2}+\frac{\pi}{2}\right)=\sin\left(\frac{\pi}{2}\right)\cos\left(\frac{\pi}{2}\right)+\sin\left(\frac{\pi}{2}\right)\cos\left(\frac{\pi}{2}\right)=1\cdot 0+1\cdot 0 = 0 \\
-	\cos(\pi)&=\cos\left(\frac{\pi}{2}+\frac{\pi}{2}\right)=\cos\left(\frac{\pi}{2}\right)\cos\left(\frac{\pi}{2}\right)-\sin\left(\frac{\pi}{2}\right)\sin\left(\frac{\pi}{2}\right)=0\cdot0 - 1\cdot 1 =-1.
-\end{align*}
-$y(t)$ tedy řeší úlohu
-\begin{align*}
-	y''(t)+y(t) &= 0 \\
-	y(0) &= 0 \\
-	y'(0) &= -1 \\
-\end{align*}
-takže $\sin(t+\pi)=y(t)=-\sin(t)$ (teď závaží prošlo rovnovážnou polohou a začne dělat oblouček druhým směrem). Zase si bokem můžeme spočítat, že $\sin\left(\frac{3\pi}{2}\right)=-1,\ \cos\left(\frac{3\pi}{2}\right)=0,$ takže $z(t):=\sin\left(\frac{3\pi}{2}+t\right)$ řeší úlohu
-\begin{align*}
-	z''(t)+z(t) &= 0 \\
-	z(0) &= -1 \\
-	z'(0) &= 0, \\
-\end{align*}
-takže $\sin\left(t+\frac{3\pi}{2}\right)=-\cos(t)$ (závaží je v minimu, bude se vracet do rovnovážné polohy). Zase si bokem spočítáme $\sin(2\pi)=0, \cos(2\pi)=1$ a dostaneme, že funkce $w(t):=\sin(t+2\pi)$ řeší úlohu
-\begin{align*}
-	w''(t)+w(t) &= 0 \\
-	w(0) &= 0 \\
-	w'(0) &= 1
-\end{align*}
-a tudíž $\sin(t+2\pi)=w(t)=\sin(t).$ Podobně se to udělá pro $\cos(t+2\pi).$ Důkaz je hotov.
+Důkaz je hotov.
 \end{důkaz}
-
-\begin{poznámka}
-  V důkazu jsme 7krát použili \PL ovu větu. Kdybychom důkaz sepsali celý otrocky, s odpovídajícími vlastnostmi pro $\cos(t)$, použili bychom tuto větu 14krát.
-\end{poznámka}
-
 
 \section{Komplexní exponenciála}
 Zkusme rovnici $x''+x=0$ řešit způsobem stejným jako v sekci \ref{sec:zavedeni funkce exp}, ansatzem $e^{\lambda t}:$
@@ -225,11 +195,14 @@ která kombinuje nejdůležitějších pět čísel v matematice: $0,1,i,\pi,e.$
 \begin{úloha}
   Pomocí komplexní exponenciály řešte úlohy
   \begin{alignat*}{5}
-	  x''(t)+\omega^{2}x(t) &= 0 & x''(t)+\omega^{2}x(t) &= 0 \\
+	  mx''(t)+kx(t) &= 0 & mx''(t)+kx(t) &= 0 \\
 	  x(0) &= 0 & \quad (\text{A}) \hspace{8em}       x(0) &= x_0 \quad (\text{B}) \\
 	  	x'(0) &= v_0 & 		           x'(0) &= 0
   \end{alignat*}
   jakou periodu mají řešení?
+\end{úloha}
+\begin{úloha}
+  Jak bychom definovali $a^{z},\ a>0, z\in \mathbb{C}?$ Vyjádřete $2^{i}$ pomocí již známých funkcí.
 \end{úloha}
 \section{Kruhový pohyb}
 Pojďme si vyjasnit, jak kmitající pružiny souvisí s jednotkovou kružnicí a pravoúhlými trojúhelníky.
@@ -249,7 +222,7 @@ Po jaké křivce se to pohybujeme? Velikost vektoru, tj. našet vzdálenost od $
 \begin{equation*}
 	|\vec{r}(t)|=\sqrt{[R\cos(\omega t)]^{2}+[R\sin(\omega t)]^{2}}=R,
 \end{equation*}
-takže se pohybujeme po kružnici. Jak rychle se pohybujeme? Naše poloha je vektor, takže rychlost je také vektor. Vektor derivujeme tak, že zderivujeme jeho složky.
+takže se pohybujeme po kružnici se středem $(0,0)$ a poloměrem $R$. Jak rychle se pohybujeme? Naše poloha je vektor, takže rychlost je také vektor. Vektor derivujeme tak, že zderivujeme jeho složky.
 \begin{definice}[Derivace vektorové funkce] Derivaci vektorové funkce $\vec{r}\colon \mathbb{R}\to \mathbb{R}^{2}$ (nebo $\mathbb{R}\to \mathbb{R}^{3}$) definujeme takto:
   \begin{equation*}
 	  \vec{r}(t)=\begin{pmatrix}x(t)\\ y(t)\end{pmatrix} \Rightarrow  \vec{r}\hspace{.2em}'(t)=\begin{pmatrix}x'(t)\\ y'(t)\end{pmatrix},\quad (\text{analogicky ve 3D})
@@ -269,15 +242,15 @@ a za druhé, že délka oblouku mezi body $(1,0)$ a $(R\cos(\omega t),\sin(R\ome
 \end{equation*}
 Dále uvažujme jednotkovou kružnici: $R=1$. Protože délka oblouku $l$ je úměrná úhlu $\theta$, který svírá polopřímka procházející body $(0,0),(\cos(t),\sin(t))$ s kladnou poloosou $x$, máme
 \begin{equation}\label{eq:uhel a oblouk}
-  \exists C>0\colon \cdot\omega t = l = C\cdot \theta
+  \exists C>0\colon \omega t = l = C\cdot \theta
 \end{equation}
 kde konstanta úměrnosti $C$ závisí na tom, jakou používáme jednotku úhlu. Protože pohyb je periodický, v čase $t=T$ se vrátíme na začátek a tudíž obejdeme plný úhel. Dostáváme
-\begin{align*}
-	\omega T &= C\cdot (\text{plný úhel}) \\
-	\Rightarrow  2\pi &= C\cdot (\text{plný úhel}).
-\end{align*}
-Pracujme tedy v jednotkách úhlu, kde plný úhel je $2\pi.$ Takovou jednotku nazveme \emph{radián}. Pro radián platí $C=1$, takže dostáváme z rovnosti \ref{eq:uhel a oblouk} vztah $\theta = \omega t.$ Dokázali jsme
-\begin{věta}[Ekvivalence definic sin, cos pomocí diferenciálních rovnic a pomocí jednotkové kružnice] Bod $(\cos(\theta),\sin(\theta))$ v rovině je bod na jednotkové kružnici, ležící na polopřímce, která svírá s kladnou poloosou $x$ úhel $\theta$ v radiánech. 
+\begin{align}
+	\omega T &= C\cdot (\text{plný úhel})\notag \\
+	\Rightarrow  2\pi &= C\cdot (\text{plný úhel}).\label{eq:proc radiany}
+\end{align}
+Pracujme tedy v jednotkách úhlu, kde plný úhel je $2\pi.$ Takovou jednotku nazveme \emph{radián}. Pro radián z \ref{eq:proc radiany} plyne $C=1$, takže dostáváme z rovnosti \ref{eq:uhel a oblouk} vztah $\theta = \omega t.$ Dokázali jsme
+\begin{věta}[Ekvivalence definic sin, cos pomocí diferenciálních rovnic a pomocí jednotkové kružnice] Bod $(\cos(\theta),\sin(\theta))$ v rovině je bod na jednotkové kružnici ležící na polopřímce, která svírá s kladnou poloosou $x$ úhel $\theta$ v radiánech. 
 \end{věta}
 \begin{poznámka}\leavevmode
 	\begin{enumerate}[(i)]
@@ -285,11 +258,16 @@ Pracujme tedy v jednotkách úhlu, kde plný úhel je $2\pi.$ Takovou jednotku n
 \begin{equation*}
 	\cos(\theta)=\frac{\text{přilehlá}}{\text{přepona}},\qquad\sin(\theta)=\frac{\text{protilehlá}}{\text{přepona}}
 \end{equation*}
-\item Od teď budeme pracovat s úhly jen v radiánech. Důvod je ten, že v jiných jednotkách úhlu se ošklivě derivují naše oblíbené funkce $\sin(x), \cos(x)$:
+\item Od teď budeme pracovat s úhly jen v radiánech. Důvod je ten, že v jiných jednotkách úhlu se ošklivě derivují naše oblíbené funkce $\sin(x),\ \cos(x)$:
 	\begin{align*}
 		\sin(x^\circ)&=\sin\left(\frac{2\pi}{360}x\right) \\
 		\Rightarrow (\sin(x^{\circ}))' &= \left(\sin\left(\frac{2\pi}{360}x\right)\right)'=\frac{2\pi}{360}\cos\left(\frac{2\pi}{360}\right)=\frac{2\pi}{360}\cos(x^\circ)
 	\end{align*}
+\item Pro kruhový pohyb tedy úhel splňuje $\theta(t)=\omega t$, což je v analogii s rovnoměrným přímočarým pohybem $x(t)=v t$. Pro obecný pohyb na kružnici tedy definujeme
+\begin{equation*}
+  \omega(t) := \theta'(t) = \frac{d\theta}{dt}
+\end{equation*}
+a funkci $\omega(t)$ říkáme \emph{úhlová rychlost}.
 \end{enumerate}
 \end{poznámka}
 
@@ -308,30 +286,111 @@ Pracujme tedy v jednotkách úhlu, kde plný úhel je $2\pi.$ Takovou jednotku n
   Tyto vzorečky hned využijeme.
 \end{úloha}
 
-\begin{úloha} Jakou periodu $T$ má řešení úlohy
+\begin{úloha}\label{eq:harmonicky oscilator reseni} Jakou periodu $T$ má řešení úlohy
   \begin{align*}
   	x''(t)+\omega^{2}x(t) &= 0 \\
   	x(0) &= x_0 \\
 	x'(0) &= v_0\ ?
   \end{align*}
-  Spočtěte amplitudu oscilace $\displaystyle\max_{t\in[0,T]}x(t).$ (Hint: $\displaystyle\max_{t\in[0,T]}x(t)=x(t^{*}),$ kde $x'(t^{*})=0$.) Využijte vzorečky pro $\sin(\arctan(t)),\ \cos(\arctan(t)).$
+  Spočtěte amplitudu $A:=\displaystyle\max_{t\in[0,T]}x(t).$ (Hint: $\displaystyle\max_{t\in[0,T]}x(t)=x(t^{*}),$ kde $x'(t^{*})=0$.) Využijte vzorečky pro $\sin(\arctan(t)),\ \cos(\arctan(t)).$ Najděte úhel $\varphi_0$ takový, že
+  \begin{equation*}
+    x(t)=A\sin(\omega t+\varphi_0)
+  \end{equation*}
 \end{úloha}
 \section{Tlumený oscilátor}
 Když vychýlíme skutečnou pružinu, nebude kmitat donekonečna. Proti pohybu totiž působí třecí síla, která způsobí, že se amplituda zmenšuje. Neexistuje obecný vzorec, který by ve všech situacích uměl popsat chování třecích sil. V jistém režimu (vzduch není moc rychlý, nevíří se) se dá uvažovat matematický model
 \begin{equation*}
-	F_{\text{třecí}}=-cx',\quad c>0
+	F_{\text{třecí}}=-cx'
 \end{equation*}
 Druhý Newtonův zákon pak říká
 \begin{align*}
 	mx''(t) &= -kx(t)-cx'(t) \\
 	x''(t)+\frac{c}{m}x'(t)+\frac{k}{m}x(t) &= 0 \\
-	x''(t)+2\gamma x'(t)+\omega^{2}x(t) &= 0
+	x''(t)+2\zeta \omega_0 x'(t)+\omega_0^{2}x(t) &= 0
 \end{align*}
 kde jsme zavedli
 \begin{equation*}
-	\gamma:=\frac{c}{2m}\quad (\text{koeficient tlumení}),\quad \omega:=\sqrt{\frac{k}{m}}\quad (\text{úhlová rychlost})
+	\omega_0:=\sqrt{\frac{k}{m}}\quad (\text{přirozená úhlová rychlost}),\quad \zeta:=\frac{c}{2m\omega_0}\quad (\text{poměrné tlumení})
 \end{equation*}
-Pojďme tuto rovnici vyřešit.
+Pojďme tuto rovnici vyřešit. Ansatz $e^{\lambda t}$ vede na
+\begin{align*}
+	\lambda^{2}+2\zeta \omega_0 \lambda + \omega_0^{2}&=0 \\
+	\lambda &= (-\zeta \pm \sqrt{\zeta^{2}-1})\omega_0
+\end{align*}
+
+\begin{enumerate}[(A)]
+\item \textit{případ $\zeta=0$} je harmonický oscilátor s úhlovou rychlostí $\omega_0.$
+
+\item \textit{případ $\zeta\in (0,1)$:} 
+\begin{align*}
+	\lambda &= (-\zeta \pm \sqrt{1-\zeta^{2}}i)\omega_0 \\
+	\!\!\!\Rightarrow x(t)&=C_1e^{\left(-\zeta+\sqrt{1-\zeta^{2}}i\right)\omega_0 t}+C_2e^{\left(-\zeta-\sqrt{1-\zeta^{2}}i\right)\omega_0 t} \\
+			&= e^{-\zeta \omega_0 t}(C_1e^{\sqrt{1-\zeta^{2}}\omega_0 it}+C_2e^{-\sqrt{1-\zeta^{2}}\omega_0 it}) \\
+			&=e^{-\zeta \omega_0 t}\left[i(C_1-C_2)\sin(\sqrt{1-\zeta^{2}}\omega_0 t)+(C_1+C_2)\cos(\sqrt{1-\zeta^{2}}\omega_0 it)\right] \\
+			&=e^{-\zeta \omega_0 t}\left[D_1\sin(\omega t)+D_2\cos(\omega t)\right] = e^{-\zeta \omega_0 t}A\sin(\omega t+\varphi_0),
+\end{align*}
+kde jsme zavedli
+\begin{align*}
+  &D_1 := i(C_1-C_2),\quad D_2:=(C_1+C_2),\quad \omega := \sqrt{1-\zeta^{2}}\omega_0, \\
+  &\text{ a konstanty } A>0,\ \varphi_0, \text{ které jdou spočítat stejně jako v úloze \ref{eq:harmonicky oscilator reseni}.}
+\end{align*}
+Řešení osciluje mezi kladnými z zápornými hodnotami, ale v absolutní hodnotě klesá:
+\begin{equation*}
+	|x(t)| \leq e^{-\zeta \omega_0 t}A\quad \Rightarrow \quad \lim_{t\to \infty}x(t)=0
+\end{equation*}
+Z Úlohy \ref{ul:veta o dvou straznicich} plyne, že $\lim_{t\to \infty}x(t)=0.$
+
+\item \textit{případ $\zeta=1$:} rovnice má dvojitý kořen $\lambda=-\omega_0,$ takže řešení bude tvaru
+\begin{equation*}
+  x(t)=C_1e^{-\omega_0 t}+C_2te^{-\omega_0 t}
+\end{equation*}
+Z Věty \ref{veta:asymptotika exp} máme $\lim_{t\to \infty}te^{-t}=0,$ takže $\lim_{t\to \infty}x(t)=0$ pro případ $\zeta=1$.
+
+\item \textit{případ $\zeta\in (1,\infty)$:}
+\begin{equation*}
+	\lambda = (-\zeta \pm \sqrt{\zeta^{2}-1})\omega_0 \\
+\end{equation*}
+protože $\sqrt{\zeta^{2}-1}<\zeta,$ dostáváme, že oba kořeny rovnice jsou záporné. Tedy
+\begin{equation*}
+	x(t)=C_1e^{\lambda_1 t}+C_2e^{\lambda_2 t},\ \lambda_1,\ \lambda_2<0\quad \Rightarrow \quad\lim_{t\to \infty}x(t)=0.
+\end{equation*}
+
+\item \textit{případ $\zeta\in(-1,0)$:} Výpočet je stejný jako v připadě $\zeta\in(-1,0)$:
+\begin{equation*}
+  x(t)=e^{-\zeta \omega_0 t}A\sin(\omega t+\varphi_0)
+\end{equation*}
+Jenže $\zeta<0$, takže oscilace $x(t)$ se bude časem zvětšovat: v časech $t_k=\frac{2k\pi}{\omega}-\varphi_0$ platí
+\begin{equation*}
+  x(t_k)=\left(e^{-\frac{2\pi \zeta \omega_0}{\omega}}\right)^{k}e^{\zeta \omega_0 \varphi_0}A\sin(2\pi) = B\cdot C^{k},\ B>0,\ C>1
+\end{equation*}
+a tato posloupnost čísel roste nade všechny meze.
+
+\item \textit{případ $\zeta=-1:$} Pracujeme s funkcemi $e^{\omega_0t}, te^{\omega_0 t},$ obě z nichž mají $\lim_{t\to \infty}=\infty.$ Tedy v závislosti na počátečních podmínkách půjde řešení do $+\infty$ nebo $-\infty$.
+
+\item \textit{případ $\zeta\in(-\infty,-1)$} vyjde stejně jako případ $\zeta=-1,$ akorát se tam pracuje s funkcemi $e^{\lambda_1 t}, e^{\lambda_2 t},\ \lambda_1,\ \lambda_2>0.$
+\end{enumerate}
+
+Vidíme, že pro $\zeta<0$ se systém chová nefyzikálně. Tento případ totiž odpovídá $c<0$, což by znamenalo, že síla $F_{\text{třecí}}=-cx'$ míří na stejný směr jako rychlost, tj. hmotný bod neustále zrychluje. Proto se neustále zvětšuje amplituda.
+
+Dále tudíž budeme uvažovat $\zeta \geq 0$. Máme čtyři režimy:
+\begin{enumerate}
+	\item $\zeta=0$ je netlumený oscilátor s úhlovou rychlostí $\omega=\omega_0$
+\begin{equation*}
+  x(t)=A\sin(\omega t+\varphi_0)
+\end{equation*}
+	\item $\zeta\in (0,1)$ je podkriticky tlumený oscilátor s $\omega=\sqrt{1-\zeta^{2}}\omega_0<\omega_0$
+\begin{equation*}
+  x(t)=Ae^{-\zeta \omega_0 t}\sin(\omega t+\varphi_0)
+\end{equation*}
+	\item $\zeta=1$ je kriticky tlumený oscilátor, který nekmitá
+\begin{equation*}
+  x(t)=(C_1+C_2t)e^{-\omega_0 t}
+\end{equation*}
+	\item $\zeta\in (1,\infty)$ je nadkriticky tlumený oscilátor, který taktéž nekmitá.
+\begin{equation*}
+  x(t)=C_1e^{-\lambda_1 t}+C_2e^{-\lambda_2 t},\ \lambda_1,\ \lambda_2>0.
+\end{equation*}
 \begin{Todo}
-  dodelat
+  priklady z praxe
 \end{Todo}
+\end{enumerate}

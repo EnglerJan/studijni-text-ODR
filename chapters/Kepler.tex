@@ -5,4 +5,279 @@
    hledal, až nalezl v hvězdářských triedrech \\
    tajemství, která teď neseme na bedrech.
 \end{chapquote}
-V této kapitole si dokážeme, že planety obíhají Slunce po elipsách. V úloze bude hrát roli více proměnných závislých na čase, setkáme se tak s první \emph{soustavou diferenciálních rovnic}.
+V této kapitole si dokážeme, že planety obíhají Slunce po kuželosečkách. V úloze bude hrát roli více proměnných závislých na čase, setkáme se tak s první \emph{soustavou diferenciálních rovnic}.
+
+\section{Kuželosečky}
+Nakonec budeme počítat, že se planety pohybují po kuželosečkách. Na to si prvně musíme definovat, co je to kuželosečka, a naučit se s nimi pracovat v polárních souřadnicích.
+
+\begin{definice}[Elipsa, hyperbola, parabola]\leavevmode
+\begin{enumerate}[(i)]
+	\item Elipsa je množina bodů $X$ v rovině, které splňují
+	\begin{equation*}
+		|XF_1|+|XF_2|=2a
+	\end{equation*}
+	pro nějaké body $F_1,F_2$ a číslo $a>0.$ Body $F_1,F_2$ nazýváme \emph{ohniska} a $a$ nazýváme \emph{hlavní poloosa}.
+	\item Hyperbola je množina bodů $X$ v rovině, které splňují
+	\begin{equation*}
+	  ||XF_1|-|XF_2||=2a
+	\end{equation*}
+	pro nějaké body $F_1,F_2$ a číslo $a>0$ (terminologie stejná jako pro elipsu).
+	\item Parabola je množina bodů $X$ v rovině splňující
+\begin{equation*}
+  |XF|=|Xd|
+\end{equation*}
+pro nějaký bod $F$ a přímku $d$. $F$ nazýváme ohnisko, $d$ \emph{řídící} přímka.
+\end{enumerate}
+\end{definice}
+
+Níže si odvoďme rovnici elipsy a hyperboly. Zvolme souřadnou soustavu tak, že $F_1=(-e,0),$ $F_2=(e,0)$, kde $2e=|F_1F_2|.$ Pak pro bod $X=(x,y)$ na elipse/hyperbole platí ($\pm$ je pro elipsu $+$ a pro hyperbolu $-$)
+\begin{align}
+	\sqrt{(x+e)^{2}+y^{2}}\pm \sqrt{(x-e)^{2}+y^{2}} &= 2a\notag \\
+	2x^{2}+2e^{2}+2y^{2}\pm 2\sqrt{(x+e)^{2}+y^{2}}\sqrt{(x-e)^{2}+y^{2}} &= 4a^{2}\notag \\
+	\pm \sqrt{(x+e)^{2}+y^{2}}\sqrt{(x-e)^{2}+y^{2}} &= 2a^{2}-x^{2}-e^{2}-y^{2}\notag \\
+        [(x+e)^{2}+y^{2}][(x-e)^{2}+y^{2}] &= [2a^{2}-x^{2}-e^{2}-y^{2}]^{2}\notag \\
+					   &\hspace{.5em}\vdots\notag \\
+	a^{2}x^{2}+a^{2}y^{2}-x^{2}e^{2}&=a^{4}-a^{2}e^{2}\notag \\
+	\frac{x^{2}}{a^{2}}+\frac{y^{2}}{a^{2}-e^{2}}&=1\label{eq:rovnice elipsy/hyperboly}
+\end{align}
+Jaký je mezi elipsou a hyperbolou rozdíl? Pro elipsu je $e<a.$ Označme $(0,b)$ bod na kladné poloose $y$ procházející elipsou. Z \ref{eq:rovnice elipsy/hyperboly} plyne
+\begin{equation*}
+  \frac{0^{2}}{a^{2}}+\frac{b^{2}}{a^{2}-e^{2}}=1 \quad \Rightarrow \quad b=\sqrt{a^{2}-e^{2}}
+\end{equation*}
+a rovnice elipsy se přepíše na
+\begin{equation*}
+  \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1.
+\end{equation*}
+Číslu $b$ říkáme \emph{vedlejší poloosa}.
+
+\begin{Todo}
+  obrazek a,b,e
+\end{Todo}
+
+Pro hyperbolu ale platí $e>a,$ takže žádný bod $(0,b)$ tam ležet nemůže. Rovnici \ref{eq:rovnice elipsy/hyperboly} je tedy vhodné přepsat na
+\begin{equation*}
+  \frac{x^{2}}{a^{2}}-\frac{y^{2}}{e^{2}-a^{2}}=1
+\end{equation*}
+a definovat $b:=\sqrt{e^{2}-a^{2}}$, takže
+\begin{equation}\label{eq:rovnice hyperboly}
+  \frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1
+\end{equation}
+Všimněme si, že pro $x,y$ velké můžeme psát
+\begin{equation*}
+	\frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}\approx 0\quad \Rightarrow \quad y\approx \frac{b}{a}x\quad \text{ nebo }\quad y\approx \frac{-b}{a}x
+\end{equation*}
+Význam parametru $b$ pro hyperbolu je tedy, že kontroluje směrnici tečen v nekonečnu (\uv{asymptot}).
+
+\begin{úloha}
+	Z rovnice \ref{eq:rovnice hyperboly} vyjádřete $y=y(x)$ ($y>0$) a spočítejte $\lim_{x\to \infty}y'(x).$
+\end{úloha}
+
+Pojďme spočítat rovnici paraboly. Nechť $d$ je přímka $y=0$, $F=(0,p), X=(x,y):$
+\begin{align}
+	\sqrt{x^{2}+(y-p)^{2}}&=y\notag \\
+	x^{2}+y^{2}-2yp+p^{2} &= y\notag \\
+	y &= \frac{x^{2}}{2p}+\frac{p}{2}\label{eq:rovnice paraboly}
+\end{align}
+Nazvěme \emph{vrchol paraboly} bod, ve kterém parabola prochází kladnou poloosou $y$. Z \ref{eq:rovnice paraboly} plyne $V=(0,\frac{p}{2}).$ Ukázali jsme
+
+\begin{věta}[Rovnice kuželoseček]
+Pro každou kuželosečku existuje kartézská soustava souřadnic $(x,y)$, ve které se dá kuželosečka vyjádřit rovnicí
+  \begin{enumerate}
+	\item Elipsa
+		\begin{equation*}
+		  \frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=1
+		\end{equation*}
+	\item Hyperbola
+		\begin{equation*}
+		  \frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=1
+		\end{equation*}
+	\item Parabola
+		\begin{equation*}
+		  y=\frac{x^{2}}{2p}+\frac{p}{2}
+		\end{equation*}
+  \end{enumerate}
+\end{věta}
+
+\begin{úloha}
+  Kde je řídící přímka paraboly $y=x^{2}$?
+\end{úloha}
+
+\begin{úloha}
+  Jaká kuželosečka je daná rovnicí $y=\frac{1}{x}?$ Proveďte změnu souřadnic
+  \begin{equation*}
+	  \overline{x}:=\frac{x+y}{\sqrt{2}},\qquad \overline{y}:=\frac{-x+y}{\sqrt{2}}
+  \end{equation*}
+  a vyjádřete rovnici v nových souřadnicích.
+\end{úloha}
+
+\begin{úloha}
+Řešte úlohy
+  \begin{alignat*}{5}
+	  x''(t)-x(t) &= 0 & x''(t)-x(t) &= 0 \\
+	  x(0) &= 0 & \quad (\text{A}) \hspace{8em}       x(0) &= 1 \quad (\text{B}) \\
+	  	x'(0) &= 1 & 		           x'(0) &= 0
+  \end{alignat*}
+Řešení úlohy (A) nazvěte $\sinh(t),$ řešení úlohy (B) nazvěte $\cosh(t).$ Dokažte 
+\begin{enumerate}[(i)]
+	\item $\sinh(0)=0,\ \cosh(0)=1$
+	\item $(\sinh(t))'=\cosh(t),\ (\cosh(t))'=\sinh(t)$
+	\item $\sinh(-t)=-\sinh(t),\ \cosh(-t)=\cosh(t)$
+	\item $\cosh^{2}(t)-\sinh^{2}(t)=1$
+\end{enumerate}
+Tudíž body $(\cos(t),\sin(t))$ obíhají jednotkovou kružnici $x^{2}+y^{2}=1$, zatímco body $(\cosh(t),\sinh(t))$ obíhají (jednu větev) \emph{jednotkové hyperboly} $x^{2}-y^{2}=1.$ Proto se funkcím říká \emph{hyperbolický sinus} a \emph{hyperbolický kosinus}.
+\end{úloha}
+
+\section{Polární souřadnice}
+Dále budeme kromě kartézských souřadnic $X=(x,y)$ pracovat v polárních souřadnicích $(r,\varphi)$, kde $r$ značí vdálenost bodu $X=(x,y)$ od $\mathcal{O}=(0,0)$ a $\varphi$ značí úhel mezi kladnou poloosou $x$ a polopřímkou $\mathcal{O}X.$ Platí
+\begin{alignat*}{4}
+	x &= r\cos(\varphi)& \qquad r&=\sqrt{x^{2}+y^{2}} \\
+	y &= r\sin(\varphi)& \qquad \tan(\varphi) &= \frac{y}{x} \\
+	x&,y\in \mathbb{R}& r&>0,\varphi\in[0,2\pi)
+\end{alignat*}
+
+\begin{úloha}Najdi rovnici kružnice se středem v $(0,0)$ v polárních souřadnicích. 
+\end{úloha}
+
+\begin{úloha}Co za útvar je rovnice $r=\varphi$? 
+\end{úloha}
+
+\begin{příklad}
+  Najděme rovnici elipsy s ohnisky $F_1=(0,0), F_2=(2e,0)$ a hlavní poloosou $a,$ tj. vyjádřeme $r=r(\varphi).$\\
+  \textit{Řešení:}
+\begin{align*}
+	\frac{(x-e)^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}&=1 \\
+	\frac{(r\cos(\varphi)-e)^{2}}{a^{2}}+\frac{r\sin(\varphi)^{2}}{b^{2}}&=1\quad \rvert \cdot a^{2}b^{2}\\
+	(r^{2}\cos^{2}(\varphi)+2er\cos(\varphi)+e^{2})b^{2} + r^{2}\sin^{2}(\varphi)a^{2}&=a^{2}b^{2} \\
+	r^{2}(b^{2}\cos^{2}(\varphi)+a^{2}\sin^{2}(\varphi))+r(2eb^{2}\cos(\varphi))+(e^{2}b^{2}-a^{2}b^{2})&=0 \\
+	r^{2}(b^{2}+e^{2}\sin^{2}(\varphi))+r(2eb^{2}\cos(\varphi))-b^{4}&=0 \\
+\end{align*}
+Řešení této kvadratické rovnice je
+\begin{align}
+	r(\varphi) &= \frac{-2b^{2}e\cos(\varphi)\pm \sqrt{4b^{4}e^{2}\cos^{2}(\varphi)+4b^{4}(b^{2}+e^{2}\sin^{2}(\varphi))}}{2(b^{2}+e^{2}\sin^{2}(\varphi))}\notag \\
+	&= \frac{2b^{2}\left[-e\cos(\varphi)\pm \sqrt{e^{2}\cos^{2}(\varphi)+b^{2}+e^{2}\sin^{2}(\varphi)}\right]}{2(a^{2}-e^{2}\cos^{2}(\varphi))}\notag \\
+	&= \frac{2b^{2}[-e\cos(\varphi)\pm a]}{2(a^{2}-e^{2}\cos^{2}(\varphi))} = \frac{b^{2}(a-e\cos(\varphi))}{a^{2}-e^{2}\cos^{2}(\varphi)}=\frac{b^{2}}{a+e\cos(\varphi)}\notag \\
+	&= \frac{\frac{b^{2}}{a}}{1+\frac{e}{a}\cos(\varphi)}\label{eq:rovnice elipsy v polarnich}
+\end{align}
+kde jsme z $\pm$ vybrali $+$ tak, aby $r>0.$
+\end{příklad}
+
+\section{Newtonův gravitační zákon}
+Mějme tělesa A o hmotnosti $M$ v bodě $\vec{r}_1$ a těleso B o hmotnosti $m$ v bodě $\vec{r}_2$. Pak těleso A působí na B \emph{gravitační silou}
+\begin{equation*}
+	\vec{F}_{\text{grav}}=\frac{mMG}{|\vec{r}|^3}\vec{r},
+\end{equation*}
+kde $\vec{r}:=\vec{r}_2-\vec{r_1}$ a $G=\SI{6.674 e-11}{m^3kg^{-1}s^{-2}}$ je \emph{univerzální gravitační konstanta}.
+
+Podle 2. Newtonova zákona je trajektorie $\vec{r}_1$ tělesa B řešení rovnice
+\begin{equation*}
+	m\vec{r}_1\hspace{.1em}''(t) = \frac{mMG}{|\vec{r}|^3}\vec{r}
+\end{equation*}
+Problém s touto je, že v ní vystupuje $\vec{r}_2$ (schované v $\vec{r}$). Tedy zároveň musíme vyřešit rovnici
+\begin{equation*}
+	m\vec{r}_2\hspace{.1em}''(t) = \frac{mMG}{|\vec{r}|^3}(-\vec{r})
+\end{equation*}
+(znaménko $-$ je u $\vec{r}$ protože se prohodily role těles). Jenže tato rovnice má stejný problém, zase v ní vystupuje $\vec{r}_1$. Tedy musíme řešit obě rovnice najednou:
+\begin{align*}
+	m\vec{r}_1\hspace{.1em}''(t) &= \frac{mMG}{|\vec{r}_2-\vec{r}_1|^3}(\vec{r}_2-\vec{r}_1) \\
+	M\vec{r}_2\hspace{.1em}''(t) &= \frac{mMG}{|\vec{r}_2-\vec{r}_1|^3}(\vec{r}_2-\vec{r}_1)
+\end{align*}
+Když rozepíšeme vektory do $\vec{r}_1(t)=(x_1(t),y_1(t),z_1(t)),$ $\vec{r}_2(t)=(x_2(t),y_2(t),z_2(t)),$ dostaneme \emph{soustavu 6 diferenciálních rovnic pro 6 neznámých funkcí}
+\begin{align*}
+	mx_1''(t) &= \frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(x_2-x_1) \\
+	my_1''(t) &= \frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(y_2-y_1) \\
+	mz_1''(t) &= \frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(z_2-z_1) \\
+	Mx_2''(t) &= -\frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(x_2-x_1) \\
+	My_1''(t) &= -\frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(y_2-y_1) \\
+	Mz_1''(t) &= -\frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(z_2-z_1). \\
+\end{align*}
+Abychom mohli pokračovat dál, uděláme zjednodušující předpoklad:
+\begin{center}
+	\boxed{\text{Těleso A je o mnohem těžší než B, takže jeho zrychlení je zanedbatelné.}}
+\end{center}
+Pak můžeme najít vztažnou soustavu takovou, že $x_2(t)=y_2(t)=z_2(t)=0,$ a zbude soustava 3 diferenciálních rovnic
+\begin{align*}
+		x_1''(t) &= -\frac{MG}{[x_1^2+y_1^2+z_1^2]^{\frac{3}{2}}}x_1 \\
+		y_1''(t) &= -\frac{MG}{[x_1^2+y_1^2+z_1^2]^{\frac{3}{2}}}y_1 \\
+		z_1''(t) &= -\frac{MG}{[x_1^2+y_1^2+z_1^2]^{\frac{3}{2}}}z_1 \\
+\end{align*}
+spolu s počátečními podmínkami
+\begin{alignat*}{6}
+	x_1(0) &= x_0 & y_1(0)&=y_0 & z_1(0)&=z_0 \\
+	x_1'(0) &= v_{0x}\; & y_1'(0)&=v_{0y}\; & z_1'(0)&=v_{0z}.
+\end{alignat*}
+
+Vektory $\vec{r}_1(0), \vec{r}_1\hspace{.1em}'(0)$ jsou dva vektory v třírozměrném prostoru, proto k nim lze vždy nalézt vektor $\vec{a}\in \mathbb{R}^3$ takový, že $\vec{r}_1(0)\perp \vec{a}$ a $\vec{r}_1'\hspace{.1em}(0)\perp \vec{a}.$ Natočme souřadnou soustavu tak, aby osa $z$ mířila ve směru vektoru $\vec{a}$. Pak platí $z_1(0)=z_1'(0)=0$, takže $z_1(t)$ řeší úlohu
+\begin{align*} 
+		z_1''(t) &= -\frac{MG}{[x_1^2+y_1^2+z_1^2]^{\frac{3}{2}}}z_1 \\
+		z_1(0) &= 0 \\
+		z_1'(0) &= 0
+\end{align*}
+a tudíž z \PL ovy věty $\forall t\in [0,\infty)\colon z_1(t)=0.$ Úlohu jsme zredukovali na soustavu 2 diferenciálních rovnic (nebudeme psát indexy 1, tj $x:=x_1, y:=y_1$):
+
+\begin{align*}
+		x''(t) &= -\frac{MG}{[x^2+y^2]^{\frac{3}{2}}}x \\
+		y''(t) &= -\frac{MG}{[x^2+y^2]^{\frac{3}{2}}}y \\
+\end{align*}
+Všimněme si už teď, že pokud $x^{2}+y^{2}=a^{2}=\text{konst.}$, dostáváme rovnici harmonického oscilátoru s frekvencí $\omega_0^{2}=\frac{MG}{(x^{2}+y^{2})^{\frac{3}{2}}}=\frac{MG}{a^{3}},$ jejíž řešení jsou $\sin$ a $\cos$, které opravdu obíhají kružnici. Pro takové řešení platí 3. Keplerův zákon
+\begin{equation*}
+	\left(\frac{2\pi}{T}\right)^{2}=\omega_0^{2}=\frac{MG}{a^{3}}\quad \Rightarrow\quad \frac{T^{2}}{a^{3}} = \frac{4\pi^{2}}{M^{2}G^{2}} = \text{ univerzální konstanta},
+\end{equation*}
+ale to předbíháme. Tedy jedno z řešení je pohyb po kružnici s frekvencí $\sqrt{\frac{MG}{a^{3}}}$. Existuje i nějaké jiné? 
+
+Komplikovaný člen v rovnici je $(x^{2}+y^{2})^{\frac{3}{2}}.$ To je, protože používáme špatné souřadnice. Pojďme rovnici přepsat do polárních souřadnic:
+\begin{align*}
+	x(t) &= r(t)\cos(\varphi(t)) \\
+	y(t) &= r(t)\sin(\varphi(t)) \\
+\end{align*}
+Zavedeme opět úhlovou rychlost $\omega:=\varphi':$
+\begin{align*}
+	x' &= r'\cos(\varphi)-r\omega \sin(\varphi) \\
+	x'' &= r''\cos(\varphi)-2r'\omega \sin(\varphi)-r\omega' \sin(\varphi) - r\omega^{2}\cos(\varphi) \\
+	y' &= r'\sin(\varphi)+r\omega \cos(\varphi) \\
+	y'' &= r''\sin(\varphi) + 2r'\omega\cos(\varphi) +r\omega'\cos(\varphi)- r\omega^{2}\sin(\varphi)
+\end{align*}
+Tudíž v polárních rovnicích vypadá naše soustava následovně:
+\begin{align}
+	r''\cos(\varphi)-2r'\omega \sin(\varphi)-r\omega' \sin(\varphi) - r\omega^{2}\cos(\varphi) &= -\frac{MG}{r^{2}}\cos(\varphi)\label{eq:gravitace v polarnich1} \\
+	r''\sin(\varphi) + 2r'\omega\cos(\varphi) +r\omega'\cos(\varphi)- r\omega^{2}\cos(\varphi) &= -\frac{MG}{r^{2}}\sin(\varphi)\label{eq:gravitace v polarnich2}
+\end{align}
+Abychom se zbavili sinů a kosinů, násobme a sčítejme rovnice následovně:
+\begin{alignat}{4}
+	\cos(\varphi)\cdot(\ref{eq:gravitace v polarnich1})+\sin(\varphi)\cdot(\ref{eq:gravitace v polarnich2}) \quad &\Rightarrow&\quad r''-r\omega^{2}&=-\frac{MG}{r^{2}}\label{eq:gravitace v polarnich3}  \\
+	-\sin(\varphi)\cdot(\ref{eq:gravitace v polarnich1})+\cos(\varphi)\cdot(\ref{eq:gravitace v polarnich2}) \quad &\Rightarrow&\quad 2r'\omega + r\omega' &= 0 \label{eq:gravitace v polarnich4}
+\end{alignat}
+Z rovnice \ref{eq:gravitace v polarnich3} plyne
+\begin{equation*}
+	(r^{2}\omega)'=2rr'\omega+r^{2}\omega' = r(\underbrace{2r'\omega+r\omega'}_{\stackrel{\ref{eq:gravitace v polarnich3}}{=}\ 0})=0\quad 
+\end{equation*}
+takže $L:=r^{2}\omega$ se zachovává. Tomuto číslu (ve skutečnosti $m\cdot L$) se říká \emph{moment hybnosti}, právě jsme dokázali \emph{zákon zachování momentu hybnosti}.
+
+My nebudeme hledat řešení $r(t), \varphi(t),$ ale jen tvar trajektorie $r(\varphi).$ Tedy další zjednodušení rovnice bude, že z ní \emph{eliminujeme čas}. Zatím jsou derivace podle času, musíme je přepočítat na derivace podle $\varphi$:
+\begin{equation*}
+	\frac{d}{dt}r(\varphi(t))=\frac{dr}{d\varphi}(\varphi(t))\frac{d\varphi}{dt}(t) \quad \text{nebo zkráceně}\quad \frac{dr}{dt}=\frac{dr}{d\varphi}\frac{d\varphi}{dt}=\frac{dr}{d\varphi}\omega
+\end{equation*}
+Rovnou u toho uděláme substituci $U(\varphi)=\frac{1}{r(\varphi)}.$
+\begin{align*}
+	\frac{dU}{d\varphi} &= \frac{d}{d\varphi}\left(\frac{1}{r}\right)=-\frac{1}{r^{2}}\frac{dr}{d\varphi}=-\frac{1}{r^{2}}\frac{\frac{dr}{dt}}{\omega}=-\frac{1}{L}\frac{dr}{dt} \\
+	\frac{d^{2}U}{d\varphi^{2}} &= \frac{d}{d\varphi}\left(\underbrace{-\frac{1}{L}}_{=\text{konst.}}\frac{dr}{dt}\right)= -\frac{1}{L}\frac{\frac{d}{dt}\left(\frac{dr}{dt}\right)}{\frac{d\varphi}{dt}} = -\frac{1}{L\omega} \frac{d^{2}r}{dt^{2}}.
+\end{align*}
+Rovnice \ref{eq:gravitace v polarnich4} tedy přechází na
+\begin{align*}
+	-L\omega \frac{d^{2}U}{d\varphi^{2}}-r\omega^{2}&=-\frac{MG}{r^{2}} \\
+	-L\frac{d^{2}U}{d\varphi^{2}}-r^{2}\omega \frac{1}{r}&=-\frac{MG}{r^{2}\omega} \\
+	-L \frac{d^{2}U}{d\varphi^{2}}-LU &= -\frac{MG}{L} \\
+	\frac{d^{2}U}{d\varphi^{2}}+U &= \frac{MG}{L^{2}}
+\end{align*}
+toto je rovnice harmonického oscilátoru, až na to, že pravá strana je $\neq 0$. Vyřešíme ji substitucí $U=\frac{MG}{L^{2}}+u,$ což vede na rovnici
+\begin{equation*}
+  \frac{d^{2}u}{d\varphi^{2}}+u=0
+\end{equation*}
+Řešení této rovnice je $u(\varphi)=A\cos(\varphi+\varphi_0)$ pro nějaká $A>0, \varphi_0,$ které jsou dány počátečními podmínkami. Dosadíme zpátky:
+\begin{align*}
+	U(\varphi)&=\frac{MG}{L^{2}}+u(\varphi)=\frac{MG}{L^{2}}+A\cos(\varphi+\varphi_0)\\
+	\Rightarrow r(\varphi)&=\frac{1}{\frac{MG}{L^{2}}+A\cos(\varphi+\varphi_0)}=\frac{\frac{L^{2}}{MG}}{1+A\frac{L^{2}}{MG}\cos(\varphi+\varphi_0)}
+\end{align*}
+Porovnáním s \ref{eq:rovnice elipsy v polarnich} Vidíme, že dráha je kuželosečka s geometrickými parametry
+\begin{equation*}
+  \frac{b^{2}}{a}=\frac{L^{2}}{MG},\quad \frac{e}{a}=A \frac{L^{2}}{MG}
+\end{equation*}
