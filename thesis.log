@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.5.10)  28 SEP 2026 21:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.5.10)  29 SEP 2026 01:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1852,15 +1852,12 @@ Underfull \vbox (badness 2277) has occurred while \output is active []
 ] [37]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38]
-Underfull \vbox (badness 5331) has occurred while \output is active []
-
- [39] [40] [41] [42]) [43]
+ [38] [39] [40] [41] [42] [43] [44] [45]) [46]
 \openout2 = `chapters/Integral.aux'.
 
  (./chapters/Integral.tex
  6.
-) [44
+) [47
 
 
 
@@ -1870,7 +1867,7 @@ Underfull \vbox (badness 5331) has occurred while \output is active []
 
  (./chapters/Linearni rovnice.tex
  7.
-) [45
+) [48
 
 
 
@@ -1880,7 +1877,7 @@ Underfull \vbox (badness 5331) has occurred while \output is active []
 
  (./chapters/Separace promennych.tex
  8.
-) [46
+) [49
 
 
 
@@ -1890,7 +1887,7 @@ Underfull \vbox (badness 5331) has occurred while \output is active []
 
  (./chapters/Numericke reseni.tex
  9.
-) [47
+) [50
 
 
 
@@ -1900,7 +1897,7 @@ Underfull \vbox (badness 5331) has occurred while \output is active []
 
  (./chapters/Mocninne rady.tex
  10.
-) [48
+) [51
 
 
 
@@ -1910,15 +1907,15 @@ Underfull \vbox (badness 5331) has occurred while \output is active []
 
  (./chapters/cool_quote.tex
  11.
-[49
+[52
 
 
 
 
-] [50] [51]) [52]
+] [53] [54]) [55]
 \openout2 = `chapters/Summary.aux'.
 
- (./chapters/Summary.tex) [53
+ (./chapters/Summary.tex) [56
 
 
 
@@ -1941,18 +1938,18 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 59996 strings out of 467533
- 1325285 string characters out of 5419495
- 2279237 words of memory out of 5000000
- 87165 multiletter control sequences out of 15000+600000
- 732501 words of font info for 275 fonts, out of 8000000 for 9000
+ 60023 strings out of 467533
+ 1325601 string characters out of 5419495
+ 2279236 words of memory out of 5000000
+ 87170 multiletter control sequences out of 15000+600000
+ 732975 words of font info for 280 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  126i,20n,127p,1135b,2956s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/hfbright/hfbrmb10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmro12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/tex-gyre/qzcmi.pfb>
-Output written on thesis.pdf (56 pages, 622000 bytes).
+Output written on thesis.pdf (59 pages, 636524 bytes).
 PDF statistics:
- 1115 PDF objects out of 1200 (max. 8388607)
- 927 compressed objects within 10 object streams
- 351 named destinations out of 1000 (max. 500000)
+ 1141 PDF objects out of 1200 (max. 8388607)
+ 949 compressed objects within 10 object streams
+ 363 named destinations out of 1000 (max. 500000)
  52187 words of extra memory for PDF output out of 61914 (max. 10000000)
 

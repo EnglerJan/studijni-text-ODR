@@ -23,22 +23,22 @@
 \contentsline {chapter}{\numberline {5}Pohyby planet}{36}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Kuželosečky}{36}{section*.18}%
 \contentsline {section}{\numberline {5.2}Polární souřadnice}{39}{section*.19}%
-\contentsline {section}{\numberline {5.3}Newtonův gravitační zákon}{40}{section*.20}%
-\contentsline {chapter}{\numberline {6}Integrál}{44}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Plocha pod grafem}{44}{section*.21}%
-\contentsline {section}{\numberline {6.2}Primitivní funkce}{44}{section*.22}%
-\contentsline {section}{\numberline {6.3}Objemy}{44}{section*.23}%
-\contentsline {chapter}{\numberline {7}Lineární rovnice}{45}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Lineární homogenní rovnice}{45}{section*.24}%
-\contentsline {section}{\numberline {7.2}Lineární nehomogenní rovnice}{45}{section*.25}%
-\contentsline {section}{\numberline {7.3}Metoda integračního faktoru}{45}{section*.26}%
-\contentsline {section}{\numberline {7.4}Soustavy lineárních rovnic}{45}{section*.27}%
-\contentsline {chapter}{\numberline {8}Metoda separace proměnných}{46}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Numerické řešení diferenciálních rovnic}{47}{chapter.9}%
-\contentsline {section}{\numberline {9.1}Explicitní Eulerova metoda}{47}{section*.28}%
-\contentsline {section}{\numberline {9.2}Aproximace čísla $\pi $}{47}{section*.29}%
-\contentsline {chapter}{\numberline {10}Mocninné řady}{48}{chapter.10}%
-\contentsline {chapter}{\numberline {11}WIP}{49}{chapter.11}%
-\contentsline {section}{\numberline {11.1}Závěr}{50}{section*.30}%
-\contentsline {chapter}{Summary and Outlook}{53}{chapter*.31}%
+\contentsline {section}{\numberline {5.3}Newtonův gravitační zákon}{41}{section*.20}%
+\contentsline {chapter}{\numberline {6}Integrál}{47}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Plocha pod grafem}{47}{section*.21}%
+\contentsline {section}{\numberline {6.2}Primitivní funkce}{47}{section*.22}%
+\contentsline {section}{\numberline {6.3}Objemy}{47}{section*.23}%
+\contentsline {chapter}{\numberline {7}Lineární rovnice}{48}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Lineární homogenní rovnice}{48}{section*.24}%
+\contentsline {section}{\numberline {7.2}Lineární nehomogenní rovnice}{48}{section*.25}%
+\contentsline {section}{\numberline {7.3}Metoda integračního faktoru}{48}{section*.26}%
+\contentsline {section}{\numberline {7.4}Soustavy lineárních rovnic}{48}{section*.27}%
+\contentsline {chapter}{\numberline {8}Metoda separace proměnných}{49}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Numerické řešení diferenciálních rovnic}{50}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Explicitní Eulerova metoda}{50}{section*.28}%
+\contentsline {section}{\numberline {9.2}Aproximace čísla $\pi $}{50}{section*.29}%
+\contentsline {chapter}{\numberline {10}Mocninné řady}{51}{chapter.10}%
+\contentsline {chapter}{\numberline {11}WIP}{52}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Závěr}{53}{section*.30}%
+\contentsline {chapter}{Summary and Outlook}{56}{chapter*.31}%
 \contentsfinish 

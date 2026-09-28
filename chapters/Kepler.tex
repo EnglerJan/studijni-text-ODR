@@ -128,14 +128,14 @@ Tudíž body $(\cos(t),\sin(t))$ obíhají jednotkovou kružnici $x^{2}+y^{2}=1$
 \end{úloha}
 
 \section{Polární souřadnice}
-Dále budeme kromě kartézských souřadnic $X=(x,y)$ pracovat v polárních souřadnicích $(r,\varphi)$, kde $r$ značí vdálenost bodu $X=(x,y)$ od $\mathcal{O}=(0,0)$ a $\varphi$ značí úhel mezi kladnou poloosou $x$ a polopřímkou $\mathcal{O}X.$ Platí
+Dále budeme kromě kartézských souřadnic $(x,y)$ pracovat v polárních souřadnicích $(r,\varphi)$, kde $r$ značí vdálenost bodu $X=(x,y)$ od $\mathcal{O}=(0,0)$ a $\varphi$ značí úhel mezi kladnou poloosou $x$ a polopřímkou $\mathcal{O}X.$ Platí
 \begin{alignat*}{4}
 	x &= r\cos(\varphi)& \qquad r&=\sqrt{x^{2}+y^{2}} \\
 	y &= r\sin(\varphi)& \qquad \tan(\varphi) &= \frac{y}{x} \\
 	x&,y\in \mathbb{R}& r&>0,\varphi\in[0,2\pi)
 \end{alignat*}
 
-\begin{úloha}Najdi rovnici kružnice se středem v $(0,0)$ v polárních souřadnicích. 
+\begin{úloha}Najděte rovnici kružnice se středem v $(0,0)$ v polárních souřadnicích. 
 \end{úloha}
 
 \begin{úloha}Co za útvar je rovnice $r=\varphi$? 
@@ -156,39 +156,87 @@ Dále budeme kromě kartézských souřadnic $X=(x,y)$ pracovat v polárních so
 	r(\varphi) &= \frac{-2b^{2}e\cos(\varphi)\pm \sqrt{4b^{4}e^{2}\cos^{2}(\varphi)+4b^{4}(b^{2}+e^{2}\sin^{2}(\varphi))}}{2(b^{2}+e^{2}\sin^{2}(\varphi))}\notag \\
 	&= \frac{2b^{2}\left[-e\cos(\varphi)\pm \sqrt{e^{2}\cos^{2}(\varphi)+b^{2}+e^{2}\sin^{2}(\varphi)}\right]}{2(a^{2}-e^{2}\cos^{2}(\varphi))}\notag \\
 	&= \frac{2b^{2}[-e\cos(\varphi)\pm a]}{2(a^{2}-e^{2}\cos^{2}(\varphi))} = \frac{b^{2}(a-e\cos(\varphi))}{a^{2}-e^{2}\cos^{2}(\varphi)}=\frac{b^{2}}{a+e\cos(\varphi)}\notag \\
-	&= \frac{\frac{b^{2}}{a}}{1+\frac{e}{a}\cos(\varphi)}\label{eq:rovnice elipsy v polarnich}
+	&= \frac{\frac{b^{2}}{a}}{1+\frac{e}{a}\cos(\varphi)} = \frac{p}{1+\epsilon \cos(\varphi)},\quad \epsilon:=\frac{e}{a}\in(0,1),\ p:=\frac{b^{2}}{a}\label{eq:rovnice elipsy v polarnich} 
 \end{align}
 kde jsme z $\pm$ vybrali $+$ tak, aby $r>0.$
 \end{příklad}
+Můžete si spočítat, že pro hyperbolu vyjde formálně stejný vzoreček, ale tam $\epsilon=\frac{e}{a}\in(1,\infty).$ To znamená, že jmenovatel může být nulový nebo záporný, což neodpovídá tomu, že $r>0$. Takže vyžadujeme
+\begin{equation*}
+  1+\epsilon\cos(\varphi)>0 \Rightarrow \cos(\varphi)>\frac{-1}{\epsilon}
+\end{equation*}
+
+Definujme funkci $\arccos\colon [-1,1]\to [0,\pi]$ jako inverzní k $\cos\colon [0,\pi]\to [-1,1].$ Pak problematický úhel je $\varphi_{\infty}:=\arccos(\frac{-1}{\epsilon})$ a my chceme brát jen úhly
+\begin{equation*}
+	\varphi\in (\varphi_{\infty}-\pi, \varphi_{\infty}).
+\end{equation*}
+% Druhý interval $(\varphi_{\infty},\varphi_{\infty})$ odpovídá druhé větvi hyperboly, která je \uv{na druhé straně}, takže tam $r(\varphi)<0.$ To nás ale dál trápit nebude, protože planety nemůžou nespojitě přeskočit z jedné větve hyperboly do druhé.
+\begin{příklad}
+  Najděme rovnici paraboly s $F=(0,0)$ a řídící přímkou $y=-p.$\\
+  \textit{Řešení:}
+  \begin{align*}
+        (y+p) &= \frac{x^{2}}{2p}+\frac{p}{2} \\
+	(r\sin(\varphi)+p) &= \frac{r^{2}\cos^{2}(\varphi)}{2p}+\frac{p}{2} \\
+	-r^{2}\frac{\cos^{2}(\varphi)}{2p}+r\sin(\varphi)+\frac{p}{2} &= 0 \\
+	r &= \frac{-\sin(\varphi)\pm \sqrt{\sin^{2}(\varphi)+\cos^{2}(\varphi)}}{-2\frac{\cos^{2}(\varphi)}{2p}} = p\frac{-\sin(\varphi)+1}{\cos^{2}(\varphi)} \\
+	  &=p \frac{(-\sin(\varphi)+1)(1+\sin(\varphi))}{\cos^{2}(\varphi)(1+\sin(\varphi))} =\frac{p}{1+\sin(\varphi)}
+  \end{align*}
+\end{příklad}
+
+Ukázali jsme
+\begin{věta}[Rovnice kuželoseček v polárních souřadnicích]
+  Kuželosečky lze vyjádřit v polárních souřadnicích rovnicí
+  \begin{equation*}
+    r(\varphi)=\frac{p}{1+\epsilon\cos(\varphi)}
+  \end{equation*}
+  s parametry
+  \begin{enumerate}
+	  \item Elipsa
+		  \begin{equation*}
+			  \varphi\in[0,2\pi),\ p:= \frac{b^{2}}{a},\ \epsilon\in (0,1)
+		  \end{equation*}
+	  \item Hyperbola
+		  \begin{align*}
+			  \varphi\in(\varphi_\infty-\pi, \varphi_\infty),\ p:= \frac{b^{2}}{a},\ \ \epsilon\in (1,\infty) \\
+		  \end{align*}
+	  \item Parabola
+		  \begin{equation*}
+			\varphi\in(0,2\pi),\ \epsilon=1
+		  \end{equation*}
+  \end{enumerate}
+\end{věta}
 
 \section{Newtonův gravitační zákon}
+%TODO: FIX telesa A B vs. r_1 r_2
 Mějme tělesa A o hmotnosti $M$ v bodě $\vec{r}_1$ a těleso B o hmotnosti $m$ v bodě $\vec{r}_2$. Pak těleso A působí na B \emph{gravitační silou}
 \begin{equation*}
-	\vec{F}_{\text{grav}}=\frac{mMG}{|\vec{r}|^3}\vec{r},
+	\vec{F}_{\text{grav}}=-\frac{mMG}{|\vec{r}|^3}\vec{r},
 \end{equation*}
-kde $\vec{r}:=\vec{r}_2-\vec{r_1}$ a $G=\SI{6.674 e-11}{m^3kg^{-1}s^{-2}}$ je \emph{univerzální gravitační konstanta}.
+kde $\vec{r}:=\vec{r}_1-\vec{r}_2$ a $G=\SI{6.674 e-11}{m^3kg^{-1}s^{-2}}$ je \emph{univerzální gravitační konstanta}.
 
-Podle 2. Newtonova zákona je trajektorie $\vec{r}_1$ tělesa B řešení rovnice
+Podle 2. Newtonova zákona je trajektorie $\vec{r}_1(t)$ tělesa B řešení rovnice
 \begin{equation*}
-	m\vec{r}_1\hspace{.1em}''(t) = \frac{mMG}{|\vec{r}|^3}\vec{r}
+	m\vec{r}_1\hspace{.1em}''(t) = -\frac{mMG}{|\vec{r}(t)|^3}\vec{r}(t)
 \end{equation*}
 Problém s touto je, že v ní vystupuje $\vec{r}_2$ (schované v $\vec{r}$). Tedy zároveň musíme vyřešit rovnici
 \begin{equation*}
-	m\vec{r}_2\hspace{.1em}''(t) = \frac{mMG}{|\vec{r}|^3}(-\vec{r})
+	m\vec{r}_2\hspace{.1em}''(t) = -\frac{mMG}{|\vec{r}(t)|^3}(-\vec{r}(t))
 \end{equation*}
 (znaménko $-$ je u $\vec{r}$ protože se prohodily role těles). Jenže tato rovnice má stejný problém, zase v ní vystupuje $\vec{r}_1$. Tedy musíme řešit obě rovnice najednou:
+\begin{Todo}
+  fix stupid ''
+\end{Todo}
 \begin{align*}
-	m\vec{r}_1\hspace{.1em}''(t) &= \frac{mMG}{|\vec{r}_2-\vec{r}_1|^3}(\vec{r}_2-\vec{r}_1) \\
-	M\vec{r}_2\hspace{.1em}''(t) &= \frac{mMG}{|\vec{r}_2-\vec{r}_1|^3}(\vec{r}_2-\vec{r}_1)
+	m\vec{r}_1\hspace{.1em}''(t) &= -\frac{mMG}{|\vec{r}_1-\vec{r}_2|^3}(\vec{r}_1(t)-\vec{r}_2(t)) \\
+	M\vec{r}_2\hspace{.1em}''(t) &= \frac{mMG}{|\vec{r}_1-\vec{r}_2|^3}(\vec{r}_1(t)-\vec{r}_2(t))
 \end{align*}
 Když rozepíšeme vektory do $\vec{r}_1(t)=(x_1(t),y_1(t),z_1(t)),$ $\vec{r}_2(t)=(x_2(t),y_2(t),z_2(t)),$ dostaneme \emph{soustavu 6 diferenciálních rovnic pro 6 neznámých funkcí}
 \begin{align*}
-	mx_1''(t) &= \frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(x_2-x_1) \\
-	my_1''(t) &= \frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(y_2-y_1) \\
-	mz_1''(t) &= \frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(z_2-z_1) \\
-	Mx_2''(t) &= -\frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(x_2-x_1) \\
-	My_1''(t) &= -\frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(y_2-y_1) \\
-	Mz_1''(t) &= -\frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(z_2-z_1). \\
+	mx_1'' &= -\frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(x_1-x_2) \\
+	my_1'' &= -\frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(y_1-y_2) \\
+	mz_1'' &= -\frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(z_1-z_2) \\
+	Mx_2'' &= \frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(x_1-x_2) \\
+	My_1'' &= \frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(y_1-y_2) \\
+	Mz_1'' &= \frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(z_1-z_2). \\
 \end{align*}
 Abychom mohli pokračovat dál, uděláme zjednodušující předpoklad:
 \begin{center}
@@ -220,9 +268,9 @@ a tudíž z \PL ovy věty $\forall t\in [0,\infty)\colon z_1(t)=0.$ Úlohu jsme 
 \end{align*}
 Všimněme si už teď, že pokud $x^{2}+y^{2}=a^{2}=\text{konst.}$, dostáváme rovnici harmonického oscilátoru s frekvencí $\omega_0^{2}=\frac{MG}{(x^{2}+y^{2})^{\frac{3}{2}}}=\frac{MG}{a^{3}},$ jejíž řešení jsou $\sin$ a $\cos$, které opravdu obíhají kružnici. Pro takové řešení platí 3. Keplerův zákon
 \begin{equation*}
-	\left(\frac{2\pi}{T}\right)^{2}=\omega_0^{2}=\frac{MG}{a^{3}}\quad \Rightarrow\quad \frac{T^{2}}{a^{3}} = \frac{4\pi^{2}}{M^{2}G^{2}} = \text{ univerzální konstanta},
+	\left(\frac{2\pi}{T}\right)^{2}=\omega_0^{2}=\frac{MG}{a^{3}}\quad \Rightarrow\quad \frac{T^{2}}{a^{3}} = \frac{4\pi^{2}}{MG} = \text{ univerzální konstanta},
 \end{equation*}
-ale to předbíháme. Tedy jedno z řešení je pohyb po kružnici s frekvencí $\sqrt{\frac{MG}{a^{3}}}$. Existuje i nějaké jiné? 
+ale to předbíháme. Tedy jedno z řešení je pohyb po kružnici s frekvencí $\sqrt{\frac{MG}{a^{3}}}$. Pojďme najít ta ostatní.
 
 Komplikovaný člen v rovnici je $(x^{2}+y^{2})^{\frac{3}{2}}.$ To je, protože používáme špatné souřadnice. Pojďme rovnici přepsat do polárních souřadnic:
 \begin{align*}
@@ -261,23 +309,91 @@ Rovnou u toho uděláme substituci $U(\varphi)=\frac{1}{r(\varphi)}.$
 	\frac{dU}{d\varphi} &= \frac{d}{d\varphi}\left(\frac{1}{r}\right)=-\frac{1}{r^{2}}\frac{dr}{d\varphi}=-\frac{1}{r^{2}}\frac{\frac{dr}{dt}}{\omega}=-\frac{1}{L}\frac{dr}{dt} \\
 	\frac{d^{2}U}{d\varphi^{2}} &= \frac{d}{d\varphi}\left(\underbrace{-\frac{1}{L}}_{=\text{konst.}}\frac{dr}{dt}\right)= -\frac{1}{L}\frac{\frac{d}{dt}\left(\frac{dr}{dt}\right)}{\frac{d\varphi}{dt}} = -\frac{1}{L\omega} \frac{d^{2}r}{dt^{2}}.
 \end{align*}
-Rovnice \ref{eq:gravitace v polarnich4} tedy přechází na
+Rovnice \ref{eq:gravitace v polarnich3} tedy přechází na
 \begin{align*}
 	-L\omega \frac{d^{2}U}{d\varphi^{2}}-r\omega^{2}&=-\frac{MG}{r^{2}} \\
 	-L\frac{d^{2}U}{d\varphi^{2}}-r^{2}\omega \frac{1}{r}&=-\frac{MG}{r^{2}\omega} \\
 	-L \frac{d^{2}U}{d\varphi^{2}}-LU &= -\frac{MG}{L} \\
-	\frac{d^{2}U}{d\varphi^{2}}+U &= \frac{MG}{L^{2}}
+	\frac{d^{2}U}{d\varphi^{2}}+U &= \frac{MG}{L^{2}}.
 \end{align*}
-toto je rovnice harmonického oscilátoru, až na to, že pravá strana je $\neq 0$. Vyřešíme ji substitucí $U=\frac{MG}{L^{2}}+u,$ což vede na rovnici
+Toto je rovnice harmonického oscilátoru, až na to, že pravá strana je $\neq 0$. Vyřešíme ji substitucí $U=\frac{MG}{L^{2}}+u,$ což vede na rovnici
 \begin{equation*}
   \frac{d^{2}u}{d\varphi^{2}}+u=0
 \end{equation*}
-Řešení této rovnice je $u(\varphi)=A\cos(\varphi+\varphi_0)$ pro nějaká $A>0, \varphi_0,$ které jsou dány počátečními podmínkami. Dosadíme zpátky:
+Řešení této rovnice je $u(\varphi)=A\cos(\varphi+\varphi_0)$ pro nějaká $A>0, \varphi_0,$ které jsou určené počátečními podmínkami. Dosadíme zpátky:
 \begin{align*}
 	U(\varphi)&=\frac{MG}{L^{2}}+u(\varphi)=\frac{MG}{L^{2}}+A\cos(\varphi+\varphi_0)\\
-	\Rightarrow r(\varphi)&=\frac{1}{\frac{MG}{L^{2}}+A\cos(\varphi+\varphi_0)}=\frac{\frac{L^{2}}{MG}}{1+A\frac{L^{2}}{MG}\cos(\varphi+\varphi_0)}
+	\Rightarrow r(\varphi)&=\frac{1}{\frac{MG}{L^{2}}+A\cos(\varphi+\varphi_0)}=\frac{\frac{L^{2}}{MG}}{1+A\frac{L^{2}}{MG}\cos(\varphi+\varphi_0)} = \frac{p}{1+\epsilon\cos(\varphi)}
 \end{align*}
 Porovnáním s \ref{eq:rovnice elipsy v polarnich} Vidíme, že dráha je kuželosečka s geometrickými parametry
 \begin{equation*}
-  \frac{b^{2}}{a}=\frac{L^{2}}{MG},\quad \frac{e}{a}=A \frac{L^{2}}{MG}
+  p=\frac{L^{2}}{MG},\quad \epsilon=A \frac{L^{2}}{MG},
 \end{equation*}
+což je tvrzení prvního Keplerova zákona. Zatímco $M,G,L^{2}$ jsou přímo fyzikální parametry, neznáme číslo $A.$ Teoreticky by šlo dopočítat z počátečních podmínek (máme přeci jednoznačnost řešení...) ale moc průhledné by to nebylo. Abychom $A$ vyjádřili z fyzikálně významných veličin, potřebujeme druhý zákon zachování -- \emph{zákon zachování mechanické energie}. Definujme mechanickou energii
+\begin{align*}
+	E&:= \frac{1}{2}\left( (r')^{2}+\frac{L^{2}}{r^{2}}\right)-\frac{MG}{r} \\
+\end{align*}
+a spočítejme, že má nulovou derivaci (podle času):
+\begin{align*}
+	E' &= r'r''-\underbrace{\frac{L^{2}}{r^{3}}}_{=\omega^{2}r}r'+\frac{MG}{r^{2}}r' \\
+		     &= r'\left(r''-\omega^{2}r+\frac{MG}{r^{2}}\right)\stackrel{\ref{eq:gravitace v polarnich3}}{=}0
+\end{align*}
+Protože $E$ je konstantní, počítejme ji pro $\varphi$ co nejjednodušší: $\varphi=0:$
+\begin{align*}
+	r(\varphi) &= \frac{p}{1+\epsilon\cos(\varphi)} \\
+	r'(\varphi) &= \frac{p}{(1+\epsilon\cos(\varphi))^{2}}\sin(\varphi) \\
+	\Rightarrow r(0)&= \frac{p}{1+\epsilon},\ r'(0)=0 \\
+	\Rightarrow E = E(0)&=\frac{1}{2}\frac{L^{2}}{\frac{p^{2}}{(1+\epsilon)^{2}}}-\frac{MG}{\frac{p}{1+\epsilon}}=\frac{M^{2}G^{2}}{L^{2}}\left[\frac{1}{2}(1+\epsilon)^{2}-(1+\epsilon)\right] =\frac{M^{2}G^{2}}{L^{2}}\frac{\epsilon^{2}-1}{2} \\
+	\Rightarrow \epsilon&=\sqrt{1+\frac{2L^2E}{M^{2}G^{2}}}
+\end{align*}
+Podařilo se nám oba parametry $p,\epsilon$ vyjádřit pomocí fyzikálně významných veličin: $M,G, L, E.$ Zatímco $M,G$ jsou data úlohy a dopředu je známe, $L,E$ jsme museli odvodit ze samotné úlohy a to, že jsou to konstanty, nám umožnilo řešení dopočítat. Těmto veličinám se říká \emph{integrály pohybu} a v pozdějších kapitolách si řekneme, jak je najít. To, že jsme potřebovali (a našli) dva integrály pohybu, souvisí s tím, že řešíme rovnici druhého řádu.
+
+Z parametrů $p,\epsilon$ umíme vyjádřit ostatní parametry $a,b,e.$ Vyjádřeme $a$ pro elipsu:
+\begin{align*}
+	b^{2} &= ap \\
+	e^{2} &= a^{2}\epsilon^{2} \\
+	\Rightarrow a^{2}&=b^{2}+e^{2}=a^{2}\epsilon^{2}+ap\\
+	\Rightarrow  a&=\frac{p}{1-\epsilon^{2}}=\frac{\frac{L^{2}}{MG}}{-\frac{2L^{2}E}{M^{2}G^{2}}}=-\frac{MG}{2E}
+\end{align*}
+Pro hyperbolu vyjde podobně $a=\frac{MG}{2E}.$ Umíme dopočítat $e=a\epsilon$ a $b=\sqrt{a^{2}-e^{2}}$ (elipsa) resp. $\sqrt{e^{2}-a^{2}}$ (hyperbola), tedy umíme dopočítat vše potřebné.
+
+Jaký je význam energie $E?$
+
+Pokud $E<0,$ vychází $\epsilon\in(0,1)$ a řešení je elipsa. Pro $E=0$ dostáváme $\epsilon=0$, tudíž parabolu, a pro $E>0$ dostáváme hyperbolu. Elipsa je uzavřený křivkový útvar, tudíž vektor $\vec{r}$ jde omezit nějakou konstantou $|\vec{r}|\leq C,$ zatímco parabola a hyperbola nikoliv, pro ně je velikost řešení $|\vec{r}|$ neomezená. S energií tedy souvisí, jestli je řešení omezené nebo nikoliv. V pozdějších kapitolách uvidíme, že to souvisí také se \emph{stabilitou} diferenciálních rovnic.
+
+Jaký je význam momentu hybnosti $L?$ 
+\begin{Todo}
+  vysvetlit
+\end{Todo}
+\begin{equation*}
+  \frac{dS}{dt}=\frac{dS}{d\varphi}\frac{d\varphi}{dt}=\frac{1}{2}r^{2}\omega = \frac{1}{2}L
+\end{equation*}
+Tudíž dostáváme, že plocha $S(t)$ je afinní funkcí času. Takže pro dva různé časy $t_1,t_2>0, \Delta t>0$ platí
+\begin{equation*}
+  S(t_1+\Delta t)-S(t_1)=S(t_2+\Delta t)-S(t_2),
+\end{equation*}
+což je druhý Keplerův zákon. Uvažujme teď případ elipsy. Za celou periodu $T$ vektor $\vec{r}$ oběhne plochu elipsy. V příští kapitole si ukážeme, že plocha elipsy je $\pi a b.$ Tudíž
+\begin{align*}
+	S(T) &= \pi ab \\
+	\frac{1}{2}LT &= \pi ab = \pi a^2 \sqrt{1-\epsilon^{2}} \\
+	\frac{1}{4}L^2T^2 &= \pi^2 a^4 (1-\epsilon^{2})=\pi^2 a^4 \frac{-2L^{2}E}{M^{2}G^{2}} = \pi^2 a^3 \frac{L^{2}}{MG} \\
+	\Rightarrow \frac{T^2}{a^3}&= \frac{4\pi^{2}}{MG}
+\end{align*}
+Dokázali jsme tedy
+
+\begin{věta}[Keplerovy zákony]
+  Pohyb v centrálním gravitačním poli
+  \begin{equation*}
+	  \vec{F}(\vec{r}) = -\frac{mMG}{|\vec{r}|^3}\vec{r}
+  \end{equation*}
+  má následující vlastnosti:
+  \begin{enumerate}[(i)]
+	  \item \textit{První Keplerův zákon:} dráha je kuželosečka.
+	\item \textit{Druhý Keplerův zákon:} obsahy ploch opsaných vektorem $\vec{r}$ stejný čas jsou stejné.
+	\item \textit{Třetí Keplerův zákon:}
+		\begin{equation*}
+		  \frac{T^{2}}{a^{3}}=\frac{4\pi^{2}}{MG}
+		\end{equation*}
+		tedy pro všechna tělesa v poli $\vec{F}$ je poměr $\frac{T^{2}}{a^{3}}$ stejný.
+  \end{enumerate}
+\end{věta}
