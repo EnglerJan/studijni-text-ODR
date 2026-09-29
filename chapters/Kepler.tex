@@ -5,10 +5,10 @@
    hledal, až nalezl v hvězdářských triedrech \\
    tajemství, která teď neseme na bedrech.
 \end{chapquote}
-V této kapitole si dokážeme, že planety obíhají Slunce po kuželosečkách. V úloze bude hrát roli více proměnných závislých na čase, setkáme se tak s první \emph{soustavou diferenciálních rovnic}.
+V této kapitole si dokážeme, že planety obíhají Slunce po elipsách. V úloze bude hrát roli více proměnných závislých na čase, setkáme se tak s první \emph{soustavou diferenciálních rovnic}.
 
 \section{Kuželosečky}
-Nakonec budeme počítat, že se planety pohybují po kuželosečkách. Na to si prvně musíme definovat, co je to kuželosečka, a naučit se s nimi pracovat v polárních souřadnicích.
+Nakonec budeme počítat, že se těleso v centrálním gravitačním poli pohybuje po kuželosečkách. Na to si prvně musíme definovat, co jsou kuželosečky, a naučit se s nimi pracovat v polárních souřadnicích.
 
 \begin{definice}[Elipsa, hyperbola, parabola]\leavevmode
 \begin{enumerate}[(i)]
@@ -207,7 +207,7 @@ Ukázali jsme
 
 \section{Newtonův gravitační zákon}
 %TODO: FIX telesa A B vs. r_1 r_2
-Mějme tělesa A o hmotnosti $M$ v bodě $\vec{r}_1$ a těleso B o hmotnosti $m$ v bodě $\vec{r}_2$. Pak těleso A působí na B \emph{gravitační silou}
+Mějme těleso A o hmotnosti $M$ v bodě $\vec{r}_1$ a těleso B o hmotnosti $m$ v bodě $\vec{r}_2$. Pak těleso A působí na B \emph{gravitační silou}
 \begin{equation*}
 	\vec{F}_{\text{grav}}=-\frac{mMG}{|\vec{r}|^3}\vec{r},
 \end{equation*}
@@ -217,7 +217,7 @@ Podle 2. Newtonova zákona je trajektorie $\vec{r}_1(t)$ tělesa B řešení rov
 \begin{equation*}
 	m\vec{r}_1\hspace{.1em}''(t) = -\frac{mMG}{|\vec{r}(t)|^3}\vec{r}(t)
 \end{equation*}
-Problém s touto je, že v ní vystupuje $\vec{r}_2$ (schované v $\vec{r}$). Tedy zároveň musíme vyřešit rovnici
+Problém s touto rovnicí je, že v ní vystupuje $\vec{r}_2$ (schované v $\vec{r}$). Tedy zároveň musíme vyřešit rovnici
 \begin{equation*}
 	m\vec{r}_2\hspace{.1em}''(t) = -\frac{mMG}{|\vec{r}(t)|^3}(-\vec{r}(t))
 \end{equation*}
@@ -284,7 +284,7 @@ Zavedeme opět úhlovou rychlost $\omega:=\varphi':$
 	y' &= r'\sin(\varphi)+r\omega \cos(\varphi) \\
 	y'' &= r''\sin(\varphi) + 2r'\omega\cos(\varphi) +r\omega'\cos(\varphi)- r\omega^{2}\sin(\varphi)
 \end{align*}
-Tudíž v polárních rovnicích vypadá naše soustava následovně:
+Tudíž v polárních souřadnicích vypadá naše soustava následovně:
 \begin{align}
 	r''\cos(\varphi)-2r'\omega \sin(\varphi)-r\omega' \sin(\varphi) - r\omega^{2}\cos(\varphi) &= -\frac{MG}{r^{2}}\cos(\varphi)\label{eq:gravitace v polarnich1} \\
 	r''\sin(\varphi) + 2r'\omega\cos(\varphi) +r\omega'\cos(\varphi)- r\omega^{2}\cos(\varphi) &= -\frac{MG}{r^{2}}\sin(\varphi)\label{eq:gravitace v polarnich2}
@@ -379,21 +379,16 @@ což je druhý Keplerův zákon. Uvažujme teď případ elipsy. Za celou period
 	\frac{1}{4}L^2T^2 &= \pi^2 a^4 (1-\epsilon^{2})=\pi^2 a^4 \frac{-2L^{2}E}{M^{2}G^{2}} = \pi^2 a^3 \frac{L^{2}}{MG} \\
 	\Rightarrow \frac{T^2}{a^3}&= \frac{4\pi^{2}}{MG}
 \end{align*}
-Dokázali jsme tedy
+Pro planety sluneční soustavy platí $E<0$. Dokázali jsme tedy
 
-\begin{věta}[Keplerovy zákony]
-  Pohyb v centrálním gravitačním poli
-  \begin{equation*}
-	  \vec{F}(\vec{r}) = -\frac{mMG}{|\vec{r}|^3}\vec{r}
-  \end{equation*}
-  má následující vlastnosti:
+\begin{věta}[Keplerovy zákony]\leavevmode
   \begin{enumerate}[(i)]
-	  \item \textit{První Keplerův zákon:} dráha je kuželosečka.
+	  \item \textit{První Keplerův zákon:} planety obíhají Slunce po elipsách.
 	\item \textit{Druhý Keplerův zákon:} obsahy ploch opsaných vektorem $\vec{r}$ stejný čas jsou stejné.
 	\item \textit{Třetí Keplerův zákon:}
 		\begin{equation*}
 		  \frac{T^{2}}{a^{3}}=\frac{4\pi^{2}}{MG}
 		\end{equation*}
-		tedy pro všechna tělesa v poli $\vec{F}$ je poměr $\frac{T^{2}}{a^{3}}$ stejný.
+		tedy pro všechny planety je poměr $\frac{T^{2}}{a^{3}}$ stejný.
   \end{enumerate}
 \end{věta}
