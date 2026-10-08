@@ -233,3 +233,50 @@ takže
 \end{equation*}
 Tedy existuje nějaké $n_0\in \mathbb{N}$ tak velké, že $I_{n_0}\in(0,1).$ To je ve sporu s $I_{n_0}\in \mathbb{Z}.$
 \end{důkaz}
+
+\begin{věta}
+  Nechť $X_n$ je aproximace řešení úlohy
+  \begin{align*}
+    x' &= f(t,x) \\
+    x(0) &= x_0
+  \end{align*}
+zkonstruovaná explicitní Eulerovou metodou s krokem $\tau$. Předpokládejme, že $f$ je Lipschitzovská a $C^{1}$. Pak existuje konstanta $C=C(\tau,x,f)$ závislá jen na $\tau$, přesném řešení $x$ a pravé straně $f$, že
+\begin{equation*}
+	\max_{1\leq i\leq n}|e_i| \leq C\tau
+\end{equation*}
+\end{věta}
+\begin{důkaz}
+Platí
+\begin{align*}
+	x_{n+1}	&=x_n+\tau f(t_n,x_n)+E_n \\
+	X_{n+1}	&= X_n+\tau f(t_n,X_n)
+\end{align*}
+kde $E_n=\frac{1}{2}x''(\xi)\tau^{2}, \xi\in(t_n,t_{n+1}).$ Odečtením těchto rovnic dostaneme
+\begin{align*}
+	e_{n+1} &= e_n+\tau [f(t_n,x_n)-f(t_n,X_n)] \\
+	\Rightarrow  |e_{n+1}-e_n| &= \tau |f(t_n,x_n)-f(t_n,X_n)| \leq \tau C|x_n-X_n|=\tau C |e_n| \\
+	\Rightarrow |e_{n+1}| &\leq (1+C\tau)|e_n|
+\end{align*}
+Protože $x''$ je omezená na $[0,T]$, dostáváme
+\begin{equation*}
+	|E_i|\leq \frac{\tau^{2}}{2}\norm{x''}_{C[0,T]}=:M
+\end{equation*}
+\begin{align*}
+	|e_1|&=|E_1|\leq M \\
+	|e_2|&\leq (1+C\tau)|e_1|+|E_2| \leq [(1+C\tau)+1]M \\
+	|e_3|&\leq (1+C\tau)|e_2|+|E_3| \leq [(1+C\tau)^{2}+(1+C\tau)+1]M \\
+	     &\vdots \\
+	|e_n|&\leq [(1+C\tau)^{n-1}+\hdots+(1+C\tau)+1]M \\
+	     &= \frac{(1+C\tau)^{n}-1}{(1+C\tau)-1}M= \frac{(1+C\tau)^{n}-1}{C\tau}\frac{\tau^{2}}{2}\norm{x''}_{C[0,T]} \\
+	     &= \frac{(1+C\tau)^{n}-1}{2C}\norm{x''}_{C[0,T]}\tau
+\end{align*}
+Podle binomické věty platí
+\begin{align*}
+	\left(1+C\tau\right)^{n}&=\left(1+\frac{CT}{n}\right)^n = \sum_{k=0}^n \frac{n\cdot(n-1)\cdot\hdots\cdot (n-k+1)}{n\cdot n\cdot \hdots \cdot n}\frac{(CT)^{k}}{k!}\leq \\
+	&\leq\sum_{k=0}^n \frac{(CT)^{k}}{k!} \leq \sum_{k=0}^\infty \frac{(CT)^{k}}{k!}=e^{CT},
+\end{align*}
+takže
+\begin{equation*}
+	|e_n|\leq \underbrace{\frac{e^{CT}-1}{2C}\norm{x''}_{C[0,T]}}_{=C(\tau,x,f)}\tau
+\end{equation*}
+\end{důkaz}
