@@ -7,6 +7,17 @@ Třetí paradox je … že letící šíp je v klidu, což vyplývá z předpokl
 	Za jasného denního světla matematici prověřují své rovnice a důkazy a při hledání matematické přesnosti nenechávají nic náhodě. V noci však, za svitu úplňku, sní, vznášejí se mezi hvězdami a žasnou nad zázrakem nebes. Nacházejí inspiraci. Bez snů není umění, není matematika, není život.
 \end{chapquote}
 
+\begin{chapquote}{Václav Havel, Zahradní slavnost}
+  . . . v budoucnosti se bude umění s technikou tak nějak
+harmonicky doplňovat – lyrickoepické verše pomohou při
+chemizaci likvidační praxe – periodická soustava pomůže
+rozvoji impresionismu – na každém technickém výrobku
+bude zvláštní ploška, vyhrazená pro účinný estetický vjem
+– komíny atomových elektráren budou pomalovány našimi nejlepšími krajináři – dvacet tisíc mil pod mořem
+budou čítárny přístupné všem – diferenciální rovnice se
+budou psát ve verších – na střechách cyklotronů budou
+divadla malých forem – a v nich se budou recitovat diferenciální rovnice – tak nějak lidsky . . .
+\end{chapquote}
 
 Stojí před námi hádanka, která lidstvo trápila 2000 let. Antickým filosofům z Eleje se zdál pojem pohybu tak zvláštní, že ho zavrhli a řekli, že žádný pohyb vlastně neexistuje. Zenón Elejský vymyslel několik paradoxů, které měli prokázat logickou nesmyslnost pohybu. Bohužel se nedochovali jeho původní spisy a musíme čerpat z Aristotelova komentáře. Aristoteles mluví o čtyřech paradoxech, přičemž ten čtvrtý je velmi vágní, pojďme si představit první tři.
 
@@ -109,4 +120,116 @@ Pokud $\alpha=\beta$, můžeme sestrojit jen jednu vepsanou kouli $\kappa$, $F:=
   \end{equation*}
   Bod (ii) se ukáže stejně, akorát $|P_1^XP_2^X|=||XP_1^X|-|XP_2^X||.$
   Ukažme (iii). 
+\end{důkaz}
+
+\begin{věta}
+  Číslo $\sqrt{2}$ je iracionální.
+\end{věta}
+\begin{důkaz}
+  Pro spor předpokládejme, že $\sqrt{2}=\frac{a}{b},$ kde $a,b$ jsou nesoudělná přirozená čísla. Dostáváme
+  \begin{equation*}
+    a^{2}=2b^{2}
+  \end{equation*}
+  Tudíž $a^{2}$ je sudé, takže $a$ je sudé. (Liché číslo jde vyjádřit jako $2k+1, k\in \mathbb{N},$ a to po umocnění dává $(2k+1)^{2}=4(k^{2}+k)+1$, což je znovu liché. Tedy pokud $a^{2}$ je sudé, musí být sudé i $a$.) Tímpádem je ale $a^{2}$ dělitelné čtyřmi, takže
+  \begin{equation*}
+    \frac{b^{2}}{2}=\frac{a^{2}}{4}\in \mathbb{N}
+  \end{equation*}
+  a tudíž $b^{2}$ je sudé, takže $b$ je sudé. Obě čísla jsou sudá, což je spor s tím, že byla nesoudělná.
+\end{důkaz}
+Úplně stejnou logikou získáme
+\begin{věta}
+  Číslo $\sqrt{p}$ je iracionální pro libovolné prvočíslo $p$.
+\end{věta}
+\begin{důkaz}
+	Stejný jak pro $\sqrt{2}$, akorát se přepíše \uv{sudé} na \uv{dělitelné $p$} atd.
+\end{důkaz}
+\begin{věta}
+  Číslo $e$ je iracionální.
+\end{věta}
+\begin{důkaz}
+  Pro spor předpokládejme, že $e=\frac{a}{b}$, kde $a,b$ jsou nesoudělná přirozená čísla. Víme
+  \begin{equation}\label{eq:e je iracionalni}
+    \frac{a}{b} = e = 1+\frac{1}{1!}+\frac{1}{2!}+\hdots + \frac{1}{b!} + R
+  \end{equation}
+  kde zbytek $R$ (remainder) jde odhadnout
+  \begin{align*}
+	  R &= \frac{1}{(b+1)!}+\frac{1}{(b+2)!}+\frac{1}{(b+3)!}+\hdots \\
+	    &= \frac{1}{b!}\left[\frac{1}{b+1}+\frac{1}{(b+1)(b+2)}+\frac{1}{(b+1)(b+2)(b+3)}+\hdots \right] \\
+	  &\leq \frac{1}{b!}\left[\frac{1}{b+1}+\frac{1}{(b+1)^{2}}+\frac{1}{(b+1)^{3}}+\hdots \right] = \frac{1}{b!}\frac{\frac{1}{b+1}}{1-\frac{1}{b+1}}=\frac{1}{b\cdot b!}
+  \end{align*}
+\end{důkaz}
+Vynásobením (\ref{eq:e je iracionalni})$\cdot b!$ dostaneme
+\begin{equation*}
+	a(b-1)! =  b!+\frac{b!}{1!}+\frac{b!}{2!}+\hdots + \frac{b!}{b!} + R\cdot b!,
+\end{equation*}
+což je spor, protože $a(b-1)!, b!, \frac{b!}{1!},\hdots, \frac{b!}{b!}$ jsou celá čísla, zatímco $0 < R\cdot b! \leq \frac{1}{b} < 1.$
+
+Abychom mohli říct, že $\frac{1}{b}<1$, měli bychom ještě ukázat, že $b>1$, neboli že $e$ není přirozené číslo. To ale snadno plyne (například) z odhadu
+\begin{align*}
+	e = 1+\frac{1}{1!}&+\frac{1}{2!}+R,\quad 0<R<\frac{1}{2\cdot 2!} \\
+	\Rightarrow  1+1+\frac{1}{2}&<e<1+1+\frac{1}{2}+\frac{1}{2\cdot 2} \\
+	2.5&<e<2.75 
+\end{align*}
+
+\begin{věta}
+  Číslo $\pi$ je iracionální.
+\end{věta}
+\begin{důkaz}
+  Pro spor předpokládejme, že $\pi=\frac{a}{b}$, kde $a,b$ jsou nesoudělná přirozená čísla. Definujme
+  \begin{align*}
+	  f_n(x):=\frac{b^{n}}{n!}x^{n}(a-bx)^{n}&=\frac{b^{n}}{n!}x^{n}\sum_{k=0}^{n}\begin{pmatrix}n\\ k\end{pmatrix}a^{k}(-1)^{n-k}b^{n-k}x^{n-k} \\
+	  &=\sum_{k=0}^{n}\frac{1}{n!}\begin{pmatrix}n\\ k\end{pmatrix}a^{k}(-1)^{n-k}b^{2n-k}x^{2n-k}
+  \end{align*}
+  Substitucí v sumě $j:=2n-k, 0\leq k\leq n \Rightarrow n\leq j\leq 2n$ dostaneme
+  \begin{equation*}
+  f_n(x)=\sum_{j=n}^{2n}\frac{1}{n!}\begin{pmatrix}n\\ 2n-j\end{pmatrix}a^{2n-j}(-1)^{n+j}b^{n+j}x^{n+j}
+  \end{equation*}
+  Exponent u $x$ je $\geq n$, takže platí
+  \begin{equation*}
+    f_n(0)=f'_n(0)=\hdots=f^{(n-1)}_n(0)=0
+  \end{equation*}
+  Dále když $n+k$-krát zderivujeme $f_n$, kde $0\leq k\leq n,$ členy $x^{n+j}, j<k$ se zderivují na nulu, $x^{n+k}$ se zderivuje na
+  \begin{equation*}
+    \frac{d^{n+k}}{dx^{n+k}}x^{n+k}=(n+k)(n+k-1)\cdot\hdots\cdot2\cdot1=(n+k)!
+  \end{equation*}
+  a členy $x^{n+j}, j>k$ se zderivují na $x^{j-k}$, čehož se zbavím tak, že za $x$ dosadím nulu. Tedy
+  \begin{equation*}
+	  f_n^{(n+j)}(0)=\frac{1}{n!}\begin{pmatrix}n\\ 2n-j\end{pmatrix}a^{2n-j}(-1)^{n+j}b^{n+j}(n+j)! \in \mathbb{Z}
+  \end{equation*}
+  Číslo je celé, protože v $(n+j)!$ je dělitelné $n!$. Protože $f_n$ je polynom stupně $2n$, derivace řádu $>2n$ vyjdou vždy 0. Tedy celkem
+  \begin{equation*}
+    \forall j\in \mathbb{N}\colon f_n^{(j)}(0)\in \mathbb{Z} 
+  \end{equation*}
+  Dále platí
+  \begin{equation*}
+    f_n(x)=\frac{b^{2n}}{n!}x^{n}(\pi-x)^{n}\quad \Rightarrow \quad f_n(\pi-x)=f_n(x),
+  \end{equation*}
+  takže dostáváme i 
+  \begin{equation*}
+    \forall j\in \mathbb{N}\colon f_n^{(j)}(\pi)\in \mathbb{Z}.
+  \end{equation*}
+Definujme
+\begin{equation*}
+  F_n := f_n-f_n''+f_n^{(4)}-\hdots + (-1)^{n}f_n^{(2n)}
+\end{equation*}
+Pak platí $F_n(0), F_n(\pi)\in \mathbb{Z}$ a (protože $f_n^{(2n+2)}=0$):
+\begin{equation*}
+  F_n''+F_n = f_n.
+\end{equation*}
+Dále definujme
+\begin{align*}
+	I_n :&= \int_0^\pi f_n(x)\sin(x)dx = \int_0^\pi (F_n''(x)+F_n(x))\sin(x)dx =\\
+	     &= \int_0^\pi (-F_n'(x)\cos(x)+F_n(x)\sin(x))dx + [F_n'(x)\sin(x)]_0^\pi \\
+	     &= \int_0^\pi (F_n(x)(-\sin(x))+F_n(x)\sin(x))dx + [F_n'(x)\sin(x)]_0^\pi - [F_n(x)\cos(x)]_0^\pi \\
+	     &= F_n(0)-F_n(\pi) \in \mathbb{Z}
+\end{align*}
+Protože $f_n(x)>0, \sin(x)>0$ na $(0,\pi)$, platí $I_n>0.$ Zároveň ale $x(\pi-x)\leq \frac{\pi^{2}}{4}$ (nakreslete si parabolu), takže
+\begin{equation*}
+  f_n(x)=\frac{b^{2n}}{n!}x^{n}(\pi-x)^{n}\leq \frac{b^{2n}}{n!}\left(\frac{\pi^{2}}{4}\right)^{n}
+\end{equation*}
+takže 
+\begin{equation*}
+	I_n \leq \int_0^\pi \frac{b^{2n}}{n!}\left(\frac{\pi^{2}}{4}\right)^{n} dx = \pi\frac{b^{2n}}{n!}\left(\frac{\pi^{2}}{4}\right)^{n}\quad \Rightarrow \quad \lim_{n\to \infty}I_n=0.
+\end{equation*}
+Tedy existuje nějaké $n_0\in \mathbb{N}$ tak velké, že $I_{n_0}\in(0,1).$ To je ve sporu s $I_{n_0}\in \mathbb{Z}.$
 \end{důkaz}

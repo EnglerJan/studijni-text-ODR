@@ -2,8 +2,7 @@
 V následujících dvou kapitolách si představíme základní funkce $\exp, \sin, \cos$, které jistě už znáte. Narozdíl od SŠ (a i většiny kurzů na VŠ) si je ale \uv{nevycucáme z prstu}, ale systematicky odvodíme jako řešení diferenciálních rovnic. Z příslušných rovnic pak vyčteme všechny vlastnosti těchto funkcí.
 
 \section{Bakterie, radioaktivita, tranzistory, Gangnam Style a rozpínání vesmíru}
-
-\section{Zavedení funkce exp}\label{sec:zavedeni funkce exp}
+%DOPLNIT A VYSVETLIT SURJEKTIVNI FUNKCI
 
 \begin{definice}[Funkce exp]
   Funkce $\exp(t)$ je jednoznačné řešení úlohy
@@ -13,6 +12,52 @@ V následujících dvou kapitolách si představíme základní funkce $\exp, \s
   \end{align*}
   Číslo $e:= \exp(1)$ nazýváme \emph{Eulerovo číslo}.
 \end{definice}
+
+\section{Vyčíslení funkce exp}
+Zadefinovali jsme si funkci jako abstraktní objekt, který řeší nějakou diferenciální rovnici. To není příliš uspokojující, protože z toho není jasné, jak hodnotu funkce vyčíslit (kromě $\exp(0)$, což je z definice 1). Pojďme si ukázat, jak se dá $\exp(t)$ spočítat.
+
+Víme, že pro malé $h$ platí
+\begin{equation*}
+  \frac{\exp(t+h)-\exp(t)}{h} \approx (\exp(t))'=\exp(t)
+\end{equation*}
+Takže 
+\begin{equation*}
+  \exp(t+h) \approx \exp(t)+h\cdot \exp(t) = (1+h)\exp(t)
+\end{equation*}
+a aproximace je tím lepší, čím menší je $h$. Můžeme tedy začít od $t=0$ a malými krůčky $h$ se posouvat:
+\begin{align*}
+	\exp(h) &\approx (1+h)\exp(0) = 1+h \\
+	\exp(2h) &\approx (1+h)\exp(h) = (1+h)^{2} \\
+	\exp(3h) &\approx (1+h)\exp(2h) = (1+h)^{3} \\
+		 &\vdots
+\end{align*}
+Pokud chceme vyčíslit $\exp(x),$ rozdělíme si interval $[0,x]$ na malé krůčky $h=\frac{x}{N}$, kde $N\in \mathbb{N}$ je velké:
+\begin{equation*}
+  0,\ \frac{x}{N},\ 2\frac{x}{N},\ 3\frac{x}{N},\ \hdots,\ x
+\end{equation*}
+a tudíž
+\begin{equation*}
+  \exp(x)\approx \left(1+\frac{x}{N}\right)^{N}
+\end{equation*}
+
+\begin{příklad}
+  Aproximujeme si Eulerovo číslo $e=\exp(1).$ Červeně jsou vyznačeny správné cifry (zatím nevíme, jak sami spočítat počet správných cifer, porovnáváme to s hodnotou ve standardních softwarových knihovnách).
+  \begin{align*}
+	  \left(1+\frac{1}{10}\right)^{10}&\approx \textcolor{red}{2}.5937424601000023 \\
+	  \left(1+\frac{1}{100}\right)^{100}&\approx \textcolor{red}{2.7}048138294215285 \\
+	  \left(1+\frac{1}{1000}\right)^{1000}&\approx \textcolor{red}{2.71}69239322355936 \\
+	  \left(1+\frac{1}{10^{4}}\right)^{10^{4}}&\approx \textcolor{red}{2.718}1459268249255 \\
+	  \left(1+\frac{1}{10^{5}}\right)^{10^{5}}&\approx \textcolor{red}{2.7182}682371922975 \\
+	  \left(1+\frac{1}{10^{6}}\right)^{10^{6}}&\approx \textcolor{red}{2.71828}04690957534
+  \end{align*}
+\end{příklad}
+
+\begin{Todo}
+  graf jak geometricka posl aproximuje exp
+\end{Todo}
+
+\section{Vlastnosti funkce exp}\label{sec:zavedeni funkce exp}
+
 
 \begin{věta}[Vlastnosti funkce exp]\label{veta:vlastnosti exp}\leavevmode
 \begin{enumerate}[(i)]
@@ -261,7 +306,7 @@ Protože obě funkce $0$ a $\frac{1}{(n+1)!}\frac{1}{t}$ jdou v limitě $t\to \i
   Ke každé bijekci $f\colon A\to B$ existuje jednoznačně určená inverzní funkce $f^{-1}\colon B\to A,$ která je taky bijekce.
 \end{věta}
 \begin{důkaz}
-  Nechť $b\in B.$ Protože $f$ je surjektivní, existuje $a\in A$ takové, že $f(a)=b.$ Protože $f$ je injektivní, existuje takové $a$ jen jedno: pokud by existovala $a_1,a_2$ taková, že $f(a_1)=b=f(a_2),$ z injektivity plyne $a_1=a_2.$ Označme $f^{-1}(b):=a.$ Pokud toto provedeme pro všechna $b\in B$, dostaneme funkci $f^{-1}\colon B\to A$, která je k $f$ inverzní:
+  Nechť $b\in B.$ Protože $f$ je surjektivní, existuje $a\in A$ takové, že $f(a)=b.$ Protože $f$ je injektivní, existuje takové $a$ jen jedno: pokud by existovala $a_1,a_2$ taková, že $f(a_1)=b=f(a_2),$ z injektivity plyne $a_1=a_2.$ Označme $f^{-1}(b):=a.$ Pokud toto provedeme pro všechna $b\in B$, dostaneme funkci $f^{-1}\colon B\to A$, která je k $f$ inverzní: platí totiž
   \begin{equation*}
     f(f^{-1}(b))=f(a)=b
   \end{equation*}
@@ -352,45 +397,6 @@ Najděte pomocí substituce $y(t):=\ln(x(t))$ co nejvíc řešení rovnice
 	  t_{1/8}=\frac{\ln(8)}{\lambda}
   \end{equation*}
   Z vlastností logaritmu plyne, že $t_{1/8}=3t_{1/2}.$ Obecně $t_{1/2^{n}}=n t_{1/2}.$
-\end{příklad}
-
-\section{Vyčíslení funkce exp}
-Zadefinovali jsme si speciální funkce a dokázali řadu elegantních vlastností, ale naše nové funkce neumíme \emph{vyčíslit}. Pojďme to napravit.
-
-Víme, že pro malé $h$ platí
-\begin{equation*}
-  \frac{\exp(t+h)-\exp(t)}{h} \approx (\exp(t))'=\exp(t)
-\end{equation*}
-Takže 
-\begin{equation*}
-  \exp(t+h) \approx \exp(t)+h\cdot \exp(t) = (1+h)\exp(t)
-\end{equation*}
-a aproximace je tím lepší, čím menší je $h$. Můžeme tedy začít od $t=0$ a malými krůčky $h$ se posouvat:
-\begin{align*}
-	\exp(h) &\approx (1+h)\exp(0) = 1+h \\
-	\exp(2h) &\approx (1+h)\exp(h) = (1+h)^{2} \\
-	\exp(3h) &\approx (1+h)\exp(2h) = (1+h)^{3} \\
-		 &\vdots
-\end{align*}
-Pokud chceme vyčíslit $\exp(x),$ rozdělíme si interval $[0,x]$ na malé krůčky $h=\frac{x}{N}$, kde $N\in \mathbb{N}$ je velké:
-\begin{equation*}
-  0,\ \frac{x}{N},\ 2\frac{x}{N},\ 3\frac{x}{N},\ \hdots,\ x
-\end{equation*}
-a tudíž
-\begin{equation*}
-  \exp(x)\approx \left(1+\frac{x}{N}\right)^{N}
-\end{equation*}
-
-\begin{příklad}
-  Aproximujeme si Eulerovo číslo $e=\exp(1).$ Červeně jsou vyznačeny správné cifry (zatím nevíme, jak sami spočítat počet správných cifer, porovnáváme to s hodnotou ve standardních softwarových knihovnách).
-  \begin{align*}
-	  \left(1+\frac{1}{10}\right)^{10}&\approx \textcolor{red}{2}.5937424601000023 \\
-	  \left(1+\frac{1}{100}\right)^{100}&\approx \textcolor{red}{2.7}048138294215285 \\
-	  \left(1+\frac{1}{1000}\right)^{1000}&\approx \textcolor{red}{2.71}69239322355936 \\
-	  \left(1+\frac{1}{10^{4}}\right)^{10^{4}}&\approx \textcolor{red}{2.718}1459268249255 \\
-	  \left(1+\frac{1}{10^{5}}\right)^{10^{5}}&\approx \textcolor{red}{2.7182}682371922975 \\
-	  \left(1+\frac{1}{10^{6}}\right)^{10^{6}}&\approx \textcolor{red}{2.71828}04690957534
-  \end{align*}
 \end{příklad}
 
 \section{Obecná mocnina}

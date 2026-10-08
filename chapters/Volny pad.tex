@@ -1,11 +1,158 @@
-\chapter{Co je diferenciální rovnice?}
+\chapter{Co je diferenciální rovnice?}\label{ch:Co je diferencialni rovnice}
 \begin{chapquote}{Henri Poincaré}% Value of Science: Essential Writings of Henri Poincare (1907), 87.
 Newton nám ukázal, že zákon je pouze nezbytný vztah mezi současným stavem světa a stavem, který na něj bezprostředně navazuje. Všechny ostatní zákony, které byly od té doby objeveny, nejsou ničím jiným; v podstatě se jedná o diferenciální rovnice.
 %Newton has shown us that a law is only a necessary relation between the present state of the world and its immediately subsequent state. All the other laws since discovered are nothing else; they are in sum, differential equations.
 \end{chapquote}
 
 %VYSVETLIT f'=0 => f=CONST. !!!!
+V této kapitole se podíváme na první diferenciální rovnici: \textit{druhý Newtonův zákon}. Pomocí něho spočítáme polohu hmotného bodu v homogenním gravitačním poli tak, že ji \uv{uhodneme}. Pak se zamyslíme nad tím, jestli je tato operace \uv{uhodnutí} legitimní a dostaneme se tak k principu determinismu.
 
-\section{Volný pád}
+\section{Volný pád}\label{sec:volny pad}
+Mějme hmotný bod pohybující se po přímce, nechť $x(t)$ je jeho poloha v čase $t.$ Pak rychlost dostaneme derivováním $x$ podle času:
+\begin{equation*}
+  v(t):=x'(t)=\frac{dx}{dt}(t)
+\end{equation*}
+a zrychlení derivováním $v$ podle času:
+\begin{equation*}
+  a(t):=v'(t)=\frac{dv}{dt}(t)=x''(t)=\frac{d^{2}x}{dt^{2}}(t),
+\end{equation*}
+tedy zrychlení je druhá derivace polohy. Druhý Newtonův zákon pak můžeme napsat ve tvaru
+\begin{equation*}
+	mx''(t)=F\quad \text{neboli}\quad m\frac{d^{2}x}{dt^{2}}=F.
+\end{equation*}
+Úloha je tedy následující: někdo nám zadá sílu působící na hmotný bod (a tudíž zrychlení, což se triviálně dopočítá jako $\frac{F}{m}$), a chceme zjistit polohu hmotného bodu. Jinak řečeno, někdo nám zadá $x''(t)$ a my chceme spočítat $x(t).$ Takové úloze říkáme \textit{diferenciální rovnice}. Obecná diferenciální rovnice se dá napsat ve tvaru
+\begin{equation}\label{eq:obecna diferencialni rovnice}
+  \phi(t,x,x',x'', ..., x^{(n)})=0
+\end{equation}
+kde $\phi$ je nějaká funkce (tedy výraz, kde se může objevovat $t, x,\hdots, x^{(n)}$ různými způsoby). V následujících kapitolách si ukážeme například, jak řešit rovnice
+\begin{align*}
+	x'(t) &= e^{t}\sin(t) \\
+	x'(t)- x(t) &= 0 \\
+	x''(t)+x(t) &= 0 \\
+	x'(t) &= \sqrt{x(t)}
+\end{align*}
+a nebo si ukážeme, že funkce $x(t)=\sin(t)$ řeší rovnici
+\begin{equation*}
+  x(t)^{2}+(x'(t))^{2}=1.
+\end{equation*}
+Abychom mohli druhý Newtonův zákon napsat ve tvaru rovnice \ref{eq:obecna diferencialni rovnice}, musíme pracovat s $F$ závisejícím nějak na čase, poloze, rychlosti, zrychlení, ...
+
+Budeme dále předpokládat, že $F=F(t,x,x').$ Tedy
+\begin{equation*}
+	\boxed{\text{Druhý Newtonův zákon: } mx''(t)=F(t,x(t),x'(t))}
+\end{equation*}
+Pořád ale máme problém, něco nám chybí. To uvidíme v následujícím příkladu.
+
+\begin{příklad}[Rovnoměrný přímočarý pohyb]
+Předpokládejme, že na nás nepůsobí žádná síla, tedy $F=0$. Jak se pohybujeme? \\
+\textit{Řešení:} Platí
+\begin{align*}
+	mx''(t)&=0,\ m\neq 0 \\
+	\Rightarrow  x''(t)&=0
+\end{align*}
+Hledáme funkci, jejíž druhá derivace je $0$. Pokud budeme pracovat s rychlostí $v(t):=x'(t)$, znamená to, že derivace rychlosti je $v'(t)=x''(t)=0.$ Známe nekonečně mnoho funkcí, jejíž derivace je $0$, jsou to konstantní funkce. Tedy uhodneme, že 
+\begin{align*}
+	v(t) &= C = \text{konst.} \\
+	\Rightarrow x'(t) &= C
+\end{align*}
+Tímpádem derivace $x(t)$ je konstanta. Známe nekonečně mnoho funkcí, jejíž derivace je konstantní, jsou to afinní funkce, jejíž směrnice je ona konstanta $C$. Tedy uhodneme, že
+\begin{equation*}
+  x(t) = C\cdot t+D.
+\end{equation*}
+Získali jsme tedy nekonečně mnoho řešení, kde důležité fyzikální veličiny poloha, rychlost a zrychlení jsou
+\begin{align*}
+	x(t) &= C\cdot t + D \\
+	v(t) &= x'(t) = C \\
+	a(t) &= x''(t) = 0
+\end{align*}
+
+Jak určit konstany $C,D$? Očividně platí $C=v(0), D=x(0)$. Tedy pokud bychom věděli počáteční polohu a rychlost, uměli bychom přesně spočítat $x(t)=v_0\cdot t+x_0.$ Abychom tedy mohli použít druhý Newtonův zákon na určení polohy hmotného bodu v budoucnosti, musíme znát počáteční \textit{stav} hmotného bodu, tj. jeho polohu a rychlost.
+
+Obecně, abychom mohli určit řešení $x(t)$ diferenciální rovnice, nestačí nám samotná diferenciální rovnice, ale potřebujeme k ní \textit{počáteční podmínky}.
+\end{příklad}
+
+Pokud v rovnici vystupují nanejvýš derivace $x^{(n)}(t)$ (tedy nevystupují v ní derivace $x^{(n+1)}(t), \hdots$), nazýváme jí \textit{rovnice $n$-tého řádu.} Rovnice $n$-tého řádu vyžadují $n$ počátečních podmínek. Například druhý Newtonův zákon vyžaduje 2 počáteční podmínky -- počáteční polohu a rychlost.
+
+\begin{příklad}[Svislý vrh v homogenním gravitačním poli]
+  Na hmotný bod působí síla $F=-mg$, kde $g$ je konstanta. Počáteční poloha je $x_0$ a počáteční rychlost $v_0$. Jak se pohybuje hmotný bod?\\
+  \textit{Řešení:} Řešíme úlohu
+\begin{align*}
+	mx''(t) &= -mg \\
+	x(0) &= x_0 \\
+	x'(0) &= v_0
+\end{align*}
+Opět postupujeme tak, že odstaňujeme derivace \uv{hádáním}:
+\begin{align*}
+	mx''(t) &= -mg \\
+	x''(t) &= -g \\
+	x'(t) &= -gt+ C \\
+	x(t) &= -\frac{1}{2}gt^{2}+Ct+D
+\end{align*}
+Očividně $x(0)=D,\ x'(0)=C,$ tedy $C=v_0,\ D=x_0.$ Tedy poloha, rychlost a zrychlení hmotného bodu jsou
+\begin{align*}
+	x(t)&=-\frac{1}{2}gt^{2}+v_0t+x_0 \\
+	v(t)&=-gt+v_0 \\
+	a(t)&=-g
+\end{align*}
+\end{příklad}
+
+\begin{příklad}[Šikmý vrh v homogenním gravitačním poli]
+Na hmotný bod působí síla 
+\begin{equation*}
+	\vec{F}=\begin{pmatrix}0\\ -mg\end{pmatrix},
+\end{equation*}
+kde $g$ je konstanta. Počáteční poloha je $x_0$ a počáteční rychlost $v_0$. Jak se pohybuje hmotný bod?\\
+\textit{Řešení:} musíme použít druhý Newtonův zákon v $x$-ovém směru, kde je síla $0$, a v $y$-ovém směru, kde je síla $-mg$. Dostaneme dvě úlohy
+\begin{alignat*}{5}
+  mx''(t) &= 0 & my''(t) &= -mg \\
+  x(0) &= x_0 & \hspace{4em} \text{a} \hspace{4em}       y(0) &= y_0 \quad \\
+  x'(0) &= v_{0x} & 		           y'(0) &= v_{0y}
+\end{alignat*}
+Tyto úlohy už umíme řešit, tedy výsledný pohyb je
+\begin{align*}
+	x(t) &= v_{0x}t+x_0 \\
+	y(t) &= -\frac{1}{2}gt^{2}+v_{0y}t+y_0.
+\end{align*}
+\end{příklad}
 
 \section{\PL ova věta. Princip determinismu}
+Je náš postup řešení úloh v sekci \ref{sec:volny pad} legitimní? Našli jsme všechna řešení daných úloh? Co vlastně znamená řešit diferenciální rovnici?
+
+\begin{definice}[Řešení úlohy dané diferenciální rovnicí] Mějme úlohu
+\begin{align}
+	\phi(t,x,x',\hdots,x^{(n)}) &= 0\notag \\
+	x(0) &= C_0\notag \\
+	x'(0) &= C_1\quad \label{eq:obecna uloha} \\
+	      &\vdots\notag \\
+	x^{(n-1)}(0) &= C_{n-1}\notag
+\end{align}
+Řešením úlohy je taková funkce $x,$ která má $n$ derivací, splňuje
+\begin{equation*}
+	\forall t\colon\ \phi(t,x(t),x'(t),\hdots,x^{(n)}(0))=0
+\end{equation*}
+a $x(0)=C_0,\hdots,x^{(n-1)}(0)=C_{n-1}.$
+\end{definice}
+ Diferenciální rovnice říká, co se děje uvnitř onoho systému, jak funguje a jak spolu interagují všechny veličiny. Dále budeme pomocí diferenciálních rovnic popisovat fyzikální zákony, rychlosti chemických reakcí, šíření pandemií nebo nárůst popularity virálních videí. Věříme, že náš svět je \textit{deterministický}. Tudíž pokud máme správný \textit{model}, správný matematický popis vnitřního mechanismu daného systému (=správnou diferenciální rovnici), a známe momentální stav systému (=správné počáteční podmínky), pak jsme schopni předpovědět budoucí chování systému. Pokud nejsme schopni předpovědět chování systému, pak se v něm děje něco, co neznáme nebo neumíme popsat (=máme špatnou diferenciální rovnici), nebo nemáme dost informací o počátečních podmínkách.
+
+Matematicky je situace složitější. Dají se zkonstruovat diferenciální rovnice, které pro jisté počáteční podmínky mají víc než jedno řešení, nebo nemají řešení žádné. Těmto patologickým jevům se budeme zabývat později. Rovnice, se kterými se setkáme v příštích pár kapitolách, tuto patologii nemají, a my budeme nadále předpokládat, že řešení (splňující dané počátečních podmínek) existuje vždy právě jedno. Budeme pracovat s předběžnou verzí \PL ovy věty. Věta má jisté předpoklady, které eliminují ony patologické případy, ale těmi se zatím zabývat nebudeme, protože zatím nemáme znalosti na jejich pochopení.
+
+\begin{věta}[\PL ova věta, neformálně]
+  Diferenciální rovnice $n$-tého řádu má právě jedno řešení, které splňuje daných $n$ počátečních podmínek.
+\end{věta}
+
+Tato věta říká dvě věci:
+\begin{enumerate}[(i)]
+	\item \textit{Existence řešení:} Můžeme mluvit o řešeních úlohy (\ref{eq:obecna uloha}), protože víme, že nějaké řešení existuje.
+\item \textit{Jednoznačnost řešení:} Když zadefinujeme funkci jako řešení úlohy (\ref{eq:obecna uloha}), je tato definice jednoznačná. Pokud o dvou funkcích $x_1, x_2$ dokážeme, že obě řeší úlohu (\ref{eq:obecna uloha}), plyne z toho $x_1=x_2.$
+\end{enumerate}
+Proto ji taky můžeme nazvat \textit{Věta o existenci a jednoznačnosti řešení}.
+
+Poznamenejme, že se v celém kurzu budeme zabývat \textit{obyčejnými} diferenciálními rovnicemi. Slovo obyčejná znamená, že veličiny závisí jen na jednom parametru, který bude zpravidla čas. Oproti tomu existují \textit{parciální diferenciální rovnice}, kde veličiny závisí na více parametrech a kombinují se tam derivace podle všech parametrů zvlášť, takzvané parciální derivace. Například když studujeme vývoj teploty v termosce, máme dvě možnosti:
+\begin{enumerate}[(i)]
+	\item Můžeme předstírat, že ve všech částech termosky je jedna a tatáž teplota $T$. Tudíž budeme zkoumat teplotu jako funkci $T(t)$ a sestavíme pro ni obyčejnou diferenciální rovnici. K tomu se dostaneme v kapitole \ref{chap:integral}.
+	\item Můžeme uvažovat prostorové rozložení teploty, tedy zkoumat $T(t,x,y,z)$. Pro tuto funkci sestavíme parciální diferenciální rovnici, takzvanou rovnici vedení tepla, a tu pak vyřešíme. Problém je, že pokud termoska nemá nějaký speciální tvar, neumíme rovnici řešit na papíře a musíme se uspokojit s řešením na počítači. Navíc kromě počátečních podmínek musíme uvažovat \textit{okrajové podmínky}: nejspíš bude záležét na tom, jestli termosku položíme na radiátor, nebo ji hodíme do ledového rybníku.
+\end{enumerate}
+
+Existují další typy diferenciálních rovnic. Například pokud studujete vývoj populace, kde doba těhotenství je $\tau=\SI{9}{měsíců}$, bude růst populace $x'(t)$ záviset ne na veličinách v čase $t$, ale v čase $t-\tau$ (domyslete si ony veličiny). Takovým rovnicím se říká \textit{rovnice s prodlevou}. Pokud zkoumáme ceny komodit na světových trzích, nikdy nemůžeme znát všechny veličiny, které vstupují do systému. Naši neznalost modelujeme pomocí náhodných jevů (akcie chodí sporadicky nahoru a dolů), takovým rovnicím říkáme \textit{stochastické diferenciální rovnice}. Pokud se v úloze objevuje nějaká nerovnost (letíme si v klidu rovnoměrným přímočarým pohybem a najednou narazíme do zdi), řešíme takzvanou \textit{subdiferenciální inkluzi}. Matematici toho vymysleli hodně.
+
+Pokud chcete porozumět světu okolo sebe, čtěte dál, a studujte diferenciální rovnice.

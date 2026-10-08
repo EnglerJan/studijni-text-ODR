@@ -1,5 +1,9 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'thesis.blg'
-[44] biber:342> INFO - === Mon Sep 28, 2026, 19:00:45
-[51] Utils.pm:479> ERROR - thesis.bcf is malformed, last biblatex run probably failed. Deleted thesis.bbl
-[51] Biber.pm:137> INFO - ERRORS: 1
+[104] biber:342> INFO - === Wed Sep 30, 2026, 10:28:34
+[125] Biber.pm:421> INFO - Reading 'thesis.bcf'
+[215] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
+[232] bbl.pm:676> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[232] bbl.pm:779> INFO - Output to thesis.bbl
+[233] Biber.pm:132> WARN - The file 'thesis.bcf' does not contain any citations!
+[233] Biber.pm:134> INFO - WARNINGS: 1
