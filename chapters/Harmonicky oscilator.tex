@@ -38,9 +38,11 @@ Ze skušenosti víme, že kmitání pružiny je periodické. Tuto vlastnost bude
 
 \begin{poznámka}
   Pojďme se zamyslet, jak se asi bude řešení vyvíjet. Uvažujme $\sin(t)$. Závaží má počáteční polohu $x(0)=0$ a rychlost $x'(0)=1$, takže ze začátku bude výchylka růst přibližně lineárně:
-  \begin{Todo}
-    obrazek
-  \end{Todo}
+
+  \begin{equation*}
+    \sin(t)\approx \sin(0)+\sin'(0)\cdot t=0+1\cdot t = t
+  \end{equation*}
+
   Jenže pak $x>0,$ takže $x''=-x<0,$ takže závaží začne zpomalovat.
 
   Pořád je $x>0,$ takže rychlost se pořád zmenšuje a někdy musí dosáhnout hodnoty $0$. Tedy $\exists t^{*}>0\colon x'(t^{*})=0.$
@@ -49,9 +51,9 @@ Ze skušenosti víme, že kmitání pružiny je periodické. Tuto vlastnost bude
 
   Závaží se vrátí do rovnovážné polohy, tedy $\exists t^{**}>t^{*}\colon x(t^{**})=0.$
 
-  Situace v čase $t^{**}$ je podobná jako v čase $0$, jen rychlost míří opačným směrem, uděláme proto oblouček opačným směrem. V nějakém čase $t^{***}>t^{**}$ se vrátíme do rovnovážné polohy $x(t^{***})=0.$
+  Situace v čase $t^{**}$ je podobná jako v čase $0$, jen rychlost míří opačným směrem, uděláme proto oblouček opačným směrem. V nějakém čase $t^{***}>t^{**}$ se otočíme a v dalším čase $t^{****}>t^{***}$ se vrátíme do rovnovážné polohy $x(t^{****})=0$, přičemž $x'(t^{****})>0.$
 
-  Níže si dokážeme, že naše kvalitativní analýza je správně. Mimo jiné i zjistíme, že $t^{*}=2t^{*},\ x(t^{*})=1,\ x'(t^{**})=-x'(0),\ x(t+2t^{**})=x(t),\ \hdots,\ $ což zatím nejde vidět. Z toho pak plyne, že při druhém návratu do rovnovážné polohy v čase $t^{***}$ se začne závaží pohybovat stejně, jak v čase 0. Děj je tedy periodický s periodou $t^{***},$ a navíc $t^{***}=2t^{**}.$ Číslo $t^{**}$ už dobře znáte -- je to \emph{Ludolfovo číslo} $\pi$.
+  Níže si dokážeme, že naše kvalitativní analýza je správně. Mimo jiné i zjistíme, že $t^{*}=2t^{*},\ x(t^{*})=1,\ x'(t^{**})=-x'(0),\ x(t+2t^{**})=x(t),\ \hdots,\ $ což zatím nejde vidět. Z toho pak plyne, že v čase $t^{****}$ se začne závaží pohybovat stejně, jak v čase 0. Děj je tedy periodický s periodou $t^{****},$ a navíc $t^{****}=2t^{**}.$ Číslo $t^{**}$ už dobře znáte -- je to \emph{Ludolfovo číslo} $\pi$.
 \end{poznámka}
 
 \begin{úloha}\label{ul:harmonicky oscilator}
@@ -62,6 +64,11 @@ Ze skušenosti víme, že kmitání pružiny je periodické. Tuto vlastnost bude
 	x'(0) &= v_0
 \end{align*}
 \end{úloha}
+
+Pojďme aproximovat $\sin, \cos$ pomocí explicitní Eulerovy metody.
+\begin{Todo}
+  Explicitni Euler
+\end{Todo}
 
 \begin{věta}[Vlastnosti sin, cos]\leavevmode
 \begin{enumerate}[(i)]
@@ -272,7 +279,7 @@ a funkci $\omega(t)$ říkáme \emph{úhlová rychlost}.
 \end{poznámka}
 
 \begin{úloha}
-	Ukažte, že funkce $\tan(x):=\frac{\sin(x)}{\cos(x)}$ je rostoucí na $(-\frac{\pi}{2},\frac{\pi}{2})$ tak, že ji zderivujete.
+	Ukažte, že funkce $\tan(x):=\frac{\sin(x)}{\cos(x)}$ je rostoucí na $(-\frac{\pi}{2},\frac{\pi}{2})$ tak, že ji zderivujete, tj. $(\tan(x))'=\frac{1}{\cos^{2}(x)}$.
 \end{úloha}
 \begin{definice}[arctan]
   Funkce $\arctan\colon \mathbb{R}\to \left(-\frac{\pi}{2},\frac{\pi}{2}\right)$ je definovaná jako inverzní k funkci $\tan\colon \left(-\frac{\pi}{2},\frac{\pi}{2}\right)\to \mathbb{R}.$
@@ -312,6 +319,11 @@ kde jsme zavedli
 \begin{equation*}
 	\omega_0:=\sqrt{\frac{k}{m}}\quad (\text{přirozená úhlová rychlost}),\quad \zeta:=\frac{c}{2m\omega_0}\quad (\text{poměrné tlumení})
 \end{equation*}
+Pojďme tuto rovnici vyřešit Eulerovou explicitní metodou.
+\begin{Todo}
+	reseni algoritmus, fazovy portret
+\end{Todo}
+
 Pojďme tuto rovnici vyřešit. Ansatz $e^{\lambda t}$ vede na
 \begin{align*}
 	\lambda^{2}+2\zeta \omega_0 \lambda + \omega_0^{2}&=0 \\
@@ -359,11 +371,7 @@ protože $\sqrt{\zeta^{2}-1}<\zeta,$ dostáváme, že oba kořeny rovnice jsou z
 \begin{equation*}
   x(t)=e^{-\zeta \omega_0 t}A\sin(\omega t+\varphi_0)
 \end{equation*}
-Jenže $\zeta<0$, takže oscilace $x(t)$ se bude časem zvětšovat: v časech $t_k=\frac{2k\pi}{\omega}-\varphi_0$ platí
-\begin{equation*}
-  x(t_k)=\left(e^{-\frac{2\pi \zeta \omega_0}{\omega}}\right)^{k}e^{\zeta \omega_0 \varphi_0}A\sin(2\pi) = B\cdot C^{k},\ B>0,\ C>1
-\end{equation*}
-a tato posloupnost čísel roste nade všechny meze.
+Jenže $\zeta<0$, takže oscilace $x(t)$ se bude časem zvětšovat.
 
 \item \textit{případ $\zeta=-1:$} Pracujeme s funkcemi $e^{\omega_0t}, te^{\omega_0 t},$ obě z nichž mají $\lim_{t\to \infty}=\infty.$ Tedy v závislosti na počátečních podmínkách půjde řešení do $+\infty$ nebo $-\infty$.
 
@@ -394,3 +402,8 @@ Dále tudíž budeme uvažovat $\zeta \geq 0$. Máme čtyři režimy:
   priklady z praxe, dvere, RLC obvod
 \end{Todo}
 \end{enumerate}
+
+\section{Kyvadlo}
+\begin{Todo}
+  matematicke kyvadlo, fyzikalni kyvadlo simulace, fazovy portret, separatrix
+\end{Todo}

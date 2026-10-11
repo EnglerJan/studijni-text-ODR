@@ -1,0 +1,62 @@
+\chapter{Energie a stabilita}
+
+\section{Zákon zachování energie}
+
+\begin{příklad}[ZZME tíhové pole]
+\begin{align*}
+mx''+mg &= 0 \\
+mx''x'+mgx' &= 0 \\
+\frac{1}{2}mx'^{2}+mgx &= E
+\end{align*}
+\end{příklad}
+
+\begin{příklad}[ZZME pružina]
+\begin{align*}
+	mx''+kx &= 0 \\
+	mx''x'+kxx' &= 0 \\
+	\frac{1}{2}mx'^2+\frac{1}{2}kx^{2} &= E 
+\end{align*}
+\end{příklad}
+
+\begin{příklad}[ZZME obecně]
+\begin{align*}
+	m \frac{d^{2}x}{dt^{2}} &= F \\
+	m \frac{d^{2}x}{dt^{2}} &= -\frac{dV}{dx} \\
+	m \frac{d^{2}x}{dt^{2}}\frac{dx}{dt} &= -\frac{dV}{dx}\frac{dx}{dt} = -\frac{d}{dt}V(x(t)) \\
+	\frac{1}{2}m \left(\frac{dx}{dt}\right)^{2}+V(x)&=E
+\end{align*}
+
+\begin{alignat*}{4}
+	F&=F(x) &\Rightarrow V(x)&=-\int F(x)dx \\
+	F&=-mg &\Rightarrow V(x)&=mgx \\
+	F&=-kx &\Rightarrow V(x)&=\frac{1}{2}kx^{2} \\
+	F&=-\frac{mMG}{x^{2}} &\Rightarrow V(x) &= \frac{mMG}{x} \\
+	F&=\frac{1}{4\pi\epsilon_0}\frac{qQ}{x^{2}}\quad &\Rightarrow\quad V(x)&=-\frac{1}{4\pi\epsilon_0}\frac{qQ}{x}
+\end{alignat*}
+\end{příklad}
+
+\begin{příklad}[ZZME pružiny s vnější silou]
+\begin{align*}
+	mx''+kx &= F(x) \\
+	\frac{d}{dt}\left[\frac{1}{2}mx'^2+\frac{1}{2}kx^{2}\right] &= F(x(t))x'(t) \\
+	\left[\frac{1}{2}mx'^2+\frac{1}{2}kx^{2}\right]_{t_1}^{t_2} &= \int_{t_1}^{t_2}F(x(t))x'(t)dt \\
+								    &= \int_{x(t_1)}^{x(t_2)}F(x)dx \\
+								    &= W(x(t_2))-W(x(t_1))=:\Delta W \\
+	E(t_2)-E(t_1)&= \Delta W \\
+	E(t_2)&= E(t_1)+\Delta W
+\end{align*}
+\end{příklad}
+
+\begin{příklad}[ZZE tlumený oscilátor]
+\begin{align*}
+	mx''+cx'+kx &= 0 \\
+	mx''+cx'^2+kxx' &= 0 \\
+	\left[\frac{1}{2}mx'^2+\frac{1}{2}kx^{2}\right]_{t_1}^{t_2}+\int_{t_1}^{t_2} cx'(t)^2 dt &= 0 \\
+	E_{mech}(t_2)-E_{mech}(t_1)+\int_{t_1}^{t_2}cx'(t)^2dt &= 0 \\
+	E_{mech}(t_2)+\int_{0}^{t_2}cx'(t)^{2}dt&=E_{mech}(t_1)+\int_{0}^{t_1}cx'(t)^{2}dt\\
+	E_{celk}(t_2)&=E_{celk}(t_1) \\
+	E_{mech}(t_2)&<E_{mech}(t_1) \quad (c>0)
+\end{align*}
+\end{příklad}
+
+\section{Lyapunovská stabilita}

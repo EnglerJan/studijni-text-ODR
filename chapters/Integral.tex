@@ -2,18 +2,87 @@
 \begin{chapquote}{Isaac Asimov}
 Po letech, kdy mi matematika připadala snadná, jsem se konečně dostal k integrálnímu počtu a narazil jsem na překážku. Uvědomil jsem si, že dál už se nedostanu, a dodnes se mi nepodařilo tuto hranici překročit.
 \end{chapquote}
-Doteď jsme řešili diferenciální rovnice tak, že jsme řešení buď uhodli, nebo jsme si vymysleli novou funkci a tu jsme nazvali řešením. V příštích třech kapitolách se naučíme, jak (některé) rovnice řešit systematicky. Zkonstruujeme operaci, která umí v diferenciální rovnici \uv{odstranit} derivaci, a ještě k tomu ukážeme, že pomocí té samé operace jdou počítat obsahy a objemy geometrických útvarů. Této operaci říkáme \emph{integrál}.
+Doteď jsme řešili diferenciální rovnice tak, že jsme řešení buď uhodli, nebo jsme si vymysleli novou funkci a tu jsme nazvali řešením. V příštích třech kapitolách se naučíme, jak (některé) rovnice řešit systematicky. Zkonstruujeme operaci, která umí v diferenciální rovnici \uv{odstranit} derivaci. Této operaci říkáme \emph{integrál}.
 \section{Plocha pod grafem}
 V kapitole \ref{ch:Co je diferencialni rovnice} jsme odvodili
-\begin{alignat*}{5}
-	x''(t) &= -g\quad& \Rightarrow \quad& x'(t)&&=-gt+x'(0) \\
-	x'(t) &= -gt+x'(0)& \quad \Rightarrow \quad& x(t)&&=-\frac{1}{2}gt^{2}+x'(0)t+x(0).
-\end{alignat*}
-Obecně chceme řešit úlohu
+\begin{alignat}{2}
+  x''(t)=-g &\quad \Rightarrow \quad& x'(t)&=-gt+x'(0)\notag \\
+  x'(t)=-gt+x'(0) &\quad \Rightarrow \quad& x(t)&=-\frac{1}{2}gt^{2}+x'(0)t+x(0).\notag
+  \intertext{Obecně chceme řešit úlohu}
+  \begin{aligned}
+    x'(t)&=f(t) \\
+    x(0)&=x_0
+  \end{aligned}
+		  &\quad \Rightarrow \quad& x(t)&=\ ? \label{eq:obecna uloha nezavisla na x}
+\end{alignat}
+
+Protože pravá strana nezávisí na $x$, můžeme explicitní Eulerovu metodu napsat následovně:
 \begin{align*}
-	x'(t)&=f(t) \\
-	x(0)&=x_0
+	x_1 &= x_0+f(0)\Delta t \\
+	x_2 &= x_1+f(\Delta t)\Delta t = x_0 + (f(0)+f(\Delta t))\Delta t \\
+	x_3 &= x_3+f(2\Delta t)\Delta t = x_0+ (f(0)+f(\Delta t)+f(2\Delta t))\Delta t \\
+	    &\vdots \\
+	x_n &= x_0 + \Delta t\sum_{k=0}^{n-1}f(k\Delta t)
 \end{align*}
+
+Interval $[0,t]$ rozdělíme na $N$ částí (vzdálené $\Delta t = \frac{1}{N}$)
+\begin{equation*}
+  0, \frac{t}{N}, \frac{2t}{N}, \hdots, \frac{(N-1)t}{N}.
+\end{equation*}
+V sumě
+\begin{equation}\label{eq:predzvest integralu}
+  \Delta t\sum_{k=0}^{N-1}f(k\Delta t) = x_N-x_0 \approx x(t)-x_0
+\end{equation}
+je $N$ členů, což se kompenzuje tím, že ji násobíme $\Delta t=\frac{1}{N}.$ Můžeme si sumu představit jako součet obsahů obdélníčků, které se snaží svou výškou kopírovat graf funkce $f$:
+\begin{Todo}
+  obrazek
+\end{Todo}
+Čekáme tedy, že pro neustále se zvětšující $N$ bude výraz na pravé straně \ref{eq:predzvest integralu} konvergovat k ploše pod grafem $f$. Tuto plochu nazveme integrál z funkce $f$ přes interval $[0,t]:$
+\begin{equation*}
+	\sum_{k=0}^{N-1}f(k\Delta t)\Delta t\to \int_0^tf(s)ds \quad (N\to\infty).
+\end{equation*}
+
+Řešení úlohy (\ref{eq:obecna uloha nezavisla na x}) je tedy
+\begin{equation*}
+  x(t)=x_0+\int_0^tf(s)ds
+\end{equation*}
+
+\begin{definice}
+	Nechť $f\colon [a,b]\to \mathbb{R}$ je spojitá funkce. Integrál z $f$ přes interval $[a,b]$ je číslo
+	\begin{equation*}
+		\int_a^bf(s)ds := \lim_{N\to \infty} \sum_{k=0}^{N-1}f\left(a+k\Delta t\right)\Delta t,\quad \Delta t:=\frac{b-a}{N}
+	\end{equation*}
+\end{definice}
+\begin{poznámka}
+	\uv{Plocha} pro nás není zatím dobře definovaný pojem. Říct tedy, že integrál je plocha pod grafem funkce, by nebylo správně. Naopak, když použijeme definici výše, můžeme \emph{definovat} plochu pomocí integrálu. Samozřejmě ne všechny obsahy takto půjdou spočítat, dostaneme jen obsahy útvarů typu
+	\begin{equation*}
+		\{(x,y)\in \mathbb{R}^{2}\colon a\leq x\leq b,\ 0\leq y\leq f(x)\},
+	\end{equation*}
+	kde $f\colon [a,b]\to \mathbb{R}$ je spojitá funkce.
+\end{poznámka}
+
+\begin{příklad}
+	Spočítejme plochu obdélníku. Obdélník je množina $[0,a]\times [0,b]$, tedy jde popsat jako graf funkce $f(s)=b$ na intervalu $[0,a]:$
+	\begin{equation*}
+		\int_0^ab\ ds=\lim_{N\to \infty}\sum_{k=0}^{N-1}b \frac{a-0}{N}=\lim_{N\to \infty}bN \frac{a-0}{N}=\lim_{N\to \infty}ab = ab
+	\end{equation*}
+\end{příklad}
+
+\begin{příklad}
+  Spočítejme plochu pravoúhlého trojúhelníku. Jeho jedna odvěsna nechť má délku $a$ (tu položíme na osu $x$) a druhá nechť má délku $b$ (tu položíme na osu $y$). Přepona je dána grafem funkce $f(t)=\frac{b}{a}t.$ Počítáme
+  \begin{align*}
+	  \sum_{k=0}^{N-1}f\left(\frac{a-0}{N}\right)\frac{a-0}{N} &= \sum_{k=0}^{N-1}\frac{b}{a}\frac{a-0}{N}k\frac{a-0}{N}=\frac{ab}{N^{2}}\sum_{k=0}^{N-1}k=\frac{ab}{N^{2}}\frac{N(N-1)}{2} \\
+	  \Rightarrow \int_0^af(s)ds &= \lim_{N\to \infty}\frac{ab}{N^{2}}\frac{N(N-1)}{2}=\frac{ab}{2} 
+  \end{align*}
+\end{příklad}
+
+\begin{věta}[Vlastnosti integrálu]
+  linearita, lepeni intervalu, zachovavani nerovnosti, specialne odhad
+\end{věta}
+
+\begin{věta}[Základní věta Diferenciálního a Integrálního počtu]
+  
+\end{věta}
+
 \section{Primitivní funkce}
 \section{Plochy a Objemy}
-\section{Metoda integračního faktoru}

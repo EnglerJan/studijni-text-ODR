@@ -14,7 +14,7 @@ V následujících dvou kapitolách si představíme základní funkce $\exp, \s
 \end{definice}
 
 \section{Vyčíslení funkce exp}
-Zadefinovali jsme si funkci jako abstraktní objekt, který řeší nějakou diferenciální rovnici. To není příliš uspokojující, protože z toho není jasné, jak hodnotu funkce vyčíslit (kromě $\exp(0)$, což je z definice 1). Pojďme si ukázat, jak se dá $\exp(t)$ spočítat.
+Pojďme si ukázat, jak se dá $\exp(t)$ spočítat explicitní Eulerovou metodou. Nebudeme muset nic programovat, dostaneme vzoreček, do kterého půjde přímo dosadit.
 
 Víme, že pro malé $h$ platí
 \begin{equation*}
@@ -150,9 +150,9 @@ a tudíž
 \begin{úloha}
   Dokažte: pokud $x_1, x_2$ řeší rovnici
   \begin{equation*}
-    a_2x''(t)+a_1x'(t)+a_0=0
+    a_2x''(t)+a_1x'(t)+a_0x(t)=0
   \end{equation*}
-  a $\alpha, \beta\in \mathbb{R}$, pak stejnou rovnici řeší i $\alpha x_1+\beta x_2.$
+  a $\alpha, \beta\in \mathbb{R}$, pak stejnou rovnici řeší i $x(t):=\alpha x_1(t)+\beta x_2(t).$
 \end{úloha}
 
 \begin{úloha}
@@ -230,7 +230,7 @@ nevlastní limity ${\pm \infty}$ ve vlastních bodech ($c\in \mathbb{R}$) vztahy
 
 Pro nás bude důležité, že $\exp$ je rostoucí bijekce (díky tomu pak zkonstruujeme logaritmus). To si níže dokážeme, ale budeme na to potřebovat technickou větu, jejíž důkaz je nad rámec textu. Intuitivně říká, že spojité funkce \uv{neskáčou}, tj. že pokud funkce nabývá hodnot $f(a)$ a $f(b),$ musí nabývat i všech hodnot mezi.
 \begin{věta*}[Věta o nabývání mezihodnot]\label{veta:nabyvani mezihodnot}
-  Nechť $f\colon A\to \mathbb{R}$ je spojitá, $a,b\in A.$ Pak
+  Nechť $f\colon (\alpha,\beta)\to \mathbb{R}$ je spojitá, $\alpha<a<b<\beta.$ Pak
   \begin{equation*}
 	  \forall z\in (\min\{f(a),f(b)\},\max\{f(a),f(b)\})\ \exists c\in (a,b)\colon f(c)=z.
   \end{equation*}
@@ -349,10 +349,11 @@ Ukažme si trik, kterým dospějeme k (i):
   \end{align*}
   Opět tento postup není matematicky rigorózní, protože už předpokládá, že derivace $\ln(x)$ existuje.
 
-Body (ii)-(vi) plynou z Věty \ref{veta:vlastnosti exp}. Ukažme si například, jak se získá (ii): Pro $x,y>0$ najdeme $t,s\in \mathbb{R}$ takové, že $x=\exp(t),\ y=\exp(s)$ (to jde, protože $\exp$ je surjektivní funkce $\mathbb{R}\to (0,\infty).$) Pak
+Ukažme si, jak se získá (ii): Pro $x,y>0$ najdeme $t,s\in \mathbb{R}$ takové, že $x=\exp(t),\ y=\exp(s)$ (to jde, protože $\exp$ je surjektivní funkce $\mathbb{R}\to (0,\infty).$) Pak
 \begin{equation*}
   \ln(xy)=\ln(\exp(t)\exp(s))=\ln(\exp(t+s))=t+s=\ln(x)+\ln(y)
 \end{equation*}
+Body (iii)-(vi) plynou z Věty \ref{veta:vlastnosti exp} necháváme jako cvičení pilnému čtenáři.
 \end{náčrt důkazu}
 
 \begin{úloha}
@@ -448,7 +449,11 @@ Pokud bychom měli definovat $a^{x}, x\in \mathbb{R}$ tak, aby pořád platilo \
 
 \begin{věta}[Vlastnosti obecné mocniny a logaritmu]\leavevmode
 \begin{enumerate}[(i)]
-	\item Funkce $f(x)=a^{x},\ f\colon \mathbb{R}\to (0,\infty)$ má vlastnosti \ref{eq:mocnina homomorfismus}, \ref{eq:mocnina 0}, \ref{eq:mocnina Z}, \ref{eq:mocnina opakovane},  \ref{eq:mocnina Q}, \ref{eq:ln mocniny}.
+	\item Funkce $f(x)=a^{x},\ f\colon \mathbb{R}\to (0,\infty)$ splňuje
+		\begin{align*}
+			a^{x+y} &= a^{x}a^{y} \\
+			(a^{x})^{y} &= a^{xy}
+		\end{align*}
 	\item $(a^{x})'=\ln(a)a^{x}$
 	\item $a^{x}$ je rostoucí bijekce pro $a>1,$ konstantní pro $a=1$ a klesající bijekce pro $a<1$
 	\item Pro $a>1$ platí $\lim_{x\to -\infty}a^{x}=0,\hspace{.85em} \lim_{x\to \infty}a^{x}=\infty$ \\
@@ -459,7 +464,12 @@ Pokud bychom měli definovat $a^{x}, x\in \mathbb{R}$ tak, aby pořád platilo \
 \end{enumerate}
 \end{věta}
 \begin{důkaz}
-  Cvičení. Vše plyne z vlastností $\ln$ a $\exp.$
+  Ukažme třeba, jak se získá (i):
+  \begin{align*}
+	  a^{x+y} &= \exp(\log(a)(x+y))=\exp(\log(a)x)\exp(\log(a)y)=a^{x}a^{y} \\
+	  (a^{x})^{y}&= \exp(\log(a^{x})y)=\exp\{\log[\exp(\log(a)x)]y\}=\exp(\log(a)xy)=a^{xy}.
+  \end{align*}
+  Zbylé vlastnosti necháváme jako cvičení pro pilného čtenáře.
 \end{důkaz}
 \begin{poznámka}
   Odteď budeme značit exponenciálu $e^{x}$ místo $\exp(x).$

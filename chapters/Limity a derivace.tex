@@ -63,15 +63,15 @@ Pak platí
 	\Rightarrow f(x+h)&\approx f(x)+hf'(x) \quad \text{a aproximace je tím lepší, čím lepší je }h
 \end{align*}
 Například
-\begin{equation*}
-	(3+h)^{2}\approx 9+6h
-\end{equation*}
+\begin{alignat*}{4}
+	&&(3+h)^{2}&\approx 9+6h\quad \\
+	x:=3+h \Rightarrow \quad&& \quad x^{2}&\approx 9+6(x-3)
+\end{alignat*}
 
 \begin{úloha}
 Nakreslete bod $(3,9),$ grafy funkcí $f(x)=x^{2}$ a $g(x)=9+6(x-3).$ Co vidíte? Umíte to zopakovat pro bod $(x_0,x_0^{2})?$ Jak to souvisí s tím, kde je funkce klesající, roustoucí a kde nabývá minima?
 \end{úloha}
 
-\newpage
 \section{Limity}
 V této sekci si zavedeme derivace a naučíme se je počítat. Před tím nás ale čekají přípravné práce.
 \begin{definice}[Funkce] 
@@ -285,14 +285,14 @@ Pokud navíc $M\neq 0,$ existuje limita i pro $\frac{f}{g}$ a platí
 	Nechť $\epsilon>0$ je dáno. Najděme $\delta_1>0, \delta_2>0, \delta_3>0$ takové, že 
 	\begin{align*}
 		\forall x\in(c-\delta_1,c+\delta_1)\setminus \{c\} &\colon |f(x)-L|\leq 1  \\
-		\forall x\in(c-\delta_2,c+\delta_2)\setminus \{c\} &\colon |f(x)-L|\leq \frac{\epsilon}{2|M|}  \\
-		\forall x\in(c-\delta_3,c+\delta_3)\setminus \{c\} &\colon |g(x)-M|\leq \frac{\epsilon}{2(|L|+1)}
+		\forall x\in(c-\delta_2,c+\delta_2)\setminus \{c\} &\colon |f(x)-L|\leq \frac{\epsilon}{2|M|+2}  \\
+		\forall x\in(c-\delta_3,c+\delta_3)\setminus \{c\} &\colon |g(x)-M|\leq \frac{\epsilon}{2|L|+2}
 	\end{align*}
 	Pak pro $\delta:=\min\{\delta_1,\delta_2,\delta_3\}$ platí $\forall x\in (c-\delta,c+\delta)\setminus\{c\}\colon $
 	\begin{align*}
 		|f(x)g(x)-LM|&=|f(x)g(x)-f(x)M+f(x)M-LM| \\
 	  &\leq |f(x)|\cdot|g(x)-M|+|f(x)-L|\cdot |M| \\
-	  &\leq (|L|+1)\cdot \frac{\epsilon}{2(|L|+1)} + \frac{\epsilon}{2|M|}\cdot |M| = \epsilon
+	  &\leq (|L|+1)\cdot \frac{\epsilon}{2|L|+2} + \frac{\epsilon}{2|M|+2}\cdot |M| < \frac{\epsilon}{2}+\frac{\epsilon}{2}=\epsilon
 	\end{align*}
 	Rovnost \ref{eq:limita nasobku} plyne z \ref{eq:limita soucinu}, pokud za $g$ vezmeme konstantní funkci. Rovnost \ref{eq:limita podilu} se dokazuje podobně jako \ref{eq:limita soucinu} a je ponecháno jako cvičení pilnému čtenáři.
 \end{důkaz}
@@ -309,15 +309,6 @@ Pokud navíc $M\neq 0,$ existuje limita i pro $\frac{f}{g}$ a platí
 \end{itemize}
 \end{důsledek}
 
-\begin{příklad}
-  Ukažte, že $f(x)=\sqrt{x}$ je spojitá na $(0,\infty).$\par
-\textit{Řešení:} 
-\begin{align*}
-	\lim_{h\to 0}\sqrt{x+h}-\sqrt{x}&=\lim_{h\to 0}\frac{(\sqrt{x+h}-\sqrt{x})(\sqrt{x+h}+\sqrt{x})}{\sqrt{x+h}+\sqrt{x}} = \lim_{h\to 0} \frac{h}{\sqrt{x+h}+\sqrt{x}} \\
-					&=  \frac{\lim_{h\to 0} h}{\lim_{h\to 0} \left(\sqrt{x+h}+\sqrt{x}\right)} = \frac{0}{2 \sqrt{x}}=0 \\
-\end{align*}
-\end{příklad}
-\vspace{-4em}
 \section{Derivace}
 \begin{definice}[Derivace funkce]
   Mějme funkci $f\colon (a,b)\to \mathbb{R},\ x\in (a,b).$ Derivace funkce $f$ v bodě $x$, pokud existuje, je číslo
@@ -433,6 +424,10 @@ Vidíme, že ač za definiční obor pro $f(x)=\sqrt{x}$ můžeme vzít $[0,\inf
   Spočítejte $(\sqrt{x})'$ přímo z definice a tím ověřte, že existuje.
 \end{úloha}
 
+\begin{úloha}
+	Spočítejte $(\sqrt[3]{x})'$ přímo z definice. Umíte spočítat $(\sqrt[n]{x})'?$
+\end{úloha}
+
 \begin{úloha}\label{ul:trik na derivaci soucinu 2}
   $f(x)=\frac{1}{x}.\ f'(x)=\ ?$ Spočítejte přímo z definice a pomocí triku využívajícího větu o derivaci součinu.
 \end{úloha}
@@ -498,7 +493,6 @@ Vidíme, že ač za definiční obor pro $f(x)=\sqrt{x}$ můžeme vzít $[0,\inf
   Protože $h'(3)=-\frac{3}{4},$ tečna má rovnici $y=-\frac{3}{4}x+b.$ Dosazením bodu $(3,4)$ dostaneme $b=\frac{25}{4}.$ Rovnice jde napsat v elegantním tvaru $\textcolor{blue}{3}x+\textcolor{violet}{4}y=\textcolor{red}{25}.$
 \end{příklad}
 
-\newpage
 \begin{definice}[Vlastnosti funkce]
   Nechť $f\colon A\to \mathbb{R}, x\in A.$ Říkáme, že
   \begin{itemize}
@@ -520,16 +514,30 @@ Vidíme, že ač za definiční obor pro $f(x)=\sqrt{x}$ můžeme vzít $[0,\inf
 	Nabývá funkce $f(x)=\frac{1}{\sqrt{x+3}}$ na $[0,\infty)$ minima/maxima? Pokud ano, najděte je.
 \end{úloha}
 
-Následující věta intuitivně říká: pokud je směrnice tečny kladná, funkce roste, pokud záporná, funkce klesá. Pokud je tečna vodorovná (má nulovou směrnici), funkce se v tom bodě \uv{otáčí}, má buď lokální minimum nebo lokální maximum.
+Následující věta intuitivně říká: pokud je směrnice tečny kladná, funkce roste, pokud záporná, funkce klesá. Funkce může mít lokální extrém jenom v takových bodech, kde je tečna vodorovná, tj. derivace je 0.
 \begin{věta*}[Vlastnosti funkce plynoucí z derivace]\label{veta:Vlastnosti funkce plynoucí z derivace}
-  Nechť $f\colon (a,b)\to \mathbb{R}$ má na $(a,b)$ derivaci. Pak
+  Nechť $f\colon (a,b)\to \mathbb{R}$. Pak
   \begin{itemize}
 	  \item Pokud $f'>0$ na $(a,b)$, je $f$ rostoucí na $(a,b)$
 	  \item Pokud $f'<0$ na $(a,b)$, je $f$ klesající na $(a,b)$
-	  \item Pokud má $f$ lokální extrém v bodě $x\in (a,b)$, platí $f'(x)=0.$
+	  \item Pokud má $f$ lokální extrém v bodě $x\in (a,b)$, pak buď $f'(x)=0$ nebo $f'(x)$ neexistuje.
 	  \item Pokud $f'(x)=0$ a existuje $\epsilon>0$ takové, že $f$ je klesající na $(x-\epsilon,x)$ a rostoucí na $(x,x+\epsilon)$, má $f$ v bodě $x$ lokální minimum. Podobně pro lokální maximum.
   \end{itemize}
 \end{věta*}
+\begin{náčrt důkazu}
+  Platí
+  \begin{equation*}
+    f'(x)\approx \frac{f(x+h)-f(x)}{h}\quad \Rightarrow \quad f(x+h)\approx f(x)+hf'(x)
+  \end{equation*}
+  takže pokud $f'(x)>0$, platí (pro $h>0$) $f(x+h)>f(x)$ a funkce je rostoucí. Pokud $f'(x)<0$, platí $f(x+h)<f(x)$ a funkce je klesající. 
+
+  Pokud má funkce lokální minimum, tak platí (opět pro $h>0$)
+  \begin{align*}
+	  \frac{f(x-h)-f(x)}{-h} \quad &\text{ je malé, ale nekladné (funkce na $(x-h,x)$ neroste)} \\
+	  \frac{f(x+h)-f(x)}{h} \quad  &\text{ je malé, ale nezáporné (funkce na $(x,x+h)$ neklesá)}
+  \end{align*}
+  takže buď limita $\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}$ neexistuje, nebo je rovna nule. Podobně to platí pro lokální maximum.
+\end{náčrt důkazu}
 
 \begin{úloha}[Pokračování Úlohy \ref{pr:minimum kvadraticke funkce}]
 	$f(x)=3x^{2}-6x+7.\ \min_{x\in \mathbb{R}}f(x)=\ ?$ Řešte využitím Věty \ref{veta:Vlastnosti funkce plynoucí z derivace}.
@@ -538,3 +546,11 @@ Následující věta intuitivně říká: pokud je směrnice tečny kladná, fun
 \begin{úloha}
   Načrtněte graf funkce $f(x)=x^{3}-\frac{3}{2}x^{2}-6x+2$ tak, že najdete lokální extrémy a intervaly, kde je funkce rostoucí/klesající.
 \end{úloha}
+
+\begin{příklad}
+Funkce $f(x)=|x|$ má v bodě $x=0$ minimum. Derivace 
+\begin{equation*}
+	f'(0)=\lim_{h\to 0}\frac{|h|-|0|}{h}=\lim_{h\to 0}\frac{|h|}{h}
+\end{equation*}
+neexistuje, protože funkce $\frac{|x|}{x}$ má v bodě $x=0$ skok z hodnoty $-1$ na $+1$. Tedy $f$ nabývá minima v bodě, kde nemá derivaci.
+\end{příklad}

@@ -22,9 +22,9 @@ tedy zrychlení je druhá derivace polohy. Druhý Newtonův zákon pak můžeme 
 \end{equation*}
 Úloha je tedy následující: někdo nám zadá sílu působící na hmotný bod (a tudíž zrychlení, což se triviálně dopočítá jako $\frac{F}{m}$), a chceme zjistit polohu hmotného bodu. Jinak řečeno, někdo nám zadá $x''(t)$ a my chceme spočítat $x(t).$ Takové úloze říkáme \textit{diferenciální rovnice}. Obecná diferenciální rovnice se dá napsat ve tvaru
 \begin{equation}\label{eq:obecna diferencialni rovnice}
-  \phi(t,x,x',x'', ..., x^{(n)})=0
+  \Phi(t,x,x',x'', ..., x^{(n)})=0
 \end{equation}
-kde $\phi$ je nějaká funkce (tedy výraz, kde se může objevovat $t, x,\hdots, x^{(n)}$ různými způsoby). V následujících kapitolách si ukážeme například, jak řešit rovnice
+kde $\Phi$ je nějaká funkce (tedy výraz, kde se může objevovat $t, x,\hdots, x^{(n)}$ různými způsoby). V následujících kapitolách si ukážeme například, jak řešit rovnice
 \begin{align*}
 	x'(t) &= e^{t}\sin(t) \\
 	x'(t)- x(t) &= 0 \\
@@ -71,7 +71,7 @@ Jak určit konstany $C,D$? Očividně platí $C=v(0), D=x(0)$. Tedy pokud bychom
 Obecně, abychom mohli určit řešení $x(t)$ diferenciální rovnice, nestačí nám samotná diferenciální rovnice, ale potřebujeme k ní \textit{počáteční podmínky}.
 \end{příklad}
 
-Pokud v rovnici vystupují nanejvýš derivace $x^{(n)}(t)$ (tedy nevystupují v ní derivace $x^{(n+1)}(t), \hdots$), nazýváme jí \textit{rovnice $n$-tého řádu.} Rovnice $n$-tého řádu vyžadují $n$ počátečních podmínek. Například druhý Newtonův zákon vyžaduje 2 počáteční podmínky -- počáteční polohu a rychlost.
+Pokud v rovnici vystupují nanejvýš derivace $x^{(n)}(t)$ (tedy nevystupují v ní derivace $x^{(n+1)}(t), \hdots$), nazýváme jí \textit{rovnice $n$-tého řádu.} Rovnice $n$-tého řádu vyžadují $n$ počátečních podmínek. Například druhý Newtonův zákon je rovnice druhého řádu a tudíž vyžaduje 2 počáteční podmínky -- počáteční polohu a rychlost.
 
 \begin{příklad}[Svislý vrh v homogenním gravitačním poli]
   Na hmotný bod působí síla $F=-mg$, kde $g$ je konstanta. Počáteční poloha je $x_0$ a počáteční rychlost $v_0$. Jak se pohybuje hmotný bod?\\
@@ -120,15 +120,15 @@ Je náš postup řešení úloh v sekci \ref{sec:volny pad} legitimní? Našli j
 
 \begin{definice}[Řešení úlohy dané diferenciální rovnicí] Mějme úlohu
 \begin{align}
-	\phi(t,x,x',\hdots,x^{(n)}) &= 0\notag \\
+	x^{(n)}&=\phi(t,x,x',\hdots,x^{(n-1)})\notag \\
 	x(0) &= C_0\notag \\
 	x'(0) &= C_1\quad \label{eq:obecna uloha} \\
 	      &\vdots\notag \\
 	x^{(n-1)}(0) &= C_{n-1}\notag
 \end{align}
-Řešením úlohy je taková funkce $x,$ která má $n$ derivací, splňuje
+Řešením úlohy (\ref{eq:obecna uloha}) je taková funkce $x,$ která má $n$ derivací, splňuje
 \begin{equation*}
-	\forall t\colon\ \phi(t,x(t),x'(t),\hdots,x^{(n)}(0))=0
+	\forall t\colon\ x^{(n)}(t)=\phi(t,x(t),x'(t),\hdots,x^{(n-1)}(t))
 \end{equation*}
 a $x(0)=C_0,\hdots,x^{(n-1)}(0)=C_{n-1}.$
 \end{definice}
@@ -153,6 +153,7 @@ Poznamenejme, že se v celém kurzu budeme zabývat \textit{obyčejnými} difere
 	\item Můžeme uvažovat prostorové rozložení teploty, tedy zkoumat $T(t,x,y,z)$. Pro tuto funkci sestavíme parciální diferenciální rovnici, takzvanou rovnici vedení tepla, a tu pak vyřešíme. Problém je, že pokud termoska nemá nějaký speciální tvar, neumíme rovnici řešit na papíře a musíme se uspokojit s řešením na počítači. Navíc kromě počátečních podmínek musíme uvažovat \textit{okrajové podmínky}: nejspíš bude záležét na tom, jestli termosku položíme na radiátor, nebo ji hodíme do ledového rybníku.
 \end{enumerate}
 
-Existují další typy diferenciálních rovnic. Například pokud studujete vývoj populace, kde doba těhotenství je $\tau=\SI{9}{měsíců}$, bude růst populace $x'(t)$ záviset ne na veličinách v čase $t$, ale v čase $t-\tau$ (domyslete si ony veličiny). Takovým rovnicím se říká \textit{rovnice s prodlevou}. Pokud zkoumáme ceny komodit na světových trzích, nikdy nemůžeme znát všechny veličiny, které vstupují do systému. Naši neznalost modelujeme pomocí náhodných jevů (akcie chodí sporadicky nahoru a dolů), takovým rovnicím říkáme \textit{stochastické diferenciální rovnice}. Pokud se v úloze objevuje nějaká nerovnost (letíme si v klidu rovnoměrným přímočarým pohybem a najednou narazíme do zdi), řešíme takzvanou \textit{subdiferenciální inkluzi}. Matematici toho vymysleli hodně.
-
-Pokud chcete porozumět světu okolo sebe, čtěte dál, a studujte diferenciální rovnice.
+\section{Řešení na počítači}
+\begin{Todo}
+  Řešení na počítači
+\end{Todo}

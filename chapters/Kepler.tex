@@ -5,7 +5,73 @@
    hledal, až nalezl v hvězdářských triedrech \\
    tajemství, která teď neseme na bedrech.
 \end{chapquote}
-V této kapitole si dokážeme, že planety obíhají Slunce po elipsách. V úloze bude hrát roli více proměnných závislých na čase, setkáme se tak s první \emph{soustavou diferenciálních rovnic}.
+V této kapitole dokážeme, že planety obíhají Slunce po elipsách.
+
+\section{Newtonův gravitační zákon - simulace}
+Mějme těleso 1 o hmotnosti $M$ v bodě $\vec{r}_1$ a těleso 2 o hmotnosti $m$ v bodě $\vec{r}_2$. Pak těleso 1 působí na 2 \emph{gravitační silou}
+\begin{equation*}
+	\vec{F}_{\text{grav}}=-\frac{mMG}{|\vec{r}_1-\vec{r}_2|^3}(\vec{r}_1-\vec{r}_2),
+\end{equation*}
+kde $G=\SI{6.674 e-11}{m^3kg^{-1}s^{-2}}$ je \emph{univerzální gravitační konstanta}.
+
+Podle 2. Newtonova zákona je trajektorie $\vec{r}_1(t)$ tělesa 2 řešení rovnice
+\begin{equation*}
+	m\vec{r}_1\hspace{.1em}''(t) = -\frac{mMG}{|\vec{r}_1(t)-\vec{r}_2(t)|^3}(\vec{r}_1(t)-\vec{r}_2(t))
+\end{equation*}
+Problém s touto rovnicí je, že v ní vystupuje $\vec{r}_2$. Tedy zároveň musíme vyřešit rovnici
+\begin{equation*}
+	m\vec{r}_2\hspace{.1em}''(t) = -\frac{mMG}{|\vec{r}_1(t)-\vec{r}_2(t)|^3}(\vec{r}_2(t)-\vec{r}_1(t))
+\end{equation*}
+(prohodily jsme role těles). Jenže tato rovnice má stejný problém, zase v ní vystupuje $\vec{r}_1$. Tedy musíme řešit obě rovnice najednou:
+\begin{Todo}
+  fix stupid ''
+\end{Todo}
+\begin{align*}
+	m\vec{r}_1\hspace{.1em}''(t) &= -\frac{mMG}{|\vec{r}_1-\vec{r}_2|^3}(\vec{r}_1(t)-\vec{r}_2(t)) \\
+	M\vec{r}_2\hspace{.1em}''(t) &= \frac{mMG}{|\vec{r}_1-\vec{r}_2|^3}(\vec{r}_1(t)-\vec{r}_2(t))
+\end{align*}
+Když rozepíšeme vektory do $\vec{r}_1(t)=(x_1(t),y_1(t),z_1(t)),$ $\vec{r}_2(t)=(x_2(t),y_2(t),z_2(t)),$ dostaneme \emph{soustavu 6 diferenciálních rovnic pro 6 neznámých funkcí}
+\begin{align*}
+	mx_1'' &= -\frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(x_1-x_2) \\
+	my_1'' &= -\frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(y_1-y_2) \\
+	mz_1'' &= -\frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(z_1-z_2) \\
+	Mx_2'' &= \frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(x_1-x_2) \\
+	My_1'' &= \frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(y_1-y_2) \\
+	Mz_1'' &= \frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(z_1-z_2). \\
+\end{align*}
+Abychom mohli pokračovat dál, uděláme zjednodušující předpoklad:
+\begin{center}
+	\boxed{\text{Těleso 1 je o mnohem těžší než 2, takže jeho zrychlení je zanedbatelné.}}
+\end{center}
+Pak můžeme najít vztažnou soustavu takovou, že $x_2(t)=y_2(t)=z_2(t)=0,$ a zbude soustava 3 diferenciálních rovnic
+\begin{align*}
+		x_1''(t) &= -\frac{MG}{[x_1^2+y_1^2+z_1^2]^{\frac{3}{2}}}x_1 \\
+		y_1''(t) &= -\frac{MG}{[x_1^2+y_1^2+z_1^2]^{\frac{3}{2}}}y_1 \\
+		z_1''(t) &= -\frac{MG}{[x_1^2+y_1^2+z_1^2]^{\frac{3}{2}}}z_1 \\
+\end{align*}
+spolu s počátečními podmínkami
+\begin{alignat*}{6}
+	x_1(0) &= x_0 & y_1(0)&=y_0 & z_1(0)&=z_0 \\
+	x_1'(0) &= v_{0x}\; & y_1'(0)&=v_{0y}\; & z_1'(0)&=v_{0z}.
+\end{alignat*}
+
+Vektory $\vec{r}_1(0), \vec{r}_1\hspace{.1em}'(0)$ jsou dva vektory v třírozměrném prostoru, proto k nim lze vždy nalézt vektor $\vec{a}\in \mathbb{R}^3$ takový, že $\vec{r}_1(0)\perp \vec{a}$ a $\vec{r}_1'\hspace{.1em}(0)\perp \vec{a}.$ Natočme souřadnou soustavu tak, aby osa $z$ mířila ve směru vektoru $\vec{a}$. Pak platí $z_1(0)=z_1'(0)=0$, takže $z_1(t)$ řeší úlohu
+\begin{align*} 
+		z_1''(t) &= -\frac{MG}{[x_1^2+y_1^2+z_1^2]^{\frac{3}{2}}}z_1 \\
+		z_1(0) &= 0 \\
+		z_1'(0) &= 0
+\end{align*}
+a tudíž z \PL ovy věty $\forall t\in [0,\infty)\colon z_1(t)=0.$ Úlohu jsme zredukovali na soustavu 2 diferenciálních rovnic (nebudeme psát indexy 1, tj $x:=x_1, y:=y_1$):
+\begin{align*}
+		x''(t) &= -\frac{MG}{[x^2+y^2]^{\frac{3}{2}}}x \\
+		y''(t) &= -\frac{MG}{[x^2+y^2]^{\frac{3}{2}}}y.
+\end{align*}
+
+Explicitní Eulerovou metodou můžeme tyto rovnice řešit následovně:
+\begin{Todo}
+  simulace
+\end{Todo}
+
 
 \section{Kuželosečky}
 Nakonec budeme počítat, že se těleso v centrálním gravitačním poli pohybuje po kuželosečkách. Na to si prvně musíme definovat, co jsou kuželosečky, a naučit se s nimi pracovat v polárních souřadnicích.
@@ -205,67 +271,13 @@ Ukázali jsme
   \end{enumerate}
 \end{věta}
 
-\section{Newtonův gravitační zákon}
-%TODO: FIX telesa A B vs. r_1 r_2
-Mějme těleso A o hmotnosti $M$ v bodě $\vec{r}_1$ a těleso B o hmotnosti $m$ v bodě $\vec{r}_2$. Pak těleso A působí na B \emph{gravitační silou}
-\begin{equation*}
-	\vec{F}_{\text{grav}}=-\frac{mMG}{|\vec{r}|^3}\vec{r},
-\end{equation*}
-kde $\vec{r}:=\vec{r}_1-\vec{r}_2$ a $G=\SI{6.674 e-11}{m^3kg^{-1}s^{-2}}$ je \emph{univerzální gravitační konstanta}.
-
-Podle 2. Newtonova zákona je trajektorie $\vec{r}_1(t)$ tělesa B řešení rovnice
-\begin{equation*}
-	m\vec{r}_1\hspace{.1em}''(t) = -\frac{mMG}{|\vec{r}(t)|^3}\vec{r}(t)
-\end{equation*}
-Problém s touto rovnicí je, že v ní vystupuje $\vec{r}_2$ (schované v $\vec{r}$). Tedy zároveň musíme vyřešit rovnici
-\begin{equation*}
-	m\vec{r}_2\hspace{.1em}''(t) = -\frac{mMG}{|\vec{r}(t)|^3}(-\vec{r}(t))
-\end{equation*}
-(znaménko $-$ je u $\vec{r}$ protože se prohodily role těles). Jenže tato rovnice má stejný problém, zase v ní vystupuje $\vec{r}_1$. Tedy musíme řešit obě rovnice najednou:
-\begin{Todo}
-  fix stupid ''
-\end{Todo}
-\begin{align*}
-	m\vec{r}_1\hspace{.1em}''(t) &= -\frac{mMG}{|\vec{r}_1-\vec{r}_2|^3}(\vec{r}_1(t)-\vec{r}_2(t)) \\
-	M\vec{r}_2\hspace{.1em}''(t) &= \frac{mMG}{|\vec{r}_1-\vec{r}_2|^3}(\vec{r}_1(t)-\vec{r}_2(t))
-\end{align*}
-Když rozepíšeme vektory do $\vec{r}_1(t)=(x_1(t),y_1(t),z_1(t)),$ $\vec{r}_2(t)=(x_2(t),y_2(t),z_2(t)),$ dostaneme \emph{soustavu 6 diferenciálních rovnic pro 6 neznámých funkcí}
-\begin{align*}
-	mx_1'' &= -\frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(x_1-x_2) \\
-	my_1'' &= -\frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(y_1-y_2) \\
-	mz_1'' &= -\frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(z_1-z_2) \\
-	Mx_2'' &= \frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(x_1-x_2) \\
-	My_1'' &= \frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(y_1-y_2) \\
-	Mz_1'' &= \frac{mMG}{[(x_1-x_2)^{2}+(y_1-y_2)^{2}+(z_1-z_2)^{2}]^{\frac{3}{2}}}(z_1-z_2). \\
-\end{align*}
-Abychom mohli pokračovat dál, uděláme zjednodušující předpoklad:
-\begin{center}
-	\boxed{\text{Těleso A je o mnohem těžší než B, takže jeho zrychlení je zanedbatelné.}}
-\end{center}
-Pak můžeme najít vztažnou soustavu takovou, že $x_2(t)=y_2(t)=z_2(t)=0,$ a zbude soustava 3 diferenciálních rovnic
-\begin{align*}
-		x_1''(t) &= -\frac{MG}{[x_1^2+y_1^2+z_1^2]^{\frac{3}{2}}}x_1 \\
-		y_1''(t) &= -\frac{MG}{[x_1^2+y_1^2+z_1^2]^{\frac{3}{2}}}y_1 \\
-		z_1''(t) &= -\frac{MG}{[x_1^2+y_1^2+z_1^2]^{\frac{3}{2}}}z_1 \\
-\end{align*}
-spolu s počátečními podmínkami
-\begin{alignat*}{6}
-	x_1(0) &= x_0 & y_1(0)&=y_0 & z_1(0)&=z_0 \\
-	x_1'(0) &= v_{0x}\; & y_1'(0)&=v_{0y}\; & z_1'(0)&=v_{0z}.
-\end{alignat*}
-
-Vektory $\vec{r}_1(0), \vec{r}_1\hspace{.1em}'(0)$ jsou dva vektory v třírozměrném prostoru, proto k nim lze vždy nalézt vektor $\vec{a}\in \mathbb{R}^3$ takový, že $\vec{r}_1(0)\perp \vec{a}$ a $\vec{r}_1'\hspace{.1em}(0)\perp \vec{a}.$ Natočme souřadnou soustavu tak, aby osa $z$ mířila ve směru vektoru $\vec{a}$. Pak platí $z_1(0)=z_1'(0)=0$, takže $z_1(t)$ řeší úlohu
-\begin{align*} 
-		z_1''(t) &= -\frac{MG}{[x_1^2+y_1^2+z_1^2]^{\frac{3}{2}}}z_1 \\
-		z_1(0) &= 0 \\
-		z_1'(0) &= 0
-\end{align*}
-a tudíž z \PL ovy věty $\forall t\in [0,\infty)\colon z_1(t)=0.$ Úlohu jsme zredukovali na soustavu 2 diferenciálních rovnic (nebudeme psát indexy 1, tj $x:=x_1, y:=y_1$):
-
+\section{Keplerovy zákony}
+Nyní si vyřešíme rovnice analyticky. Řešíme
 \begin{align*}
 		x''(t) &= -\frac{MG}{[x^2+y^2]^{\frac{3}{2}}}x \\
-		y''(t) &= -\frac{MG}{[x^2+y^2]^{\frac{3}{2}}}y \\
+		y''(t) &= -\frac{MG}{[x^2+y^2]^{\frac{3}{2}}}y.
 \end{align*}
+
 Všimněme si už teď, že pokud $x^{2}+y^{2}=a^{2}=\text{konst.}$, dostáváme rovnici harmonického oscilátoru s frekvencí $\omega_0^{2}=\frac{MG}{(x^{2}+y^{2})^{\frac{3}{2}}}=\frac{MG}{a^{3}},$ jejíž řešení jsou $\sin$ a $\cos$, které opravdu obíhají kružnici. Pro takové řešení platí 3. Keplerův zákon
 \begin{equation*}
 	\left(\frac{2\pi}{T}\right)^{2}=\omega_0^{2}=\frac{MG}{a^{3}}\quad \Rightarrow\quad \frac{T^{2}}{a^{3}} = \frac{4\pi^{2}}{MG} = \text{ univerzální konstanta},
@@ -359,7 +371,7 @@ Pro hyperbolu vyjde podobně $a=\frac{MG}{2E}.$ Umíme dopočítat $e=a\epsilon$
 
 Jaký je význam energie $E?$
 
-Pokud $E<0,$ vychází $\epsilon\in(0,1)$ a řešení je elipsa. Pro $E=0$ dostáváme $\epsilon=0$, tudíž parabolu, a pro $E>0$ dostáváme hyperbolu. Elipsa je uzavřený křivkový útvar, tudíž vektor $\vec{r}$ jde omezit nějakou konstantou $|\vec{r}|\leq C,$ zatímco parabola a hyperbola nikoliv, pro ně je velikost řešení $|\vec{r}|$ neomezená. S energií tedy souvisí, jestli je řešení omezené nebo nikoliv. V pozdějších kapitolách uvidíme, že to souvisí také se \emph{stabilitou} diferenciálních rovnic.
+Pokud $E<0,$ vychází $\epsilon\in(0,1)$ a řešení je elipsa. Pro $E=0$ dostáváme $\epsilon=0$, tudíž parabolu, a pro $E>0$ dostáváme hyperbolu. Elipsa je uzavřený křivkový útvar, tudíž vektor $\vec{r}$ jde omezit nějakou konstantou $|\vec{r}|\leq C,$ zatímco parabola a hyperbola nikoliv, pro ně je velikost řešení $|\vec{r}|$ neomezená. S energií tedy souvisí, jestli je řešení omezené nebo nikoliv. V pozdějších kapitolách uvidíme, že s ní souvisí také se \emph{stabilitou} diferenciálních rovnic.
 
 Jaký je význam momentu hybnosti $L?$ 
 \begin{Todo}
